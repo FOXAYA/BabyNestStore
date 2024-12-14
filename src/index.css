@@ -37,12 +37,13 @@
   }
   .waves{
       width:100%;
-      color: #F8F4EC;
+      color: #E2D6CC;
   }
   .bgground{
-background-color: #fff;
+    background-color: #fff;
   }
   .slider-bg{
-      background-color: #F8F4EC;
+      background-color: #E2D6CC;
+
   }
 /* end navbarlayout */
