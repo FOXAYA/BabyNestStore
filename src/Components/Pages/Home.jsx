@@ -63,7 +63,7 @@ class Home extends Component {
       </svg>
   </div>
 
-     <Carousel className="custom-carousel slider-bg">
+     <Carousel className="custom-carousel slider-bg  custom-height ">
           
         {/*  slide 1 */}
         <Carousel.Item>
@@ -80,7 +80,7 @@ class Home extends Component {
               </Button>
             </div>
             <div className="slider-image">
-              <img src={myimg1} alt="Collection 1" className="img-fluid" />
+              <img src={myimg1} alt="Collection 1" className="img-fluid d-block w-100" />
             </div>
 
           </div>
@@ -101,7 +101,7 @@ class Home extends Component {
               </Button>
             </div>
             <div className="slider-image">
-              <img src={myimg2} alt="Collection 2" className="img-fluid" />
+              <img src={myimg2} alt="Collection 2" className="img-fluid d-block w-100" />
             </div>
             </div>
         </Carousel.Item>
@@ -120,8 +120,8 @@ class Home extends Component {
                 Shop Now
               </Button>
             </div>
-            <div className="slider-image">
-              <img src={myimg3} alt="Collection 3" className="img-fluid" />
+            <div className="slider-image ">
+              <img src={myimg3} alt="Collection 3" className="img-fluid d-block w-100" />
             </div>
           </div>
         </Carousel.Item>

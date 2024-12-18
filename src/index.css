@@ -106,11 +106,39 @@ body{
   height: auto;
   display: block;
 }
-.star{
-  color: #EEA12C;
-  bottom:200px;
-  margin-left: 200px;
+/* تحريك الحاويات إلى الجهة اليمنى */
+.carousel-control-prev,
+.carousel-control-next {
   position: absolute;
-  font-size: 3rem;
-  background-color: red;
+  right: 10px; /* تثبيت على الجهة اليمنى */
+  width: auto;
+  height: auto;
+}
+
+.carousel-control-prev {
+  transform: translate(560%,0);
+  -webkit-transform: translate(560%,0);
+  -moz-transform: translate(560%,0);
+  -ms-transform: translate(560%,0);
+  -o-transform: translate(560%,0);
+}
+
+.carousel-control-next {
+  top: 60%;
+  transform: translate(-6%,10%);
+  -webkit-transform: translate(-6%,10%);
+  -moz-transform: translate(-6%,10%);
+  -ms-transform: translate(-6%,10%);
+  -o-transform: translate(-6%,10%);
+}
+
+/* تحسين مظهر الأيقونات */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--theme-color-bg_color);
+  color: var(--theme-color-text);
+  border-radius: 50%; 
+  width: 40px;
+  height: 40px;
+  background-size: 50%; 
 }
