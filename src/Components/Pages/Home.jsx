@@ -4,8 +4,7 @@ import myimg1 from "../assets/images/home-1.png";
 import myimg2 from "../assets/images/home-2.png";
 import myimg3 from "../assets/images/home-3.png";
 import ButtonUi from "../ui/ButtonUi";
-import WaveTop from "../animation/WaveTop";
-import WaveBottom from "../animation/WaveBottom";
+import { WaveBottom, WaveTop } from "../animation/Wave";
 
 class Home extends Component {
   render() {
