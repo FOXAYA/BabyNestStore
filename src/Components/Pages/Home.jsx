@@ -5,13 +5,14 @@ import myimg2 from "../assets/images/home-2.png";
 import myimg3 from "../assets/images/home-3.png";
 import ButtonUi from "../ui/ButtonUi";
 import { WaveBottom, WaveTop } from "../animation/Wave";
+import Icons from "../Layout/IconsAnimated";
 
 class Home extends Component {
   render() {
     return (
       <>
         <WaveTop />
-
+        <Icons />
         <Carousel className="custom-carousel slider-bg">
           {/*  slide 1 */}
           <Carousel.Item>

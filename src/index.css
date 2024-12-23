@@ -162,6 +162,10 @@ a {
   background-color: var(--theme-color-text_link3);
   color: var(--theme-color-text_hover3);
   transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
 }
 
 /* Style for the inactive dots */
@@ -175,9 +179,13 @@ a {
 
 .carousel-control-prev-icon {
   position: absolute;
-  left: 5%;
+  left: 7%;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
 }
 
 .carousel-control-next-icon {
@@ -235,6 +243,10 @@ a {
   flex-direction: column;
   opacity: 1;
   transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
 }
 
 .category-card:hover .card-body {
@@ -263,7 +275,6 @@ a {
 }
 
 /* End Carogries */
-
 /* Start responsive home */
 .slider-content {
   display: flex;
