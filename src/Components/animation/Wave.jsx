@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const waveVariants = {
+// Default wave variants
+const defaultWaveVariants = {
   start: {
     d: `
       M1920,0 
@@ -32,20 +33,30 @@ const waveVariants = {
   },
 };
 
-const WaveBottom = () => (
-  <div className="waves d-flex" style={{ transform: "scaleY(-1)" }}>
+// Reusable Wave component
+const Wave = ({
+  variants = defaultWaveVariants,
+  fill = "#F8F4EB",
+  duration = 1.5,
+  reverse = false,
+  className = "",
+}) => (
+  <div
+    className={`waves d-flex ${className}`}
+    style={reverse ? { transform: "scaleY(-1)" } : {}}
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1920 80"
       preserveAspectRatio="none"
     >
       <motion.path
-        fill="#F8F4EB"
-        variants={waveVariants}
+        fill={fill}
+        variants={variants}
         initial="start"
         animate="wave"
         transition={{
-          duration: 1.5,
+          duration,
           repeat: Infinity,
           repeatType: "reverse",
           ease: "easeInOut",
@@ -55,27 +66,7 @@ const WaveBottom = () => (
   </div>
 );
 
-const WaveTop = () => (
-  <div className="waves d-flex">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1920 80"
-      preserveAspectRatio="none"
-    >
-      <motion.path
-        fill="#F8F4EB"
-        variants={waveVariants}
-        initial="start"
-        animate="wave"
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
-      />
-    </svg>
-  </div>
-);
+const WaveBottom = (props) => <Wave {...props} reverse />;
+const WaveTop = (props) => <Wave {...props} />;
 
-export { WaveBottom, WaveTop };
+export { Wave, WaveBottom, WaveTop };
