@@ -5,8 +5,8 @@ import Trendy from './Trendy';
   render() {
     return (
 <>
-<CategoriesList />
-<Trendy />
+         <CategoriesList />
+          <Trendy />
 </>
     )
   }

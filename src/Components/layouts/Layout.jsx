@@ -3,6 +3,7 @@ import NavbarLayout from './NavbarLayout';
 import Home from "../Pages/Home"
 import Clients from '../layouts/Clients';
 import Category from '../Pages/Category';
+import ProductCard from '../cards/ProductCard';
 class Layout extends Component {
   render() {
     return (
@@ -10,7 +11,9 @@ class Layout extends Component {
       <NavbarLayout />
       <Home />
       <Clients />
-      <Category />
+          <Category />
+          <ProductCard />
+      
       </>
     )
   }
