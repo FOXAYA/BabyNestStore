@@ -1,4 +1,3 @@
-/* BlogImage.js*/
 .slideContainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -6,71 +5,70 @@
   overflow: hidden;
 }
 
-.header-section {
+.headerSection {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.header-section h4 {
+.headerSection h4 {
   font-size: 18px;
   color: #666;
   margin-bottom: 10px;
 }
 
-.header-section h1 {
+.headerSection h1 {
   font-size: 36px;
   color: #333;
 }
 
-.blog-container {
+.blogContainer {
   display: flex;
+  justify-content: space-between;
   overflow: hidden;
-  margin-left: 40px;
-  margin-right: 40px;
-  gap: 20px;
-  scroll-behavior: smooth;
 }
 
-.blog-item {
-  flex: 0 0 25%;
+.blogItem {
+  flex: 1 1 21%;
+  margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
   cursor: pointer;
+  transition: transform 0.5s;
 }
 
-.image-container {
+.blogItem:hover {
+  transform: scale(1.05);
+}
+
+.imageContainer {
   overflow: hidden;
 }
 
-.image-container img {
+.imageContainer img {
   width: 100%;
   height: auto;
   transition: transform 0.5s ease;
 }
 
-.image-container:hover img {
-  transform: scale(1.1);
-}
-
-.content-area {
+.contentArea {
   padding: 20px;
 }
 
-.content-area h3 {
-  font-size: 24px;
+.contentArea h3 {
+  font-size: 18px;
   color: #333;
   margin-bottom: 10px;
 }
 
-.content-area p {
+.contentArea p {
   font-size: 14px;
   color: #777;
   margin: 5px 0;
 }
 
-.dots-container {
+.dotsContainer {
   text-align: center;
   margin-top: 20px;
 }
@@ -90,15 +88,12 @@
 }
 
 @media (max-width: 600px) {
-  .blog-container {
-    display: block;
+  .blogContainer {
+    flex-direction: column;
   }
 
-  .blog-item {
-    flex: 0 0 100%;
-  }
-
-  .image-container img {
-    width: 100%;
+  .blogItem {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
   }
 }
