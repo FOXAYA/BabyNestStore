@@ -8,7 +8,7 @@ const Footer2 = () => {
             <div className="row">
             {/* Main Title */}
             <div className="col-lg-12 text-center mb-4">
-                <h2 className="fw-bold">We provide the best products for kids</h2>
+                <h1 className="fw-bold">We provide the best products for kids</h1>
             </div>
         </div>
 
@@ -44,16 +44,16 @@ const Footer2 = () => {
             <h5 className="fw-bold mb-3">Newsletter</h5>
             <form>
                 <div className="mb-3">
-                <div className="input-group">
-                    <span className="input-group-text bg-light text-dark">
-                    <i className="bi bi-envelope"></i>
-                    </span>
-                    <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Enter Your Email Address"
-                    />
-                </div>
+                    <div>
+                        <span className="text-dark">
+                        <i className="bi bi-envelope"></i>
+                        </span>
+                        <input
+                        type="email"
+                        className="form-control"
+                        placeholder="Enter Your Email Address"
+                        />
+                    </div>
                 </div>
                 <div class="d-flex align-items-center">
                 <input type="checkbox" id="privacyPolicy" />
@@ -64,12 +64,9 @@ const Footer2 = () => {
             </form>
             </div>
         </div>
-
-
-
         {/* Footer Bottom */}
-        <div className="row mt-4">
-            <div className="col-12 text-center">
+        <div className="row mt-3">
+            <div className="col-15 text-center border-top">
             <span>
                 <a href="l" className="text-white text-decoration-none">AncoraThemes </a>© 2024. All rights reserved.
             </span>
