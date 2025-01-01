@@ -4,6 +4,8 @@ import Home from "../Pages/Home"
 import Clients from '../layouts/Clients';
 import Category from '../Pages/Category';
 import ProductCard from '../cards/ProductCard';
+import BlogImage from '../Pages/BlogImage';
+import Icon from '../Pages/Icon';
 class Layout extends Component {
   render() {
     return (
@@ -12,7 +14,9 @@ class Layout extends Component {
       <Home />
       <Clients />
           <Category />
-          <ProductCard />
+        <ProductCard />
+        <Icon />
+        <BlogImage />
       
       </>
     )
