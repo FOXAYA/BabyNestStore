@@ -11,8 +11,8 @@ class Layout extends Component {
       <NavbarLayout />
       <Home />
       <Clients />
-          <Category />
-          <ProductCard />
+      <Category />
+      <ProductCard />
       
       </>
     )

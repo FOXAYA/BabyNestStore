@@ -10,7 +10,6 @@ class App extends Component {
       <Router>
         <Routes>
         <Route path="/" element={<Layout />} />
-
         <Route path="/" element={<ProductCard />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
       </Routes>
