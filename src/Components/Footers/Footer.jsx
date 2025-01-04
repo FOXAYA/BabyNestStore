@@ -84,22 +84,22 @@ const Footer = () => {
                 <Row className="justify-content-center my-4">
                     <ul className="d-flex list-unstyled social-icons justify-content-center flex-wrap">
                         <li className="m-2">
-                            <a href="i" className="social-link facebook">
+                            <a href="https://www.facebook.com" className="social-link facebook">
                                 <FontAwesomeIcon icon={faFacebook} size="1x" />
                             </a>
                         </li>
                         <li className="m-2">
-                            <a href="i" className="social-link twitter">
+                            <a href="https://www.twitter.com" className="social-link twitter">
                                 <FontAwesomeIcon icon={faTwitter} size="1x" />
                             </a>
                         </li>
                         <li className="m-2">
-                            <a href="i" className="social-link basketball">
+                            <a href="https://www.basketball.com" className="social-link basketball">
                                 <FontAwesomeIcon icon={faBasketballBall} size="1x" />
                             </a>
                         </li>
                         <li className="m-2">
-                            <a href="i" className="social-link instagram">
+                            <a href="https://www.instagram.com" className="social-link instagram">
                                 <FontAwesomeIcon icon={faInstagram} size="1x" />
                             </a>
                         </li>
