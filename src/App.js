@@ -16,7 +16,6 @@ class App extends Component {
           <Route path="/" element={<Layout />} />
           <Route path="/" element={<ProductCard />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
-
           <Route path="/blog" element={<BlogImage />} />
           <Route path="/blog/:id" element={<BabyShop />} />
         </Routes>
