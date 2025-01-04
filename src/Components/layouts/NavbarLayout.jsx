@@ -32,7 +32,7 @@ class NavbarLayout extends Component {
                   Pages
                 </Nav.Link>
                 <Nav.Link
-                  href="#"
+                  href="#blog"
                   className="fs-6  link-underline-custom text-dark"
                 >
                   Blog

@@ -1,0 +1,99 @@
+.slideContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.headerSection h4 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.headerSection h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.blogContainer {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.blogItem {
+  flex: 1 1 21%;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.blogItem:hover {
+  transform: scale(1.05);
+}
+
+.imageContainer {
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.contentArea {
+  padding: 20px;
+}
+
+.contentArea h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contentArea p {
+  font-size: 14px;
+  color: #777;
+  margin: 5px 0;
+}
+
+.dotsContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+@media (max-width: 600px) {
+  .blogContainer {
+    flex-direction: column;
+  }
+
+  .blogItem {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+}
