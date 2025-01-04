@@ -12,7 +12,8 @@ import footerimg4 from "../assets/images/insta-image4.jpg";
 import footerimg5 from "../assets/images/insta-image5.jpg";
 import footerimg6 from "../assets/images/insta-image6.jpg";
 
-import { Container, Row, Col, Nav, Image } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import NavS from "./NavS";
 
 const Footer = () => {
     return (
@@ -61,25 +62,8 @@ const Footer = () => {
                         <Image src={footerlogo} alt="Logo" width={70} fluid />
                     </Col>
                 </Row>
-
-                {/* Navigation Links Section */}
-                <Row className="justify-content-center">
-                    <Nav className="justify-content-center flex-wrap">
-                        <Nav.Item>
-                            <Nav.Link href="m" className="nav-link text-dark">Home</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="l" className="nav-link text-dark">Blog</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="k" className="nav-link text-dark">Shop</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="k" className="nav-link text-dark">Contact</Nav.Link>
-                        </Nav.Item>
-                    </Nav>
-                </Row>
-
+                <NavS />
+                
                 {/* Social Icons Section */}
                 <Row className="justify-content-center my-4">
                     <ul className="d-flex list-unstyled social-icons justify-content-center flex-wrap">
