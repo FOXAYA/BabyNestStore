@@ -6,7 +6,6 @@ import Category from '../Pages/Category';
 import ProductCard from '../cards/ProductCard';
 import BlogImage from '../Pages/BlogImage';
 import Icon from '../Pages/Icon';
-import Footer from '../Footer/Footer';
 class Layout extends Component {
   render() {
     return (
@@ -18,7 +17,6 @@ class Layout extends Component {
         <ProductCard />
         <Icon />
         <BlogImage />
-        <Footer />
         
       </>
     )
