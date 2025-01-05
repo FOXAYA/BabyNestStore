@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import products from "./ProductsList";
 import NavbarLayout from "../layouts/NavbarLayout";
-import { BasketContext } from "./BasketContext";
+import { useBasket } from "./BasketContext";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -12,7 +12,7 @@ const ProductDetailPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null); // Track selected size
-  const { addToBasket } = useContext(BasketContext);
+  const { addToBasket } = useBasket();
 
   useEffect(() => {
     const foundProduct = products.find((p) => p.id === parseInt(id));
