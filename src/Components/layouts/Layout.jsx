@@ -6,6 +6,7 @@ import Category from "../Pages/Category";
 import BlogImage from "../Pages/BlogImage";
 import Icon from "../Pages/Icon";
 import BestSellers from "./BestSellers";
+import Footer from "../Footer/Footer";
 class Layout extends Component {
   render() {
     return (
@@ -17,6 +18,8 @@ class Layout extends Component {
         <BestSellers />
         <Icon />
         <BlogImage />
+        <Footer />
+
       </>
     );
   }
