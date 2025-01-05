@@ -59,8 +59,28 @@ const products = [
     rating: 4.5,
     colors: ["#FF69B4", "#8A2BE2"],
     sizes: ["6-12 m", "12-18 m"],
-  }
+  },
+  {
+    id: 7,
+    image: img7,
+    name: "Girl Cardigan",
+    price: 90,
+    rating: 4.5,
+    colors: ["#FF69B4", "#8A2BE2"],
+    sizes: ["6-12 m", "12-18 m"],
+  },
 
+
+
+  {
+    id: 8,
+    image: img1,
+    name: "Girl Cardigan",
+    price: 100,
+    rating: 4.5,
+    colors: ["#FF69B4", "#8A2BE2"],
+    sizes: ["6-12 m", "12-18 m"],
+  },
 ];
 
 export default products;

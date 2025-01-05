@@ -11,7 +11,6 @@ const Footer2 = () => {
                 <h1 className="fw-bold">We provide the best products for kids</h1>
             </div>
         </div>
-
         <div className="row">
             {/* Address Section */}
             <div className="col-md-3 mb-4">
@@ -52,6 +51,9 @@ const Footer2 = () => {
                         type="email"
                         className="form-control"
                         placeholder="Enter Your Email Address"
+                        onFocus={(e) =>
+                            (e.target.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)")
+                        }
                         />
                     </div>
                 </div>
@@ -64,7 +66,7 @@ const Footer2 = () => {
             </form>
             </div>
         </div>
-        {/* Footer Bottom */}
+        {/* Footer */}
         <div className="row mt-3">
             <div className="col-15 text-center border-top">
             <span>

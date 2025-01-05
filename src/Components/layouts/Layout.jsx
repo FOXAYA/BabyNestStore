@@ -6,6 +6,8 @@ import Category from "../Pages/Category";
 import BlogImage from "../Pages/BlogImage";
 import Icon from "../Pages/Icon";
 import BestSellers from "./BestSellers";
+import ItemShop from '../Pages/ItemShop';
+
 class Layout extends Component {
   render() {
     return (
@@ -15,6 +17,7 @@ class Layout extends Component {
         <Clients />
         <Category />
         <BestSellers />
+        <ItemShop />
         <Icon />
         <BlogImage />
       </>

@@ -1,0 +1,52 @@
+{
+  "cities": [
+    {
+      "cityName": "Lisbon",
+      "street": " 755 15h Street Portugal NY  1000 ",
+      "emoji": "🇵🇹",
+      "telephone": "+1 840 841 25 69",
+      "info" : "info@email.com",
+      "position": {
+        "lat": 38.727881642324164,
+        "lng": -9.140900099907554
+      },
+      "id": 73930385
+    },
+    {
+      "cityName": "Madrid",
+      "street": " 755 15h Street Portugal NHU 1000 ",
+      "emoji": "🇪🇸",
+      "telephone": "+1 840 841 25 69",
+      "info" : "info@email.com",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": 17806751
+    },
+    {
+      "cityName": "Berlin",
+      "street": " 755 15h Street Portugal CAL 1000 ",
+      "emoji": "🇩🇪",
+         "telephone": "+1 840 841 25 69",
+      "info" : "info@email.com",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": 98443197
+    },
+    {
+      "cityName": "Nijar",
+      "street": " 755 15h Street Portugal GHUL 1000 ",
+      "emoji": "🇪🇸",
+       "telephone": "+1 840 841 25 69",
+      "info" : "info@email.com",
+      "position": {
+        "lat": "36.967508314568164",
+        "lng": "-2.13128394200588"
+      },
+      "id": 98443198
+    }
+  ]
+}
