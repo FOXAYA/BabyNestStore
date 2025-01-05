@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 import NavbarLayout from "../layouts/NavbarLayout";
-
 import CityList from "./CityList";
 import Map from "./Map";
 import Footer2 from "../Footer2/Footer2";
