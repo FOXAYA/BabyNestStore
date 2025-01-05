@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import products from "./ProductsList";
+import StarRating from "./StarRating";
+import { useBasket } from "./BasketContext"; 
 
 const ProductCard = () => {
   const [productList] = useState(
