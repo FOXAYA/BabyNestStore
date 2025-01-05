@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import products from "./ProductsList";
-import StarRating from "./StarRating";
-import { useBasket } from "./BasketContext"; 
+import StarRating from "./StarRating"; 
 
 const ProductCard = () => {
   const [productList] = useState(
     products.map((product) => ({ ...product, qty: 1 }))
   );
+
+  const [ratings, setRatings] = useState(
+    products.reduce((acc, product) => {
+      acc[product.id] = product.rating;
+      return acc;
+    }, {})
+  );
+
+  const handleRating = (id, rating) => {
+    setRatings((prevRatings) => ({ ...prevRatings, [id]: rating }));
+
+  };
 
   return (
     <Container className="mt-4">
@@ -35,13 +45,11 @@ const ProductCard = () => {
                   <Card.Text>
                     <strong>$ {product.price}</strong>
                   </Card.Text>
-                  <div>
-                    {product.rating &&
-                      [...Array(Math.round(product.rating))].map((_, i) => (
-                        <span key={i}>
-                          <FaStar style={{ color: "rgb(255, 193, 7)" }} />
-                        </span>
-                      ))}
+                  <div style={{ marginLeft: "auto" }}>
+                    <StarRating
+                      defaultRating={ratings[product.id]}
+                      onSetRating={(rating) => handleRating(product.id, rating)}
+                    />
                   </div>
                 </div>
               </Card.Body>
