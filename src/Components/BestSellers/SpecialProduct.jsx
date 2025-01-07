@@ -19,7 +19,7 @@ const Newcard = () => {
                     />
                 </Col>
 
-                <Col md={6} className="d-flex justify-content-center" >
+                <Col md={6} className="d-flex justify-content-center" style={{background: "#F8F4EC", borderRadius: "10px"}}>
 
 
 
