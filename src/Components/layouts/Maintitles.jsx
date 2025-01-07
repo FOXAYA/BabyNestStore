@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 class Maintitles extends Component {
   render() {
     const { title, subtitle } = this.props;
