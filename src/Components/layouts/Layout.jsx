@@ -1,26 +1,28 @@
-import React, { Component } from 'react'
-import NavbarLayout from './NavbarLayout';
-import Home from "../Pages/Home"
-import Clients from '../layouts/Clients';
-import Category from '../Pages/Category';
-import ProductCard from '../cards/ProductCard';
-import BlogImage from '../Pages/BlogImage';
-import Icon from '../Pages/Icon';
-import Footer from '../Footers/Footer';
+import React, { Component } from "react";
+import Navbar from "../Navbar/Navbar";
+import Home from "../Home/Home";
+import Clients from "../Clients/Clients";
+import CategoriesListSec1 from "../HomeCategories/CategoriesListSec1";
+import BestSellers from "../BestSellers/BestSellers";
+import CategoriesListSec2 from "../HomeCategories/CategoriesListSec2";
+import TrendyLayout from "../Trendy/TrendyLayout";
+import BlogImage from "../Blog/BlogImage";
+import Footer from "../Footer/Footer";
 class Layout extends Component {
   render() {
     return (
       <>
-      <NavbarLayout />
-      <Home />
-      <Clients />
-          <Category />
-        <ProductCard />
-        <Icon />
+        <Navbar />
+        <Home />
+        <Clients />
+        <CategoriesListSec1 />
+        <BestSellers />
+        <CategoriesListSec2 />
+        <TrendyLayout />
         <BlogImage />
         <Footer />
       </>
-    )
+    );
   }
 }
 export default Layout;

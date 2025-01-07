@@ -7,7 +7,7 @@ class ButtonUi extends Component {
 
     return (
       <Button
-        className={`${className} rounded-5 px-5 py-3 btn-one text-white fw-bolder mt-2`}
+        className={`${className} rounded-5 px-5 py-3 text-white fw-bolder mt-2`}
         onClick={onClick}
       >
         {text || "Shop Now"}

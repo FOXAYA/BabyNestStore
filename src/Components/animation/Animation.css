@@ -1,0 +1,23 @@
+.home-icon-one{
+  top:-30px;
+  right: 100px;
+}
+.home-icon-two {
+  left: 20px;
+  bottom:300px;
+}
+.home-icon-three {
+  left: 20px;
+  top: 270px;
+}
+.icons-home-parent {
+  height: 60vh;
+}
+.home-icon-four {
+  right: 100px;
+  top: 400px;
+}
+.home-icon-five {
+  left: 500px;
+  bottom:10px;
+}

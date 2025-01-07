@@ -4,7 +4,6 @@ import img3 from "../assets/images/product-image3.jpg";
 import img4 from "../assets/images/product-image4.jpg";
 import img5 from "../assets/images/product-image5.jpg";
 import img6 from "../assets/images/product-image6.jpg";
-import img7 from "../assets/images/product-image6.jpg";
 
 const products = [
   {
@@ -57,27 +56,6 @@ const products = [
     image: img6,
     name: "Girl Cardigan",
     price: 90,
-    rating: 4.5,
-    colors: ["#FF69B4", "#8A2BE2"],
-    sizes: ["6-12 m", "12-18 m"],
-  },
-  {
-    id: 7,
-    image: img7,
-    name: "Girl Cardigan",
-    price: 90,
-    rating: 4.5,
-    colors: ["#FF69B4", "#8A2BE2"],
-    sizes: ["6-12 m", "12-18 m"],
-  },
-
-
-
-  {
-    id: 7,
-    image: img1,
-    name: "Girl Cardigan",
-    price: 100,
     rating: 4.5,
     colors: ["#FF69B4", "#8A2BE2"],
     sizes: ["6-12 m", "12-18 m"],

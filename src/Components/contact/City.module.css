@@ -1,0 +1,106 @@
+@keyframes typewriterIn {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+}
+
+@keyframes typewriterOut {
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes caret {
+  0%, 100% {
+    background-color: transparent; 
+  }
+  50% {
+    background-color: black; 
+  }
+}
+
+.container {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  animation: 
+    typewriterIn 4s steps(15, end) forwards, 
+    typewriterOut 4s steps(15, end) 4s forwards; 
+  animation-delay: 0s;
+  animation-iteration-count: infinite; 
+}
+
+.textCenter {
+  text-align: center;
+  margin: 20px;
+}
+
+.fwBold {
+  font-weight: bold;
+}
+
+.cityContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+  background-color: #f8f4eb;
+}
+
+.cityListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #f8f4eb;
+  height: 50vh;
+  overflow-y: auto;
+}
+
+.cityCard {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  width: 23%; 
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer; 
+  transition: transform 0.2s, border 0.2s, box-shadow 0.2s;
+  background-color: #f8f4eb;
+}
+
+.cityCard:hover {
+  transform: scale(1.05); 
+}
+
+.cityCard:focus {
+  outline: none;
+
+  box-shadow: 0 0 10px rgba(252, 190, 204, 0.5);
+}
+
+.activeCard {
+  background-color: #fff; 
+
+  box-shadow: 0 0 10px rgba(252, 190, 204, 0.5);
+}
+
+@media (max-width: 768px) {
+  .container {
+    font-size: 1.5rem;
+  }
+  .cityCard {
+    width: 45%;
+  }
+}
