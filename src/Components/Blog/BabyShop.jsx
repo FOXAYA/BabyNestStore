@@ -1,19 +1,19 @@
 import React from "react";
 import ash from "../assets/images/ash.png"
 import { useLocation } from "react-router-dom";
-import styles from "./BabyShop.module.css"; // تأكد من إنشاء وتحديث ملف CSS الخاص بك
-import NavbarLayout from "../layouts/NavbarLayout";
+import styles from "./BabyShop.module.css";     
+import Navbar from '../Navbar/Navbar'
 import { WaveTop } from "../animation/Wave";
 
 export default function BabyShop() {
   const location = useLocation();
-  const { blogImage } = location.state || {}; // استقبال بيانات المدونة كخصائص
+  const { blogImage } = location.state || {};     
 
   return (
     <div >
       {blogImage ? (
               <>
-                  <NavbarLayout />
+                  <Navbar/>
                   <WaveTop />
                   
                   <div className={styles.container}>

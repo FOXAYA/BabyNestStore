@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import NavbarLayout from "../layouts/NavbarLayout";
+import Navbar from "../Navbar/Navbar";
 import CityList from "./CityList";
 import Map from "./Map";
-import Footer2 from "../Footer2/Footer2";
+import Footer2 from "../Footer/Footer2";
 import ContactUs from "./ContactUs";
 import ContactHeader from "./ContactHeader";
 import City from "./City";
@@ -13,7 +13,7 @@ const Contact = () => {
 
   return (
     <>
-      <NavbarLayout />
+      <Navbar />
       
       <ContactHeader />
       

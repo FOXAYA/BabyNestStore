@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import products from "./ProductsList";
-import StarRating from "./StarRating";
-import { useBasket } from "./BasketContext"; 
 
 const ProductCard = () => {
   const [productList] = useState(
@@ -35,15 +32,7 @@ const ProductCard = () => {
                   <Card.Text>
                     <strong>$ {product.price}</strong>
                   </Card.Text>
-                  <div>
-                    {product.rating &&
-                      [...Array(Math.round(product.rating))].map((_, i) => (
-                        <span key={i}>
-                          <FaStar style={{ color: "rgb(255, 193, 7)" }} />
-                        </span>
-                      ))}
                   </div>
-                </div>
               </Card.Body>
             </Card>
           </Col>
