@@ -60,7 +60,6 @@ const products = [
     colors: ["#FF69B4", "#8A2BE2"],
     sizes: ["6-12 m", "12-18 m"],
   },
- 
 ];
 
 export default products;
