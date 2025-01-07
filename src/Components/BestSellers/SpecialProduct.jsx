@@ -11,7 +11,12 @@ const Newcard = () => {
         <Container className="my-5">
             <Row>
                 <Col md={6} className="d-flex justify-content-center">
-                       
+                    <img
+                        src={product} // رابط صورة الطفل
+                        alt="Child"
+                        className="img-fluid rounded"
+                        
+                    />
                 </Col>
 
                 <Col md={6} className="d-flex justify-content-center" style={{background: "#F8F4EC", borderRadius: "10px"}}>
