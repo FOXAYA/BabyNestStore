@@ -5,7 +5,7 @@ import { Col, Container, Row } from "react-bootstrap";
 //import products from "./ProductsList";
 import product from "../../Components/assets/images/product-image12.png";
 
-const Newcard = () => {
+const SpecialProduct = () => {
 
     return (
         <Container className="my-5">
@@ -30,4 +30,4 @@ const Newcard = () => {
     );
 };
 
-    export default Newcard;
+    export default SpecialProduct;
