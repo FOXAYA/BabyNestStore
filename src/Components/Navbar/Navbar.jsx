@@ -21,7 +21,7 @@ const NavbarLayout = () => {
   const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <Navbar expand="lg" className="bgground p-3">
+    <Navbar expand="lg" className="bgground p-3 sticky-top">
       <Container>
         <Link to="/" style={{ textDecoration: "none" }}>
           <img src={mylogo} alt="My logo" style={{ height: "auto" }} />

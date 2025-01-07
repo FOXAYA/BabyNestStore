@@ -61,7 +61,17 @@ a {
   display: block;
 }
 /* Start Carogries */
+.maintitles{
+  color: var(--theme-color-text_dark);
 
+  padding: 4%;
+}
+.maintitles span{
+     font-size: 1rem;
+}
+.maintitles h1{
+  font-size: 3.5rem;
+}
 .client-img {
   height: 120px;
   width: 120px;
