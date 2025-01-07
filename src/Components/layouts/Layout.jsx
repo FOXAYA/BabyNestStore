@@ -8,7 +8,6 @@ import CategoriesListSec2 from "../HomeCategories/CategoriesListSec2";
 import TrendyLayout from "../Trendy/TrendyLayout";
 import BlogImage from "../Blog/BlogImage";
 import Footer from "../Footer/Footer";
-import SpecialProduct from "../BestSellers/SpecialProduct"
 class Layout extends Component {
   render() {
     return (
@@ -22,7 +21,6 @@ class Layout extends Component {
         <TrendyLayout />
         <BlogImage />
         <Footer />
-        <SpecialProduct />
       </>
     );
   }
