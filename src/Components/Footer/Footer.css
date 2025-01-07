@@ -39,7 +39,7 @@ footer {
 }
 
 /* Navbar Styles */
-
+/* 
 .nav-link {
     position: relative;
     padding: 5px 10px;
@@ -62,7 +62,7 @@ footer {
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
-}
+} */
 
 /* Social Icons Styles */
 

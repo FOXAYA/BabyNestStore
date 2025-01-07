@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import products from "./ProductsList";
-import NavbarLayout from "../layouts/NavbarLayout";
+import Navbar from '../Navbar/Navbar'
 import { useBasket } from "./BasketContext";
 
 const ProductDetailPage = () => {
@@ -40,7 +40,7 @@ const ProductDetailPage = () => {
 
   return (
     <>
-      <NavbarLayout />
+      <Navbar />
       <Container className="mt-5">
         <Row>
           <Col md={6}>
