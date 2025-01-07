@@ -1,9 +1,8 @@
-//import React, { useState } from "react";
+import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-//import { Link } from "react-router-dom";
-//import { MdOutlineShoppingCartCheckout } from "react-icons/md";
-//import products from "./ProductsList";
+//import products from "../cards/ProductsList";
 import product from "../../Components/assets/images/product-image12.png";
+//import ProductCard from "../cards/ProductCard";
 
 const SpecialProduct = () => {
 
@@ -20,7 +19,6 @@ const SpecialProduct = () => {
                 </Col>
 
                 <Col md={6} className="d-flex justify-content-center" style={{background: "#F8F4EC", borderRadius: "10px"}}>
-
 
 
                 </Col>
