@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import products from "./ProductsList";
-import NavbarLayout from "../layouts/NavbarLayout";
+import Navbar from '../Navbar/Navbar'
 import { useBasket } from "./BasketContext";
-import StarRating from "./StarRating"; 
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [selectedColor, setSelectedColor] = useState("");
-  const [selectedSize, setSelectedSize] = useState("");
-  const { getItemQuantity, increaseQuantity, decreaseQuantity, addToBasket } = useBasket();
-  const quantity = getItemQuantity(parseInt(id));
+  const [quantity, setQuantity] = useState(1);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null); // Track selected size
+  const { addToBasket } = useBasket();
 
   useEffect(() => {
     const foundProduct = products.find((p) => p.id === parseInt(id));
@@ -20,38 +20,27 @@ const ProductDetailPage = () => {
 
     if (foundProduct) {
       if (foundProduct.colors?.length > 0) {
-        setSelectedColor(foundProduct.colors[0]);
+        setSelectedColor(foundProduct.colors[0]); // Default to the first color
       }
       if (foundProduct.sizes?.length > 0) {
-        setSelectedSize(foundProduct.sizes[0]);
+        setSelectedSize(foundProduct.sizes[0]); // Default to the first size
       }
     }
   }, [id]);
 
   if (!product) return <p>Loading...</p>;
 
-  const handleIncrease = () => {
-    increaseQuantity(product.id);
-  };
-
-  const handleDecrease = () => {
-    decreaseQuantity(product.id);
-  };
-
+  const handleIncrease = () => setQuantity(quantity + 1);
+  const handleDecrease = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
   const handleBuyNow = () => {
     addToBasket({ ...product, selectedColor, selectedSize }, quantity);
-  };
-
-  const handleRating = (rating) => {
-    
-    console.log(`New rating for product ${product.id}: ${rating}`);
   };
 
   const totalPrice = product.price * quantity;
 
   return (
     <>
-      <NavbarLayout />
+      <Navbar />
       <Container className="mt-5">
         <Row>
           <Col md={6}>
@@ -65,7 +54,14 @@ const ProductDetailPage = () => {
               $ {product.price.toFixed(2)} - $ {(product.price + 5).toFixed(2)}
             </h4>
             <div className="d-flex mb-3">
-              <StarRating defaultRating={product.rating} onSetRating={handleRating} />
+              {[...Array(5)].map((_, i) => (
+                <FaStar
+                  key={i}
+                  style={{
+                    color: i < Math.round(product.rating) ? "rgb(255, 193, 7)" : "#ccc",
+                  }}
+                />
+              ))}
             </div>
             <p>Color:</p>
             <div className="d-flex mb-4">
@@ -91,7 +87,7 @@ const ProductDetailPage = () => {
               {product.sizes.map((size, index) => (
                 <Button
                   key={index}
-                  variant={selectedSize === size ? "primary" : "outline-secondary"}
+                  variant={selectedSize === size ? "primary" : "outline-secondary"} // Highlight selected size
                   className="me-2"
                   onClick={() => setSelectedSize(size)}
                 >
