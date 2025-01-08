@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import products from "./ProductsList";
+import products from "./ProductsList"; 
 
-const BasketContext = createContext({});
+const BasketContext = createContext();
 const initialCartItems = localStorage.getItem("cart-items")
   ? JSON.parse(localStorage.getItem("cart-items"))
   : [];

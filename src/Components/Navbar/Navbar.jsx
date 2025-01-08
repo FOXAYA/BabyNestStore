@@ -50,7 +50,7 @@ const NavbarLayout = () => {
             >
               Blog
             </Nav.Link>
-            <Nav.Link href="#" className="link-underline-custom position-relative text-dark">
+            <Nav.Link href="/shop" className="link-underline-custom position-relative text-dark">
               Shop
             </Nav.Link>
             <Nav.Link
