@@ -296,7 +296,46 @@ a {
 
 
 
+.range-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
 
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px; /* تكبير الخط */
+  background: rgba(0, 0, 0, 0.6);
+  outline: none;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #FFF;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #FFF;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 
 
 

@@ -10,18 +10,6 @@ const ProductCard = () => {
     products.map((product) => ({ ...product, qty: 1 }))
   );
 
-  const [ratings, setRatings] = useState(
-    products.reduce((acc, product) => {
-      acc[product.id] = product.rating;
-      return acc;
-    }, {})
-  );
-
-  const handleRating = (id, rating) => {
-    setRatings((prevRatings) => ({ ...prevRatings, [id]: rating }));
-
-  };
-
   return (
     <>
       <div>

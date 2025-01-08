@@ -7,6 +7,7 @@ import BlogImage from "./Components/Blog/BlogImage";
 import BabyShop from "./Components/Blog/BabyShop";
 import Contact from "./Components/contact/Contact";
 import { BasketProvider } from "./Components/cards/BasketContext";
+import Shop from "./Components/shop/Shop";
 class App extends Component {
   render() {
     return (
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path="/blog" element={<BlogImage />} />
             <Route path="/blog/:id" element={<BabyShop />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/shop" element={<Shop />} />
           </Routes>
         </Router>
       </BasketProvider>
