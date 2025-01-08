@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ContactPage = () => {
+const ContactUs = () => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -70,7 +70,6 @@ const ContactPage = () => {
                 height: "100vh", 
             }}
         >
-            
             <div style={{ flex: "1", paddingRight: "20px" }}>
                 <h4 style={{ color: "#2c2c54", textTransform: "uppercase", marginBottom: "20px" }}>
                     Contact Us
@@ -212,7 +211,7 @@ const ContactPage = () => {
                                     color: "#2c2c54",
                                 }}
                             >
-                                I agree to the <a href="#" style={{ color: "#2c2c54", textDecoration: "underline" }}>Privacy Policy</a>.
+                                I agree to the Privacy Policy
                             </label>
                             {errors.agree && <div style={{ color: "red", fontSize: "12px" }}>{errors.agree}</div>}
                         </div>
@@ -234,4 +233,4 @@ const ContactPage = () => {
     );
 };
 
-export default ContactPage;
+export default ContactUs;

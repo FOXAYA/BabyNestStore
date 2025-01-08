@@ -1,10 +1,9 @@
 import React from "react";
 import { Popover, Overlay, Stack, Button, Image } from "react-bootstrap";
-import { useBasket } from "./BasketContext"; // تأكد من استخدام `useBasket` ومسار الاستيراد الصحيح
+import { useBasket } from "./BasketContext";
 
 const ShoppingCard = ({ show, target, handleClose }) => {
-  const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } = useBasket(); // استخدم `useBasket`
-
+  const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } = useBasket(); 
   // حساب مجموع التوتال
   const cartTotalAmount = cartItems.reduce((acc, item) => {
     const price = typeof item.price === "number" ? item.price : parseFloat(item.price) || 0;
@@ -45,7 +44,7 @@ const ShoppingCard = ({ show, target, handleClose }) => {
                   alt={item.name}
                 />
                 <div className="flex-grow-1">
-                  {/* اسم المنتج والتفاصيل */}
+                  
                   <div
                     className="fw-bold"
                     style={{
@@ -56,7 +55,7 @@ const ShoppingCard = ({ show, target, handleClose }) => {
                   >
                     {item.name}
                   </div>
-                  {/* السعر والكمية */}
+                
                   <div
                     style={{
                       color: "#ffffffcc",
@@ -70,7 +69,7 @@ const ShoppingCard = ({ show, target, handleClose }) => {
                       : "0.00"} = ${item.price * item.quantity}
                   </div>
                 </div>
-                {/* أزرار زيادة وتقليل الكمية */}
+                
                 <Button
                   variant="link"
                   size="sm"
