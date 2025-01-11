@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import styles from "./BlogImage.module.css";
+import styles from "../Styles/BlogImage.module.css";
 
 import blog1 from "../assets/images/blog1.jpg";
 import blog2 from "../assets/images/blog2.jpg";
@@ -72,7 +72,7 @@ export default function BlogImage() {
     if (isSmallScreen) {
       return [
         BlogImages[currentIndex % totalImages],
-        BlogImages[(currentIndex + 1) % totalImages]
+        BlogImages[(currentIndex + 1) % totalImages],
       ]; // عرض صورتين في الشاشات الصغيرة
     }
 
@@ -99,15 +99,15 @@ export default function BlogImage() {
               className={styles.imageContainer}
             >
               <img src={blogImage.image} alt={blogImage.title} />
-            
-            <div className={styles.contentArea}>
-              <h3>{blogImage.title}</h3>
-              <p>
-                {blogImage.date} | {blogImage.comments}
-              </p>
-              <p>{blogImage.category}</p>
+
+              <div className={styles.contentArea}>
+                <h3>{blogImage.title}</h3>
+                <p>
+                  {blogImage.date} | {blogImage.comments}
+                </p>
+                <p>{blogImage.category}</p>
               </div>
-              </Link>
+            </Link>
           </div>
         ))}
       </div>
@@ -115,11 +115,13 @@ export default function BlogImage() {
         {BlogImages.map((_, index) => (
           <span
             key={index}
-            className={`${styles.dot} ${index === currentIndex ? styles.active : ""}`}
+            className={`${styles.dot} ${
+              index === currentIndex ? styles.active : ""
+            }`}
             onClick={() => setCurrentIndex(index)}
           ></span>
         ))}
       </div>
     </div>
-  ); 
+  );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "../Styles/Footer.css";
 import { FaTwitterSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaDribbble } from "react-icons/fa";
@@ -106,8 +106,7 @@ const Footer = () => {
             </li>
             <li className="m-2">
               <a href="i" className="social-link twitter">
-              <FaTwitterSquare />
-
+                <FaTwitterSquare />
               </a>
             </li>
             <li className="m-2">

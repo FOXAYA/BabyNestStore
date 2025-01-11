@@ -6,6 +6,7 @@ import img3 from "../assets/images/client-3.webp";
 import img4 from "../assets/images/client-4.webp";
 import img5 from "../assets/images/client-5.webp";
 import img6 from "../assets/images/client-6.webp";
+import "../Styles/Clients.css";
 
 class Clients extends Component {
   render() {

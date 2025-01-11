@@ -1,82 +1,55 @@
 import React from "react";
 import { Popover, Overlay, Stack, Button, Image } from "react-bootstrap";
 import { useBasket } from "./BasketContext";
+import "../Styles/ShopingCard.css";
+import ButtonUi from "../ui/ButtonUi";
 
 const ShoppingCard = ({ show, target, handleClose }) => {
-  const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } = useBasket(); 
-  // حساب مجموع التوتال
+  const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } =
+    useBasket();
+
   const cartTotalAmount = cartItems.reduce((acc, item) => {
-    const price = typeof item.price === "number" ? item.price : parseFloat(item.price) || 0;
+    const price =
+      typeof item.price === "number" ? item.price : parseFloat(item.price) || 0;
     return acc + price * item.quantity;
   }, 0);
 
   return (
-    <Overlay show={show} target={target.current} placement="bottom" containerPadding={20}>
-      <Popover
-        id="shopping-cart-popover"
-        style={{
-          minWidth: "350px",
-          maxWidth: "400px",
-          backgroundColor: "#1c1c1c",
-          borderRadius: "16px",
-          color: "#ffffff",
-          boxShadow: "0px 4px 20px rgba(3, 1, 46, 0.27)",
-        }}
-      >
-        <Popover.Body style={{ color: "#ffffff", padding: "20px" }}>
+    <Overlay
+      show={show}
+      target={target.current}
+      placement="bottom"
+      containerPadding={20}
+    >
+      <Popover id="shopping-cart-popover" className="shopping-cart-popover">
+        <Popover.Body className="popover-body">
           <Stack gap={4}>
             {cartItems.map((item) => (
               <div
                 key={item.id}
-                className="d-flex align-items-center"
-                style={{ borderBottom: "1px solid #ffffff20", paddingBottom: "10px" }}
+                className="cart-item d-flex  align-items-center"
               >
-                {/* صورة المنتج */}
                 <Image
                   src={item.image}
                   roundedCircle
-                  style={{
-                    width: "60px",
-                    height: "60px",
-                    marginRight: "15px",
-                    border: "2px solid #ffffff",
-                  }}
+                  className="item-image"
                   alt={item.name}
                 />
-                <div className="flex-grow-1">
-                  
-                  <div
-                    className="fw-bold"
-                    style={{
-                      color: "#ffffff",
-                      fontSize: "14px",
-                      lineHeight: "1.5",
-                    }}
-                  >
-                    {item.name}
-                  </div>
-                
-                  <div
-                    style={{
-                      color: "#ffffffcc",
-                      fontSize: "13px",
-                      marginTop: "5px",
-                    }}
-                  >
+                <div className="item-details flex-grow-1">
+                  <div className="item-name">{item.name}</div>
+                  <div className="item-price">
                     {item.quantity} × $
                     {item.price && !isNaN(parseFloat(item.price))
                       ? parseFloat(item.price).toFixed(2)
-                      : "0.00"} = ${item.price * item.quantity}
+                      : "0.00"}{" "}
+                    = ${item.price * item.quantity}
                   </div>
                 </div>
-                
+
                 <Button
                   variant="link"
                   size="sm"
-                  style={{
-                    color: "#ffffff",
-                    fontSize: "18px",
-                  }}
+                  className="quantity-button"
                   onClick={() => increaseQuantity(item.id)}
                 >
                   +
@@ -84,22 +57,16 @@ const ShoppingCard = ({ show, target, handleClose }) => {
                 <Button
                   variant="link"
                   size="sm"
-                  style={{
-                    color: "#ffffff",
-                    fontSize: "18px",
-                  }}
+                  className="quantity-button"
                   onClick={() => decreaseQuantity(item.id)}
                 >
                   -
                 </Button>
-                {/* زر الحذف */}
+
                 <Button
                   variant="link"
                   size="sm"
-                  style={{
-                    color: "#ff6b6b",
-                    fontSize: "18px",
-                  }}
+                  className="remove-button"
                   onClick={() => removeFromCart(item.id)}
                 >
                   ×
@@ -107,58 +74,28 @@ const ShoppingCard = ({ show, target, handleClose }) => {
               </div>
             ))}
 
-            {/* المجموع (Subtotal) */}
-            <div className="d-flex justify-content-between align-items-center mt-3">
-              <div
-                className="fw-bold fs-6"
-                style={{
-                  color: "#ffffff",
-                  fontSize: "16px",
-                }}
-              >
-                Subtotal:
-              </div>
-              <div
-                className="fw-bold"
-                style={{
-                  color: "#ffffff",
-                  fontSize: "16px",
-                }}
-              >
+            <div className="subtotal  d-flex justify-content-around align-items-center">
+              <div className="subtotal-label">Subtotal:</div>
+              <div className="subtotal-amount blod">
                 ${cartTotalAmount.toFixed(2)}
               </div>
             </div>
           </Stack>
 
-          {/* الأزرار */}
-          <div className="d-flex justify-content-between align-items-center mt-4">
-            <Button
-              variant="light"
-              size="sm"
-              style={{
-                backgroundColor: "#ffc107",
-                color: "#1c1c1c",
-                fontWeight: "bold",
-                borderRadius: "8px",
-                width: "120px",
-              }}
-              onClick={handleClose}
-            >
-              View Cart
-            </Button>
-            <Button
-              variant="light"
-              size="sm"
-              style={{
-                backgroundColor: "#ffffff",
-                color: "#1c1c1c",
-                fontWeight: "bold",
-                borderRadius: "8px",
-                width: "120px",
-              }}
-            >
-              Checkout
-            </Button>
+          <div className="cart-actions d-flex justify-content-between align-items-center">
+          <ButtonUi
+  size="sm"
+  variant="light"
+  className="view-cart-button"
+  onClick={handleClose}
+  text="View Cart"
+/>
+<ButtonUi
+  variant="light"
+  size="sm"
+  className="checkout-button"
+  text="Checkout"
+/>
           </div>
         </Popover.Body>
       </Popover>

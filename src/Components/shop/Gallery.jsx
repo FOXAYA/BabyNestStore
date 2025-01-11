@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import StarRating from "../cards/StarRating";
-import './Gallery.css';
+import "../Styles/Gallery.css";
 
 const initialState = {
   visibleImages: 12,
@@ -35,14 +35,22 @@ const reducer = (state, action) => {
 
 const Gallery = ({ images }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { visibleImages, sortedImages, category, size, color, priceRange } = state;
+  const { visibleImages, sortedImages, category, size, color, priceRange } =
+    state;
 
   useEffect(() => {
     const filteredImages = images.filter((image) => {
-      const inCategory = category === "all" || (Array.isArray(image.category) ? image.category.includes(category) : image.category === category);
-      const inSize = !size || (Array.isArray(image.sizes) && image.sizes.includes(size));
-      const inColor = !color || (Array.isArray(image.colors) && image.colors.includes(color));
-      const inPriceRange = image.price >= priceRange[0] && image.price <= priceRange[1];
+      const inCategory =
+        category === "all" ||
+        (Array.isArray(image.category)
+          ? image.category.includes(category)
+          : image.category === category);
+      const inSize =
+        !size || (Array.isArray(image.sizes) && image.sizes.includes(size));
+      const inColor =
+        !color || (Array.isArray(image.colors) && image.colors.includes(color));
+      const inPriceRange =
+        image.price >= priceRange[0] && image.price <= priceRange[1];
       return inCategory && inSize && inColor && inPriceRange;
     });
     dispatch({ type: "SET_SORTED_IMAGES", payload: filteredImages });
@@ -89,14 +97,22 @@ const Gallery = ({ images }) => {
   return (
     <Container className="mt-4 mb-4">
       <Row className="g-4 mb-4">
-        <Col xs={12} className="d-flex justify-content-between align-items-center">
+        <Col
+          xs={12}
+          className="d-flex justify-content-between align-items-center"
+        >
           <span>
-            Showing 1–{Math.min(visibleImages, sortedImages.length)} of {sortedImages.length} results
+            Showing 1–{Math.min(visibleImages, sortedImages.length)} of{" "}
+            {sortedImages.length} results
           </span>
           <select
             id="sort-select"
             onChange={handleSort}
-            style={{ border: "none", outline: "none", backgroundColor: "transparent" }}
+            style={{
+              border: "none",
+              outline: "none",
+              backgroundColor: "transparent",
+            }}
           >
             <option value="latest">Sort by latest</option>
             <option value="popularity">Sort by popularity</option>
@@ -112,27 +128,37 @@ const Gallery = ({ images }) => {
           {sortedImages.slice(0, visibleImages).map((product) => (
             <Col key={product.id} xs={12} sm={6} md={3} className="mb-4">
               <Link to={`/product/${product.id}`}>
-                <Card className="h-100 position-relative" style={{ overflow: 'hidden' }}>
+                <Card
+                  className="h-100 position-relative"
+                  style={{ overflow: "hidden" }}
+                >
                   <Card.Img
-                    style={{ width: "100%", height: "auto", objectFit: "cover" }}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "cover",
+                    }}
                     variant="top"
-                    src={product.src}
+                    src={product.image}
                     alt={product.name}
                   />
-                  <div className="card-options" style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    background: 'rgba(0, 0, 0, 0.5)',
-                    color: 'white',
-                    padding: '10px',
-                    transform: 'translateY(100%)',
-                    transition: 'transform 0.3s ease-in-out'
-                  }}>
+                  <div
+                    className="card-options"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      background: "rgba(0, 0, 0, 0.5)",
+                      color: "white",
+                      padding: "10px",
+                      transform: "translateY(100%)",
+                      transition: "transform 0.3s ease-in-out",
+                    }}
+                  >
                     <span>Quick View</span>
                     <span>
                       <MdOutlineShoppingCartCheckout /> Select Options
@@ -147,7 +173,9 @@ const Gallery = ({ images }) => {
                       <div style={{ marginLeft: "auto" }}>
                         <StarRating
                           defaultRating={product.rating}
-                          onSetRating={(rating) => handleRating(product.id, rating)}
+                          onSetRating={(rating) =>
+                            handleRating(product.id, rating)
+                          }
                         />
                       </div>
                     </div>

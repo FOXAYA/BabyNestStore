@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMap
-} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import styles from "./Map.module.css";
 import citiesData from "./cities.json";
-
+import styles from "../Styles/Map.module.css";
 
 function Map({ selectedCity }) {
   const [mapPosition, setMapPosition] = useState([40, 0]);
@@ -29,11 +22,10 @@ function Map({ selectedCity }) {
   const customIcon = (emoji) =>
     L.divIcon({
       html: `<div style="background-color: transparent; color: black; font-size: 24px;">⭐️ ${emoji}</div>`,
-      className: 'custom-icon'
+      className: "custom-icon",
     });
 
   return (
-  
     <div className={styles.mapContainer}>
       <MapContainer
         center={mapPosition}
@@ -59,9 +51,7 @@ function Map({ selectedCity }) {
         <ChangeCenter position={mapPosition} />
       </MapContainer>
       <div className={styles.backgroundBelowMap}></div>
-      </div>
-      
-    
+    </div>
   );
 }
 
