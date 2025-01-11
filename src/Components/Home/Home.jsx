@@ -12,7 +12,7 @@ import {
   IconFour,
   IconFive,
 } from "../animation/IconsAnimated";
-import "./Home.css";
+import "../Styles/Home.css";
 
 const slides = [
   {
@@ -45,7 +45,7 @@ class Home extends Component {
           <h6>{label}</h6>
           <h1 className="h1_home">{title}</h1>
           <p className="lead fs-6 p_home">{subtitle}</p>
-          <ButtonUi className="btn-one" />
+          <ButtonUi className="btn-one rounded-5 px-5 py-3 text-white fw-bolder" text ={"Shop Now"} />
         </div>
         <div className="icons-home-parent position-relative d-flex justify-content-around">
           <IconOne />

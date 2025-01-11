@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import products from "./ProductsList"; 
+import Images from "../shop/GaleryData";
 
 const BasketContext = createContext();
 const initialCartItems = localStorage.getItem("cart-items")
@@ -20,8 +20,9 @@ export const BasketProvider = ({ children }) => {
   const increaseQuantity = (id) => {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
-        const product = products.find((product) => product.id === id);
-        return [...currItems, { ...product, quantity: 1 }];
+        const image = Images.find((image) => image.id === id);
+        if (!image) return currItems; 
+        return [...currItems, { ...image, quantity: 1 }];
       } else {
         return currItems.map((item) => {
           if (item.id === id) {
@@ -54,17 +55,17 @@ export const BasketProvider = ({ children }) => {
     setCartItems((currItems) => currItems.filter((item) => item.id !== id));
   };
 
-  const addToBasket = (product, quantity) => {
+  const addToBasket = (image, quantity) => {
     setCartItems((currItems) => {
-      const itemExists = currItems.find((item) => item.id === product.id);
+      const itemExists = currItems.find((item) => item.id === image.id);
       if (itemExists) {
         return currItems.map((item) =>
-          item.id === product.id
+          item.id === image.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       } else {
-        return [...currItems, { ...product, quantity }];
+        return [...currItems, { ...image, quantity }];
       }
     });
   };

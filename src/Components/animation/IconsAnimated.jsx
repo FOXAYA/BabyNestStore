@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../animation/Animation.css";
+import "../Styles/Animation.css";
 
 const IconOne = () => (
   <motion.div

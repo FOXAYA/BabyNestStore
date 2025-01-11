@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import citiesData from './cities.json';
-import styles from "./City.module.css";
+import React, { useState, useEffect } from "react";
+import citiesData from "./cities.json";
+import styles from "../Styles/City.module.css";
 
 const CityList = ({ onSelectCity }) => {
   const [cities, setCities] = useState([]);
@@ -21,10 +21,14 @@ const CityList = ({ onSelectCity }) => {
         <div
           key={city.id}
           tabIndex={0}
-          className={`${styles.cityCard} ${activeIndex === index ? styles.activeCard : ''}`}
+          className={`${styles.cityCard} ${
+            activeIndex === index ? styles.activeCard : ""
+          }`}
           onClick={() => handleCardClick(index, city)}
         >
-          <h2>{city.emoji} {city.cityName}</h2>
+          <h2>
+            {city.emoji} {city.cityName}
+          </h2>
           <p>{city.street}</p>
           <p>{city.telephone}</p>
           <p>{city.info}</p>

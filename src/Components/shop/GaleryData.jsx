@@ -28,10 +28,10 @@ import img27 from "../assets/images/product-category4.jpg";
 
 const brands = ["Boden", "Burberry", "Rejina Pyo", "Tinycottons"];
 
-const Images = [
+const Product = [
   {
     id: 1,
-    src: img1,
+    image: img1,
     name: "Baby Bodysuit",
     price: 90,
     rating: 4.5,
@@ -39,12 +39,12 @@ const Images = [
     sizes: ["6-12 m"],
     date: "2025-01-01",
     popularity: 100,
-    category: "Uncategorized",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    category: ["Uncategorized", "BestSellers"],
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 2,
-    src: img2,
+    image: img2,
     name: "Baby Romper",
     price: 75,
     rating: 3,
@@ -52,12 +52,12 @@ const Images = [
     sizes: ["6-12 m"],
     date: "2025-01-02",
     popularity: 50,
-    category: ["Baby girl", "Girl"],
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    category: ["Baby girl", "Girl", "BestSellers"],
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 3,
-    src: img3,
+    image: img3,
     name: "Baby Sweater",
     price: 100,
     rating: 2,
@@ -65,12 +65,12 @@ const Images = [
     sizes: ["12-18 m"],
     date: "2025-01-03",
     popularity: 30,
-    category: "Baby girl",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    category: ["Baby girl", "BestSellers"],
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 4,
-    src: img4,
+    image: img4,
     name: "Newborn Bootie",
     price: 80,
     rating: 4,
@@ -78,12 +78,12 @@ const Images = [
     sizes: ["0-3 m"],
     date: "2025-01-04",
     popularity: 70,
-    category: "Baby girl",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    category: ["Baby girl", "BestSellers"],
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 5,
-    src: img5,
+    image: img5,
     name: "Cotton Sweatshirt",
     price: 55,
     rating: 4.5,
@@ -92,11 +92,11 @@ const Images = [
     date: "2025-01-05",
     popularity: 90,
     category: "Baby boy",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 6,
-    src: img6,
+    image: img6,
     name: "Girl Cardigan",
     price: 90,
     rating: 4.5,
@@ -104,12 +104,12 @@ const Images = [
     sizes: ["1-2 year"],
     date: "2025-01-06",
     popularity: 110,
-    category: "Baby boy",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    category: ["Baby boy", "BestSellers"],
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 7,
-    src: img7,
+    image: img7,
     name: "Sweatshirts",
     price: 100,
     rating: 4.5,
@@ -118,11 +118,11 @@ const Images = [
     date: "2025-01-25",
     popularity: 10,
     category: "Boy",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 8,
-    src: img8,
+    image: img8,
     name: "Swimsuits",
     price: 90,
     rating: 4.5,
@@ -131,11 +131,11 @@ const Images = [
     date: "2025-08-01",
     popularity: 1000,
     category: "Denim",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 9,
-    src: img9,
+    image: img9,
     name: "Toys",
     price: 90,
     rating: 4.5,
@@ -144,11 +144,11 @@ const Images = [
     date: "2020-01-01",
     popularity: 10,
     category: "Toys",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 10,
-    src: img10,
+    image: img10,
     name: "Jackets",
     price: 95,
     rating: 3,
@@ -156,11 +156,11 @@ const Images = [
     date: "2025-01-01",
     popularity: 75,
     category: "Jackets",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 11,
-    src: img11,
+    image: img11,
     name: "Denim",
     price: 75,
     rating: 4.5,
@@ -169,11 +169,11 @@ const Images = [
     date: "2025-02-01",
     popularity: 81,
     category: "Denim",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 12,
-    src: img12,
+    image: img12,
     name: "Dresses",
     price: 90,
     rating: 4.5,
@@ -182,11 +182,11 @@ const Images = [
     date: "2025-06-01",
     popularity: 7,
     category: "Dresses",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 13,
-    src: img13,
+    image: img13,
     name: "Dresses",
     price: 90,
     rating: 4.5,
@@ -195,11 +195,11 @@ const Images = [
     date: "2025-07-01",
     popularity: 3,
     category: "Dresses",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 14,
-    src: img14,
+    image: img14,
     name: "Yellow Stroller",
     price: 250,
     rating: 4,
@@ -207,11 +207,11 @@ const Images = [
     date: "2025-08-01",
     popularity: 2,
     category: "Baby accessories",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 15,
-    src: img15,
+    image: img15,
     name: "Tableware Set",
     price: 70,
     rating: 5,
@@ -219,11 +219,11 @@ const Images = [
     date: "2025-09-01",
     popularity: 19,
     category: "Tableware",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 16,
-    src: img16,
+    image: img16,
     name: "Wooden Giraffe",
     price: 70,
     rating: 5,
@@ -231,11 +231,11 @@ const Images = [
     date: "2025-10-01",
     popularity: 18,
     category: "Toys",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 17,
-    src: img17,
+    image: img17,
     name: "Baby Crib",
     price: 340,
     rating: 5,
@@ -243,44 +243,44 @@ const Images = [
     date: "2025-11-01",
     popularity: 17,
     category: "Cribs",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 18,
-    src: img18,
+    image: img18,
     name: "Handmade Dolls",
     price: 77,
     rating: 5,
     date: "2025-01-27",
     popularity: 47,
     category: "Toys",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 19,
-    src: img19,
+    image: img19,
     name: "Silicone Pacifier",
     price: 17,
     rating: 4,
     date: "2025-01-14",
     popularity: 39,
     category: "Baby accessories",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 20,
-    src: img20,
+    image: img20,
     name: "Silicone Pacifier",
     price: 18,
     rating: 3.5,
     date: "2025-01-17",
     popularity: 38,
     category: "Baby accessories",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 21,
-    src: img21,
+    image: img21,
     name: "Teddy",
     price: 20,
     rating: 5,
@@ -288,11 +288,11 @@ const Images = [
     date: "2025-01-16",
     popularity: 35,
     category: "Toys",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 22,
-    src: img22,
+    image: img22,
     name: "Newborn Bootie",
     price: 90,
     rating: 4.5,
@@ -301,11 +301,11 @@ const Images = [
     date: "2025-01-15",
     popularity: 33,
     category: "Baby Girl",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 23,
-    src: img23,
+    image: img23,
     name: "Girl Cardigan",
     price: 75,
     rating: 3,
@@ -314,11 +314,11 @@ const Images = [
     date: "2025-01-15",
     popularity: 30,
     category: "Outerwear",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 24,
-    src: img24,
+    image: img24,
     name: "Baby Sweater",
     price: 100,
     rating: 2,
@@ -327,11 +327,11 @@ const Images = [
     date: "2025-01-11",
     popularity: 77,
     category: "Jackets",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 25,
-    src: img25,
+    image: img25,
     name: "Newborn Bootie",
     price: 80,
     rating: 4,
@@ -340,11 +340,11 @@ const Images = [
     date: "2025-01-06",
     popularity: 110,
     category: "Outerwear",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 26,
-    src: img26,
+    image: img26,
     name: "Cotton Sweatshirt",
     price: 55,
     rating: 4.5,
@@ -352,12 +352,12 @@ const Images = [
     sizes: ["3-6 m", "6-12 m"],
     date: "2025-01-05",
     popularity: 85,
-    category: "Sweatshirts",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    category: ["Sweatshirts", "BestSellers"],
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 27,
-    src: img27,
+    image: img27,
     name: "Girl Cardigan",
     price: 90,
     rating: 4.5,
@@ -366,11 +366,11 @@ const Images = [
     date: "2025-01-04",
     popularity: 88,
     category: "Outerwear",
-    brand: brands[Math.floor(Math.random() * brands.length)]
+    brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 28,
-    src: img11,
+    image: img11,
     name: "Girl Cardigan",
     price: 75,
     rating: 3,
@@ -379,8 +379,8 @@ const Images = [
     date: "2025-01-15",
     popularity: 30,
     category: "Swimsuits",
-    brand: brands[Math.floor(Math.random() * brands.length)]
-  }
+    brand: brands[Math.floor(Math.random() * brands.length)],
+  },
 ];
 
-export default Images;
+export default Product;

@@ -16,13 +16,12 @@ class Trendy extends Component {
               backgroundSize: "contain",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
-              height:"90vh",
+              height: "90vh",
             }}
-            
           >
-          <WaveBottom fill="#fff" duration={2} className="wave-bottom"/>
+            <WaveBottom fill="#fff" duration={2} className="wave-bottom" />
 
-            <Container >
+            <Container>
               <div className="trendy-text">
                 <p className="subtitle">TRENDY CLOTHING</p>
                 <h1 className="main-title">
@@ -30,7 +29,7 @@ class Trendy extends Component {
                 </h1>
                 <ButtonUi
                   text={"View All Collections"}
-                  className="fs-5 trendy-btn"
+                  className="fs-5 trendy-btn rounded-5 px-5 py-3 text-white"
                 />
               </div>
             </Container>
