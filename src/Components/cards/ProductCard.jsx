@@ -8,13 +8,21 @@ import "../Styles/Card.css";
 import StarRating from "./StarRating";
 
 const ProductCard = () => {
-  const [selectedColor, setSelectedColor] = useState(null); // إضافة حالة لإدارة اللون المحدد
-
+  const [selectedColor, setSelectedColor] = useState(null);
   const bestSellers = product.filter((product) =>
     Array.isArray(product.category)
       ? product.category.includes("BestSellers")
       : product.category === "BestSellers"
   );
+
+  // Function to handle rating change
+  const handleRating = (id, rating) => {
+    const updatedProducts = bestSellers.map((prod) =>
+      prod.id === id ? { ...prod, rating } : prod
+    );
+    // Update the bestSellers or use a state management approach to persist the updated ratings
+    console.log("Updated Ratings:", updatedProducts);
+  };
 
   return (
     <>
@@ -33,7 +41,6 @@ const ProductCard = () => {
                     alt={product.name}
                     className="product-image"
                   />
-
                   <div className="card-options">
                     <Link to={`/product/${product.id}`} className="option-link">
                       Quick View
@@ -50,8 +57,15 @@ const ProductCard = () => {
                     </Link>
                   </Card.Title>
                   <Card.Text className="price-container d-flex justify-content-between">
-                    <span className="price">${product.price}</span>
-                    <StarRating />
+                    <span className="price">
+                      {" "}
+                      $ {product.price.toFixed(2)} - ${" "}
+                      {(product.price + 10).toFixed(2)}
+                    </span>
+                    <StarRating
+                      defaultRating={product.rating}
+                      onSetRating={(rating) => handleRating(product.id, rating)}
+                    />
                   </Card.Text>
                   <div className="d-flex mb-4">
                     {product.colors?.map((color, index) => (
@@ -59,8 +73,8 @@ const ProductCard = () => {
                         key={index}
                         onClick={() => setSelectedColor(color)}
                         style={{
-                          width: "24px",
-                          height: "24px",
+                          width: "20px",
+                          height: "20px",
                           backgroundColor: color,
                           border:
                             selectedColor === color

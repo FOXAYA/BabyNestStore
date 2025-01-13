@@ -93,6 +93,7 @@ function Star({ onRate, full, half, onHoverIn, onHoverOut, color, size }) {
           viewBox="0 0 20 20"
           fill="url(#halfgrad)"
           stroke={color}
+
         >
           <defs>
             <linearGradient id="halfgrad">
