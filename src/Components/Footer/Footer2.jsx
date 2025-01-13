@@ -1,9 +1,11 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import { WaveTop  } from "../animation/Wave";
 const Footer2 = () => {
     return (
-        <footer className="bg-dark text-light py-5">
+        <>
+        <WaveTop className = "wave-footer" fill ={"#1f2834"}/>
+        <footer className="footer2 text-light py-5 ">
         <div className="container">
             <div className="row">
             {/* Main Title */}
@@ -76,6 +78,7 @@ const Footer2 = () => {
         </div>
         </div>
     </footer>
+    </>
     );
 };
 

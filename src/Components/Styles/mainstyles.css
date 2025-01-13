@@ -4,8 +4,8 @@
 :root {
   --theme-color-bg_color: #ffffff;
   --theme-color-bd_color: #f8f4eb;
-  --theme-color-text: #646672;
-  --theme-color-text_light: #8e919d;
+  --theme-color-text: rgb(100, 102, 114);
+ --theme-color-text_light: #8e919d;
   --theme-color-text_dark: #132640;
   --theme-color-extra_bg_color: #1f2834;
   --theme-color-text_link: #eea12c;
@@ -84,10 +84,6 @@ a {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  -webkit-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  -ms-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 /* Start responsive home */
