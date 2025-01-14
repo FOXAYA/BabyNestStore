@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { FaStar } from "react-icons/fa";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import { SlBasketLoaded } from "react-icons/sl";
+
+import { Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Product from "../shop/GaleryData";
 import Navbar from "../Navbar/Navbar";
 import { useBasket } from "./BasketContext";
+import StarRating from "../cards/StarRating";
+import ButtonUi from "../ui/ButtonUi";
+import { WaveTop } from "../animation/Wave";
+import Footer2 from "../Footer/Footer2";
+import "../Styles/Card.css";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -36,94 +43,120 @@ const ProductDetailPage = () => {
     addToBasket({ ...product, selectedColor, selectedSize }, quantity);
   };
 
-  const totalPrice = product.price * quantity;
+  // ProductButton Component
+  function ProductButton({ product }) {
+    if (!product.sale) {
+      return null;
+    }
+    return <ButtonUi text={product.sale} className={"btn-1"} />;
+  }
 
   return (
-    <>
+    <div className="body">
       <Navbar />
-      <Container className="mt-5">
-        <Row>
-          <Col md={6}>
-            <img
-              src={product.image}
-              alt={product.name}
-              className="img-fluid rounded"
-            />
-          </Col>
-          <Col md={6}>
-            <p>Home - Baby Boy - {product.name}</p>
-            <h2>{product.name}</h2>
-            <h5>{product.brand}</h5>
-            <h4 className="text-warning">
-              $ {product.price.toFixed(2)} - $ {(product.price + 5).toFixed(2)}
-            </h4>
-            <div className="d-flex mb-3">
-              {[...Array(5)].map((_, i) => (
-                <FaStar
-                  key={i}
-                  style={{
-                    color:
-                      i < Math.round(product.rating)
-                        ? "rgb(255, 193, 7)"
-                        : "#ccc",
-                  }}
+      <WaveTop className="wave" />
+      <div className="main-detials">
+        <Container className="mt-5">
+          <Row>
+            <Col md={6}>
+              <img
+                src={product.image}
+                alt={product.name}
+                className="img-fluid w-90 h-100 rounded-5"
+              />
+            </Col>
+            <Col md={6}>
+              <div className="product-details d-flex gap-4 flex-column">
+                <div className="links d-flex gap-4">
+                  <span>Home - </span>
+                  <span> Baby Boy - </span>
+                  <span> {product.name}</span>
+                </div>
+                <ProductButton product={product} />
+                <h2>{product.name}</h2>
+                <h5>{product.brand}</h5>
+              </div>
+              <div className="d-flex second-details ">
+                <h4>
+                  $ {product.price.toFixed(2)} - ${" "}
+                  {(product.price + 10).toFixed(2)}
+                </h4>
+                <StarRating
+                  defaultRating={product.rating}
+                  onSetRating={(rating) =>
+                    console.log("Rating set to:", rating)
+                  }
                 />
-              ))}
-            </div>
-            <div className="d-flex mb-4">
-            <p>Color:</p>
-              {product.colors?.map((color, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedColor(color)}
-                  style={{
-                    width: "24px",
-                    height: "24px",
-                    backgroundColor: color,
-                    border:
-                      selectedColor === color
-                        ? "2px solid black"
-                        : "1px solid #ddd",
-                    borderRadius: "50%",
-                    cursor: "pointer",
-                    marginRight: "8px",
-                  }}
-                  aria-label={`Select color ${color}`}
-                ></button>
-              ))}
-            </div>
-            <p>Size:</p>
-            <div className="d-flex mb-4">
-              {product.sizes.map((size, index) => (
-                <Button
-                  key={index}
-                  variant={
-                    selectedSize === size ? "primary" : "outline-secondary"
-                  } // Highlight selected size
-                  className="me-2"
-                  onClick={() => setSelectedSize(size)}
-                >
-                  {size}
-                </Button>
-              ))}
-            </div>
-            <div className="d-flex align-items-center mb-4">
-              <Button variant="outline-secondary" onClick={handleDecrease}>
-                -
-              </Button>
-              <span className="mx-3">{quantity}</span>
-              <Button variant="outline-secondary" onClick={handleIncrease}>
-                +
-              </Button>
-            </div>
-            <h5>Total Price: ${totalPrice.toFixed(2)}</h5>
-            <Button variant="primary" className="mt-4" onClick={handleBuyNow}>
-              Buy Now
-            </Button>
-          </Col>
-        </Row>
-      </Container>
-    </>
+              </div>
+
+              {/* Color Selection */}
+              <div className="d-flex colors  ">
+                <p className="me-4">Color</p>
+                {product.colors?.map((color, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedColor(color)}
+                    className={`color-button ${
+                      selectedColor === color ? "selected" : ""
+                    }`}
+                    style={{ backgroundColor: color }}
+                    aria-label={`Select color ${color}`}
+                  ></button>
+                ))}
+              </div>
+
+              {/* Size Selection */}
+              <p className="mt-2 sizetxt">Size</p>
+              <div className="d-flex mb-2">
+                {product.sizes.map((size, index) => (
+                  <ButtonUi
+                    key={index}
+                    className={`me-2 ${
+                      selectedSize === size ? "unselected" : "selected-size"
+                    }`}
+                    onClick={() => setSelectedSize(size)}
+                    text={size}
+                  />
+                ))}
+              </div>
+
+              {/* Quantity Selector */}
+              <div className="d-flex align-items-center gap-2 mt-6">
+                <div className="quantity-wrap d-flex  justify-content-around align-items-center">
+
+                  <button
+                    className="quantity-btn decrement"
+                    onClick={handleDecrease}
+                    aria-label="Decrease quantity"
+                  >
+                    <IoIosArrowDown className="fs-3" />
+                  </button>
+                  <span className="quantity-display">{quantity}</span>
+
+                  <button
+                    className="quantity-btn increment"
+                    onClick={handleIncrease}
+                    aria-label="Increase quantity"
+                  >
+                    <IoIosArrowUp className="fs-3" />
+                  </button>
+                </div>
+                <button className="buy-btn" onClick={handleBuyNow}>
+                  <span className="cart-icon">
+                    <SlBasketLoaded />
+                  </span>{" "}
+                  Buy now
+                </button>
+                <button className="favorite-btn" aria-label="Add to favorites">
+                  &#9825;
+                </button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <Footer2 />
+    </div>
   );
 };
 
