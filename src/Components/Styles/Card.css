@@ -50,6 +50,7 @@
 .product-image {
   border-radius: 5px;
   width: 100%;
+  height: 100%;
   transition: transform 0.3s ease;
   -webkit-transition: transform 0.3s ease;
   -moz-transition: transform 0.3s ease;
@@ -111,8 +112,8 @@
 .price {
   color: var(--theme-color-alter_text);
   font-weight: 500;
-  line-height: 2em;
-  font-size: 1.5rem;
+  line-height: 1em;
+  font-size: 1rem;
 }
 .title-link {
   color: var(--theme-color-text_dark) !important;
@@ -224,11 +225,12 @@
 .quantity-display {
   font-size: 18px;
   font-weight: bold;
-  
 }
 
 /* Buy and Favorite Buttons */
-.quantity-wrap{padding: 5px;}
+.quantity-wrap {
+  padding: 5px;
+}
 .buy-btn,
 .quantity-wrap {
   border: 1px solid var(--theme-color-text_hover3);
@@ -251,7 +253,9 @@
   font-size: 20px;
   cursor: pointer;
 }
-.buy-btn:hover, .increment:hover, .decrement:hover {
+.buy-btn:hover,
+.increment:hover,
+.decrement:hover {
   background-color: var(--theme-color-text_hover2) !important;
   color: var(--theme-color-alter_bd_color) !important;
 }
@@ -276,5 +280,5 @@
 .favorite-btn:hover {
   background-color: #f8f8f8;
   color: var(--theme-color-text_hover);
-
 }
+

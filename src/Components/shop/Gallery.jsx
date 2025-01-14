@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
-import StarRating from "../cards/StarRating";
+import StarRating from "../shop/StarRating";
 import "../Styles/Gallery.css";
 
 const initialState = {

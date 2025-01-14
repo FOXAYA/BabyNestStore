@@ -1,14 +1,26 @@
-import React, { Component } from "react";
-import Maintitles from "../layouts/Maintitles";
+import ProductCard from "../shop/ProductCard";
+import Product from "../shop/GaleryData";
+import ButtonUi from "../ui/ButtonUi";
 
-
-class Autumncoll extends Component{
-render(){
-    return(
-       <div>
-        <Maintitles title="Autumn collection" subtitle="Trending now" />
+const AutumnCollection = () => {
+  return (
+    <>
+      <ProductCard
+        title="Trending now"
+        subtitle="Autumn collection"
+        products={Product}
+        category="OuterWear"
+        columns={4}
+      />
+      <div className="Shop_btn text-center">
+        <ButtonUi
+          className="rounded-5 px-5 py-3 text-white Shop_btn"
+          text={"Shop Collection"}
+          variant={"secondary"}
+        />
       </div>
-    )
-}
+    </>
+  );
 };
-export default Autumncoll;
+
+export default AutumnCollection;

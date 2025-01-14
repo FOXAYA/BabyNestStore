@@ -7,8 +7,8 @@ import mylogo from "../assets/images/logo.png";
 import { CiSearch } from "react-icons/ci";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
 import { SlBag } from "react-icons/sl";
-import ShoppingCard from "../cards/ShopingCard";
-import { useBasket } from "../cards/BasketContext";
+import ShoppingCard from "../shop/ShopingCard";
+import { useBasket } from "../shop/BasketContext";
 import "../Styles/Navbar.css";
 
 const NavbarLayout = () => {

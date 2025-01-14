@@ -1,3 +1,9 @@
+.category-card {
+  border: none !important;
+  background-color: blue;
+
+}
+
 .category-card .card-body {
   position: absolute;
   top: 40%;
@@ -5,7 +11,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: self-start;
   justify-content: center;
   flex-direction: column;
   opacity: 1;
@@ -14,6 +20,8 @@
   -moz-transition: opacity 0.3s ease;
   -ms-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
+  background: linear-gradient(to bottom, #ffffff00, #3632324f);
+
 }
 
 .category-card:hover .card-body {
@@ -22,17 +30,16 @@
 }
 
 .category-card .card-body .category-title {
-  color: var(--theme-color-bd_color);
-  z-index: 2;
-  font-size: 2rem;
-  color: var(--theme-color-extra_bg_color);
+  z-index: 4;
+  font-size: 1.9rem;
+  color: #fff;
 }
 
 .category-card .card-body .shop-now-btn {
   display: none;
   margin-top: 70px;
-  color: var(--theme-color-text_hover);
-  font-size: 1.5rem;
+  color: #fff;
+    font-size: 1.5rem;
   font-weight: 300;
   z-index: 2;
 }
@@ -42,35 +49,27 @@
 }
 
 /* Second Section */
-.Container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: nowrap;
-  margin: 0 auto;
-  padding: 20px;
-  margin-top: 20px;
-}
 
-.images {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.image {
-  width: 150px;
-  height: 150px;
+.h-c-sec-two .image {
+  width: 200px;
+  height: 200px;
+  border-radius: 8%;
   object-fit: cover;
   transition: transform 0.3s ease;
   -webkit-transition: transform 0.3s ease;
   -moz-transition: transform 0.3s ease;
   -ms-transition: transform 0.3s ease;
   -o-transition: transform 0.3s ease;
+  -webkit-border-radius: 8%;
+  -moz-border-radius: 8%;
+  -ms-border-radius: 8%;
+  -o-border-radius: 8%;
 }
 
-.alt {
-  margin-top: 15px;
-  font-weight: bold;
+.h-c-sec-two .alt {
+  color: var(--theme-color-extra_bg_color);
+  font-weight: 400;
+  font-size: 1.2rem;
   transition: color 0.3s ease;
   -webkit-transition: color 0.3s ease;
   -moz-transition: color 0.3s ease;
@@ -78,14 +77,10 @@
   -o-transition: color 0.3s ease;
 }
 
-.images:hover .alt {
-  color: gold;
+.h-c-sec-two .images:hover .alt {
+  color: var(--theme-color-text_hover);
 }
 
-.images:hover .image {
+.h-c-sec-two .images:hover {
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
 }
