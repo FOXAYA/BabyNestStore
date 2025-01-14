@@ -24,7 +24,7 @@ StarRating.propTypes = {
 export default function StarRating({
   maxRating = 5,
   color = "#fcc419",
-  size = 48,
+  size = 20,
   className = "",
   messages = [],
   defaultRating = 0,
@@ -32,18 +32,15 @@ export default function StarRating({
 }) {
   const [rating, setRating] = useState(defaultRating);
   const [tempRating, setTempRating] = useState(0);
+  const [isRated, setIsRated] = useState(false);
 
   function handleRating(rating) {
-    setRating(rating);
-    onSetRating(rating);
+    if (!isRated) {
+      setRating(rating);
+      onSetRating(rating);
+      setIsRated(true);
+    }
   }
-
-  const textStyle = {
-    lineHeight: "1",
-    margin: "0",
-    color,
-    fontSize: `${size / 1.5}px`,
-  };
 
   return (
     <div style={containerStyle} className={className}>
@@ -54,18 +51,13 @@ export default function StarRating({
             full={tempRating ? tempRating >= i + 1 : rating >= i + 1}
             half={tempRating ? tempRating === i + 0.5 : rating === i + 0.5}
             onRate={() => handleRating(i + 0.5)}
-            onHoverIn={() => setTempRating(i + 0.5)}
-            onHoverOut={() => setTempRating(0)}
+            onHoverIn={() => !isRated && setTempRating(i + 0.5)}
+            onHoverOut={() => !isRated && setTempRating(0)}
             color={color}
             size={size}
           />
         ))}
       </div>
-      <p style={textStyle}>
-        {messages.length === maxRating
-          ? messages[Math.ceil(tempRating || rating) - 1]
-          : tempRating || rating || ""}
-      </p>
     </div>
   );
 }

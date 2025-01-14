@@ -7,6 +7,7 @@ import BlogImage from "./Components/Blog/BlogImage";
 import BabyShop from "./Components/Blog/BabyShop";
 import Contact from "./Components/contact/Contact";
 import { BasketProvider } from "./Components/cards/BasketContext";
+import Shop from "./Components/shop/Shop";
 class App extends Component {
   render() {
     return (
@@ -14,12 +15,12 @@ class App extends Component {
         <Router>
           <Routes>
             <Route path="/" element={<Layout />} />
-
             <Route path="/products" element={<ProductCard />} />
             <Route path="/product/:id" element={<ProductDetailPage />} />
             <Route path="/blog" element={<BlogImage />} />
             <Route path="/blog/:id" element={<BabyShop />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/shop" element={<Shop />} />
           </Routes>
         </Router>
       </BasketProvider>

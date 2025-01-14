@@ -1,7 +1,7 @@
 import React from "react";
 import ash from "../assets/images/ash.png"
 import { useLocation } from "react-router-dom";
-import styles from "./BabyShop.module.css";     
+import styles from "../Styles/BabyShop.module.css";     
 import Navbar from '../Navbar/Navbar'
 import { WaveTop } from "../animation/Wave";
 

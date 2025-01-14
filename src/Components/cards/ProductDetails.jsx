@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
-import products from "./ProductsList";
-import Navbar from '../Navbar/Navbar'
+import Product from "../shop/GaleryData";
+import Navbar from "../Navbar/Navbar";
 import { useBasket } from "./BasketContext";
 
 const ProductDetailPage = () => {
@@ -11,19 +11,19 @@ const ProductDetailPage = () => {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null); // Track selected size
+  const [selectedSize, setSelectedSize] = useState(null);
   const { addToBasket } = useBasket();
 
   useEffect(() => {
-    const foundProduct = products.find((p) => p.id === parseInt(id));
+    const foundProduct = Product.find((p) => p.id === parseInt(id));
     setProduct(foundProduct);
 
     if (foundProduct) {
       if (foundProduct.colors?.length > 0) {
-        setSelectedColor(foundProduct.colors[0]); // Default to the first color
+        setSelectedColor(foundProduct.colors[0]);
       }
       if (foundProduct.sizes?.length > 0) {
-        setSelectedSize(foundProduct.sizes[0]); // Default to the first size
+        setSelectedSize(foundProduct.sizes[0]);
       }
     }
   }, [id]);
@@ -44,7 +44,11 @@ const ProductDetailPage = () => {
       <Container className="mt-5">
         <Row>
           <Col md={6}>
-            <img src={product.image} alt={product.name} className="img-fluid rounded" />
+            <img
+              src={product.image}
+              alt={product.name}
+              className="img-fluid rounded"
+            />
           </Col>
           <Col md={6}>
             <p>Home - Baby Boy - {product.name}</p>
@@ -58,14 +62,17 @@ const ProductDetailPage = () => {
                 <FaStar
                   key={i}
                   style={{
-                    color: i < Math.round(product.rating) ? "rgb(255, 193, 7)" : "#ccc",
+                    color:
+                      i < Math.round(product.rating)
+                        ? "rgb(255, 193, 7)"
+                        : "#ccc",
                   }}
                 />
               ))}
             </div>
-            <p>Color:</p>
             <div className="d-flex mb-4">
-              {product.colors.map((color, index) => (
+            <p>Color:</p>
+              {product.colors?.map((color, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedColor(color)}
@@ -73,7 +80,10 @@ const ProductDetailPage = () => {
                     width: "24px",
                     height: "24px",
                     backgroundColor: color,
-                    border: selectedColor === color ? "2px solid black" : "1px solid #ddd",
+                    border:
+                      selectedColor === color
+                        ? "2px solid black"
+                        : "1px solid #ddd",
                     borderRadius: "50%",
                     cursor: "pointer",
                     marginRight: "8px",
@@ -87,7 +97,9 @@ const ProductDetailPage = () => {
               {product.sizes.map((size, index) => (
                 <Button
                   key={index}
-                  variant={selectedSize === size ? "primary" : "outline-secondary"} // Highlight selected size
+                  variant={
+                    selectedSize === size ? "primary" : "outline-secondary"
+                  } // Highlight selected size
                   className="me-2"
                   onClick={() => setSelectedSize(size)}
                 >

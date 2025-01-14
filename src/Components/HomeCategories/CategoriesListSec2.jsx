@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./CategoriesListSec2.module.css";
+import "../Styles/HomeCategories.css";
 import seet from "../assets/images/seet.jpeg";
 import swim from "../assets/images/swim.jpeg";
 import denim from "../assets/images/denim.jpeg";
@@ -18,11 +18,11 @@ const ItemShop = () => {
   ];
 
   return (
-    <div className={styles.Container}>
+    <div className="container d-flex gap-4 justify-content-center p-4">
       {images.map((image, index) => (
-        <div key={index} className={styles.images}>
-          <img src={image.src} alt={image.alt} className={styles.image} />
-          <p className={styles.alt}>{image.alt}</p>
+        <div key={index} className="images">
+          <img src={image.src} alt={image.alt} className="image" />
+          <p className="alt">{image.alt}</p>
         </div>
       ))}
     </div>

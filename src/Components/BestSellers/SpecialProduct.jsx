@@ -11,7 +11,7 @@ const SpecialProduct = () => {
             <Row>
                 <Col md={6} className="d-flex justify-content-center">
                     <img
-                        src={product} // رابط صورة الطفل
+                        src={product} 
                         alt="Child"
                         className="img-fluid rounded"
                         style={{ width: "100%", maxWidth: "600px", borderRadius: "10px" }}

@@ -1,19 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
+import PropTypes from "prop-types";
 
-class ButtonUi extends Component {
-  render() {
-    const { className, text, onClick } = this.props;
-
-    return (
-      <Button
-        className={`${className} rounded-5 px-5 py-3 text-white fw-bolder mt-2`}
-        onClick={onClick}
+const ButtonUi = ({ className, text, onClick, size, variant }) => (
+  <Button
+    className={`${className}  mt-2`}
+    onClick={onClick}
+    size={size}
+    variant={variant} 
       >
-        {text || "Shop Now"}
-      </Button>
-    );
-  }
-}
+    {text}
+  </Button>
+);
+
+ButtonUi.defaultProps = {
+  text: "Shop Now",
+  size: "lg",
+  variant: "primary",
+};
+
+ButtonUi.propTypes = {
+  className: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  size: PropTypes.string,
+  variant: PropTypes.string,
+};
 
 export default ButtonUi;
