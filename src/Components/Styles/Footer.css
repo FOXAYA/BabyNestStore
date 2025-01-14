@@ -9,8 +9,7 @@ footer {
   font-family: var(--secondary-font);
   width: 100%;
   max-width: 100%;
-  margin-top: 50px;
-  padding-top: 155px;
+  padding-top: 100px;
   text-align: center;
 }
 .footer2 {
