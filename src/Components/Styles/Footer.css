@@ -15,6 +15,7 @@ footer {
 }
 .footer2 {
   background-color: var(--theme-color-extra_bg_color);
+  font-family: var(--secondary-font);
 }
 .wave-footer {
   transform: translateY(85%);
@@ -39,16 +40,6 @@ footer {
   text-decoration: none;
   color: #202020;
   font-size: 17px;
-}
-
-.insta-img {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px; /* Space between images */
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
 }
 
 .insta-img li img {
