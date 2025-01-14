@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import Product from "../shop/GaleryData";
 import Navbar from "../Navbar/Navbar";
 import { useBasket } from "./BasketContext";
-import StarRating from "../cards/StarRating";
+import StarRating from "./StarRating";
 import ButtonUi from "../ui/ButtonUi";
 import { WaveTop } from "../animation/Wave";
 import Footer2 from "../Footer/Footer2";

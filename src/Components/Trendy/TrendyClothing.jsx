@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import trendyimg from "../assets/images/trendy.jpg";
 import ButtonUi from "../ui/ButtonUi";
-import { WaveBottom, WaveTop } from "../animation/Wave";
+import { WaveBottom } from "../animation/Wave";
+import "../Styles/Trendy.css";
 
-class Trendy extends Component {
+class TrendyClothing extends Component {
   render() {
     return (
       <>
+      
         <div className="trendy-section-wrapper">
           <div
             className="trendy-section"
@@ -19,8 +21,6 @@ class Trendy extends Component {
               height: "90vh",
             }}
           >
-            <WaveBottom fill="#fff" duration={2} className="wave-bottom" />
-
             <Container>
               <div className="trendy-text">
                 <p className="subtitle">TRENDY CLOTHING</p>
@@ -29,16 +29,16 @@ class Trendy extends Component {
                 </h1>
                 <ButtonUi
                   text={"View All Collections"}
-                  className="fs-5 trendy-btn rounded-5 px-5 py-3 text-white"
+                  className="fs-5 trendy-btn rounded-5 px-5 py-3 text-white btn-one"
                 />
               </div>
             </Container>
-            <WaveTop fill={"#fff"} duration={2} className="wave-top" />
           </div>
         </div>
+        <WaveBottom duration={2} className="wave-bottom" />
       </>
     );
   }
 }
 
-export default Trendy;
+export default TrendyClothing;

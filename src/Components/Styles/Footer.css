@@ -14,11 +14,11 @@ footer {
   background-color: var(--theme-color-extra_bg_color);
 }
 .wave-footer {
-  transform: translateY(85%);
-  -webkit-transform: translateY(85%);
-  -moz-transform: translateY(85%);
-  -ms-transform: translateY(85%);
-  -o-transform: translateY(85%);
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
 }
 
 .instagram a {

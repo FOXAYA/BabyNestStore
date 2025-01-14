@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Components/layouts/Layout";
-import ProductDetailPage from "./Components/cards/ProductDetails";
-import ProductCard from "./Components/cards/ProductCard";
+import ProductDetailPage from "./Components/shop/ProductDetails";
+import ProductCard from "./Components/shop/ProductCard";
 import BlogImage from "./Components/Blog/BlogImage";
 import BabyShop from "./Components/Blog/BabyShop";
 import Contact from "./Components/contact/Contact";
-import { BasketProvider } from "./Components/cards/BasketContext";
+import { BasketProvider } from "./Components/shop/BasketContext";
 import Shop from "./Components/shop/Shop";
 class App extends Component {
   render() {
