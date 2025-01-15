@@ -34,14 +34,7 @@ footer {
 
 /* Social Icons Styles */
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 2px; /* Space between icons */
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+
 
 .social-icons li {
   display: inline-flex;
