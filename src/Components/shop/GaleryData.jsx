@@ -7,7 +7,7 @@ import img6 from "../assets/images/product-image6.jpg";
 import img7 from "../assets/images/seet.jpeg";
 import img9 from "../assets/images/toy.jpg";
 import img8 from "../assets/images/swim.jpeg";
-import img10 from "../assets/images/denim.jpeg";
+import img10 from "../assets/images/product-image13.jpg";
 import img11 from "../assets/images/denim.jpeg";
 import img12 from "../assets/images/jacket.jpeg";
 import img13 from "../assets/images/dress.jpeg";
@@ -21,7 +21,7 @@ import img20 from "../assets/images/Siliconepacifier.jpg";
 import img21 from "../assets/images/teddy.jpg";
 import img22 from "../assets/images/newbornbootie.jpg";
 import img23 from "../assets/images/Plasticstool.jpg";
-import img24 from "../assets/images/product-category1.jpg";
+import img24 from "../assets/images/Babycrib2.jpg";
 import img25 from "../assets/images/product-category2.jpg";
 import img26 from "../assets/images/product-category3.jpg";
 import img27 from "../assets/images/product-category4.jpg";
@@ -45,7 +45,7 @@ const Product = [
     date: "2025-01-01",
     popularity: 100,
     sale: "Up to - 20%",
-    category: ["Uncategorized", "BestSellers"],
+    category: ["Uncategorized", "Baby boy", "BestSellers"],
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
@@ -58,20 +58,20 @@ const Product = [
     sizes: ["6-12 m" , "12-14"],
     date: "2025-01-02",
     popularity: 50,
-    category: ["Baby girl", "Girl", "BestSellers"],
+    category: ["Baby girl", "BestSellers"],
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
     id: 3,
     image: img3,
     name: "Baby Sweater",
-    price: 100,
-    rating: 2,
+    price: 80,
+    rating: 3,
     colors: ["#FF6347", "#FFD700"],
     sizes: ["12-18 m"],
     date: "2025-01-03",
     popularity: 30,
-    category: ["Baby girl", "BestSellers"],
+    category: ["Boy", "BestSellers"],
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
@@ -84,7 +84,7 @@ const Product = [
     sizes: ["0-3 m"],
     date: "2025-01-04",
     popularity: 70,
-    category: ["Baby girl", "BestSellers"],
+    category: ["Baby boy", "BestSellers"],
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
@@ -110,7 +110,7 @@ const Product = [
     sizes: ["1-2 year"],
     date: "2025-01-06",
     popularity: 110,
-    category: ["Baby boy", "BestSellers"],
+    category: ["Baby girl", "Girl", "BestSellers"],
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
@@ -130,13 +130,13 @@ const Product = [
     id: 8,
     image: img8,
     name: "Swimsuits",
-    price: 90,
+    price: 40,
     rating: 4.5,
     colors: ["#FF69B4", "#8A2BE2"],
     sizes: ["2-4 year"],
     date: "2025-08-01",
     popularity: 1000,
-    category: "Denim",
+    category: "Swimsuits",
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
@@ -155,10 +155,10 @@ const Product = [
   {
     id: 10,
     image: img10,
-    name: "Jackets",
-    price: 95,
+    name: "Yellow raincoat",
+    price: 105,
     rating: 3,
-    sizes: ["2-4 year"],
+    sizes: ["2-4 year", "5-8 year"],
     date: "2025-01-01",
     popularity: 75,
     category: "Jackets",
@@ -180,14 +180,14 @@ const Product = [
   {
     id: 12,
     image: img12,
-    name: "Dresses",
+    name: "Jackets",
     price: 90,
     rating: 4.5,
     colors: ["#FF69B4", "#8A2BE2"],
     sizes: ["6-12 m", "12-18 m"],
     date: "2025-06-01",
     popularity: 7,
-    category: "Dresses",
+    category: "Jackets",
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
@@ -266,9 +266,9 @@ const Product = [
   {
     id: 19,
     image: img19,
-    name: "Silicone Pacifier",
+    name: "Silicone bib",
     price: 17,
-    rating: 4,
+    rating: 4.5,
     date: "2025-01-14",
     popularity: 39,
     category: "Baby accessories",
@@ -279,7 +279,7 @@ const Product = [
     image: img20,
     name: "Silicone Pacifier",
     price: 18,
-    rating: 3.5,
+    rating: 3,
     date: "2025-01-17",
     popularity: 38,
     category: "Baby accessories",
@@ -326,14 +326,14 @@ const Product = [
   {
     id: 24,
     image: img24,
-    name: "Baby Sweater",
-    price: 100,
-    rating: 2,
+    name: "Wooden crib",
+    price: 250,
+    rating: 4.5,
     colors: ["#FF6347", "#FFD700"],
-    sizes: ["36-48 m", "24-36 m"],
+    sizes: ["One Size"],
     date: "2025-01-11",
     popularity: 77,
-    category: "Jackets",
+    category: "Cribs",
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
@@ -414,7 +414,7 @@ const Product = [
     sizes: ["1-2 Year", "2-4 Year", "4-8 Year"],
     date: "2025-01-20",
     popularity: 30,
-    category: "OuterWear",
+    category: ["OuterWear", "Baby boy"],
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
