@@ -5,7 +5,7 @@ const Footer2 = () => {
     return (
         <>
         <WaveTop className = "wave-footer" fill ={"#1f2834"}/>
-        <footer className="footer2 text-light py-5 ">
+        <footer className="footer2 text-light py-5 bg-dark">
         <div className="container">
             <div className="row">
             {/* Main Title */}

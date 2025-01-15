@@ -360,12 +360,7 @@ const Product = [
     date: "2025-01-05",
     popularity: 85,
     sale: "Up to - 20%",
-<<<<<<< HEAD
-
-    category: ["Sweatshirts", "BestSellers"],
-=======
     category: "Sweatshirts",
->>>>>>> 4ffb5d4e0e3b3237787e29dc8c9010a412a553df
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
