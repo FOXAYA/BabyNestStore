@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 // Default wave variants
 const defaultWaveVariants = {
   start: {

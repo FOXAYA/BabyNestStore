@@ -44,6 +44,11 @@ a {
 .btn-one:hover {
   background-color: var(--theme-color-text_hover) !important;
 }
+/* .Shop_btn{
+  background-color: var(--theme-color-text_link) !important;
+  border: none !important;
+  font-family: var(--secondary-font) !important;
+} */
 
 /* Wave styles */
 .waves {
@@ -59,11 +64,10 @@ a {
   height: auto;
   display: block;
 }
-
+  
 /* Start Carogries */
 .maintitles {
   color: var(--theme-color-text_dark);
-
   padding: 4%;
 }
 .maintitles span {
@@ -157,14 +161,7 @@ a {
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
 }
-.wave-bottom {
-  position: absolute;
-  top: 5%;
-}
-.wave-top {
-  position: absolute;
-  top: 88%;
-}
+ 
 
 .slider {
   -webkit-appearance: none;

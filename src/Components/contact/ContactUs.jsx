@@ -91,7 +91,7 @@ const ContactUs = () => {
                     </li>
                     <li>
                         ✉️ <a href="mailto:info@email.com" style={{ textDecoration: "none", color: "#2c2c54" }}>
-                            info@email.com
+          info@email.com
                         </a>
                     </li>
                 </ul>

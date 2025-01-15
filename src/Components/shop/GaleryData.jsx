@@ -25,8 +25,13 @@ import img24 from "../assets/images/product-category1.jpg";
 import img25 from "../assets/images/product-category2.jpg";
 import img26 from "../assets/images/product-category3.jpg";
 import img27 from "../assets/images/product-category4.jpg";
+import img28 from "../assets/images/autumn-3.jpg";
+import img29 from "../assets/images/autumn-4.jpg";
+import img30 from "../assets/images/autumn-2.jpg";
+import img31 from "../assets/images/autumn-1.jpg";
+import img32 from '../assets/images/Linenshorts.jpg'
 
-const brands = ["Boden", "Burberry", "Rejina Pyo", "Tinycottons"];
+const brands = ["Boden", "Burberry", "Rejina Pyo", "Tinycottons", "Denim"];
 
 const Product = [
   {
@@ -50,7 +55,7 @@ const Product = [
     price: 75,
     rating: 3,
     colors: ["#FFF", "#ADD8E6"],
-    sizes: ["6-12 m"],
+    sizes: ["6-12 m" , "12-14"],
     date: "2025-01-02",
     popularity: 50,
     category: ["Baby girl", "Girl", "BestSellers"],
@@ -92,7 +97,7 @@ const Product = [
     sizes: ["3-6 m"],
     date: "2025-01-05",
     popularity: 90,
-    category: "Baby boy",
+    category: ["Baby boy", "BestSellers"],
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
@@ -355,8 +360,12 @@ const Product = [
     date: "2025-01-05",
     popularity: 85,
     sale: "Up to - 20%",
+<<<<<<< HEAD
 
     category: ["Sweatshirts", "BestSellers"],
+=======
+    category: "Sweatshirts",
+>>>>>>> 4ffb5d4e0e3b3237787e29dc8c9010a412a553df
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
   {
@@ -374,8 +383,8 @@ const Product = [
   },
   {
     id: 28,
-    image: img11,
-    name: "Girl Cardigan",
+    image: img1,
+    name: "Stripped",
     price: 75,
     rating: 3,
     colors: ["#FFF", "#ADD8E6"],
@@ -385,6 +394,75 @@ const Product = [
     category: "Swimsuits",
     brand: brands[Math.floor(Math.random() * brands.length)],
   },
+
+  {
+    id: 29,
+    image: img28,
+    name: "Demin jumpsuit",
+    price: 80,
+    rating: 3,
+    colors: ["#000", "#ADD8E6", "#E16A54"],
+    sizes: ["1-2 Year", "2-4 Year", "4-8 Year"],
+    date: "2025-01-20",
+    popularity: 30,
+    category: ["OuterWear", "Denim"],
+    brand: brands[Math.floor(Math.random() * brands.length)],
+  },
+
+  {
+    id: 30,
+    image: img29,
+    name: "Striped bodysuit",
+    price: 35.0,
+    rating: 4,
+    colors: ["#000", "#16404D", "#77B254"],
+    sizes: ["1-2 Year", "2-4 Year", "4-8 Year"],
+    date: "2025-01-20",
+    popularity: 30,
+    category: "OuterWear",
+    brand: brands[Math.floor(Math.random() * brands.length)],
+  },
+  {
+    id: 31,
+    image: img30,
+    name: "Knitted cardigan",
+    price: 35.0,
+    rating: 4,
+    colors: ["#000", "#9F5255", "#FFEB00"],
+    sizes: ["1-2 Year", "2-4 Year", "4-8 Year"],
+    date: "2025-01-20",
+    popularity: 30,
+    category: "OuterWear",
+    brand: brands[Math.floor(Math.random() * brands.length)],
+  },
+  {
+    id: 32,
+    image: img31,
+    name: "Winter jacket",
+    price: 60,
+    rating: 4,
+    colors: ["#000", "#FFEB55", "#77B254"],
+    sizes: ["1-2 Year", "2-4 Year", "4-8 Year"],
+    date: "2025-01-20",
+    popularity: 30,
+    category: "OuterWear",
+    brand: brands[Math.floor(Math.random() * brands.length)],
+  },
+
+  {
+    id: 33,
+    image: img32,
+    name: "Linen Shorts",
+    price: 30,
+    rating: 4.5,
+    colors: ["#000", "#8B4513", "#C0C0C0"],
+    sizes: ["1-2 Year", "2-4 Year","4-8 Year"],
+    date: "2025-01-01",
+    popularity: 100,
+    sale: "Up to - 30%",
+    category: ["Boy"],
+    brand: brands[Math.floor(Math.random() * brands.length)],
+  }
 ];
 
 export default Product;

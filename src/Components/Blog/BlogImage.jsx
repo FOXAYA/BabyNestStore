@@ -73,7 +73,7 @@ export default function BlogImage() {
       return [
         BlogImages[currentIndex % totalImages],
         BlogImages[(currentIndex + 1) % totalImages],
-      ]; // عرض صورتين في الشاشات الصغيرة
+      ]; // ع في الشاشات الصغيرة
     }
 
     const indices = [];
