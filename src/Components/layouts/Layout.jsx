@@ -16,8 +16,8 @@ class Layout extends Component {
         <Home />
         <Clients />
         <HomeCatogories />
-        <BestSellers />
-        <TrendyLayout />
+                <BestSellers />
+        <TrendyLayout/>
         <BlogImage />
         <Footer />
       </>

@@ -13,11 +13,26 @@
 .icons-home-parent {
   height: 60vh;
 }
-.home-icon-four {
+/* .home-icon-four {
   right: 100px;
   top: 400px;
 }
 .home-icon-five {
   left: 500px;
   bottom:10px;
+} */
+/*Waves styles */
+
+.waves {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.wave-svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }

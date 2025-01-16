@@ -9,8 +9,7 @@ import {
   IconOne,
   IconTwo,
   IconThree,
-  IconFour,
-  IconFive,
+    IconNine
 } from "../animation/IconsAnimated";
 import "../Styles/Home.css";
 
@@ -48,15 +47,14 @@ class Home extends Component {
           <ButtonUi className="btn-one rounded-5 px-5 py-3 text-white fw-bolder" text ={"Shop Now"} />
         </div>
         <div className="icons-home-parent position-relative d-flex justify-content-around">
-          <IconOne />
-          <IconTwo />
-          <IconThree />
-          <IconFour />
+          <IconOne className="home-icon-one" />
+          <IconTwo className="home-icon-two"  />
+          <IconThree  className="home-icon-three" />
+          <IconOne  className="home-icon-four" />
         </div>
         <div className="slider-image">
           <img src={image} alt={title} className="img-fluid" />
-          <IconFive />
-
+          <IconNine className="home-icon-five" />
         </div>
       </div>
     </Carousel.Item>

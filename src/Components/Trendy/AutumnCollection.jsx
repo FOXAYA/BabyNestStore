@@ -4,7 +4,7 @@ import ButtonUi from "../ui/ButtonUi";
 
 const AutumnCollection = () => {
   return (
-    <>
+    < div className="py-4 autumn-container">
       <ProductCard
         title="Trending now"
         subtitle="Autumn collection"
@@ -19,7 +19,7 @@ const AutumnCollection = () => {
           variant={"secondary"}
         />
       </div>
-    </>
+    </div>
   );
 };
 
