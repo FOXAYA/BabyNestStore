@@ -30,13 +30,23 @@ const AboutUs = () => {
                     style={{ background: "#F8F4EC", borderRadius: "10px" }}
                     >
                         <div>
-                            <h6>Toys and clothing</h6>
-                            <h4>Your children deserve the best</h4>
-                            
+                            <h5 style={{ color: "#2c2c55", fontWeight: "bold", marginBottom: "15px"}}>Toys and clothing</h5>
+                            <h1 style={{ color: "#2c2c54", fontWeight: "bold", marginBottom: "30px", lineHeight: "1.4" }}>
+                                Your children deserve the best
+                            </h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit
+                            voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis.</p>
+                            <p>Sit voluptatem accusantium doloremque laudantium,
+                            totam rem aperiam. Sed ut perspiciatis unde omnis iste.</p>
+
                         </div>
                     </Col>
                 </Row>
             </Container>
+
+            <div>
+                <img src={img1} className="d-block w-100" alt="..."/>
+            </div>
         
         <ContactUs />
         

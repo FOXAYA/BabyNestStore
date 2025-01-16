@@ -71,7 +71,7 @@ const ContactUs = () => {
             }}
         >
             <div style={{ flex: "1", paddingRight: "20px" }}>
-                <h4 style={{ color: "#2c2c54", textTransform: "uppercase", marginBottom: "20px" }}>
+                <h4 style={{ color: "#2c2c54", fontWeight: "bold", marginBottom: "30px", lineHeight: "1.4" }}>
                     Contact Us
                 </h4>
                 <h1 style={{ color: "#2c2c54", fontWeight: "bold", marginBottom: "30px", lineHeight: "1.4" }}>
