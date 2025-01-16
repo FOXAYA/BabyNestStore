@@ -6,11 +6,9 @@ import Navbar from "../Navbar/Navbar"
 import img1 from "../assets/images/about-image1.jpg"
 import img2 from "../assets/images/blog2.jpg"
 
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
-//import Forms from "./Form"
-
+import Forms from "./Form"
 import Numbers from "./Number";
 
 
@@ -79,7 +77,7 @@ const AboutUs = () => {
                     <h2 className="text-center mb-4" style={{ fontWeight: "bold" }}>
                         Contact Us
                     </h2>
-                    {/*<Forms />*/}
+                    <Forms />
                 </div>
             </div>
         <Footer2 />
