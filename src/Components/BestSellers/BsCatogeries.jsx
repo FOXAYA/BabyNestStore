@@ -27,7 +27,7 @@ const BsCatogeries = () => {
             xs={6}
             sm={4}
             md={3}
-            lg={6}
+            lg={2}
             className="text-center d-flex flex-column align-items-center justify-content-center"
           >
             <img
