@@ -1,0 +1,82 @@
+:root {
+  --primary-font: "Permanent Marker", serif;
+  --secondry-font: "Roboto", serif;
+  --accent-font: "Hind Madurai", serif;
+  --theme-color-bd_color: #f8f4eb;
+  --secondry-font: "Roboto", serif;
+  --theme-color-text_light: #8e919d;
+}
+.Icons {
+  margin-bottom: 200px;
+}
+.icon-container {
+  height: 60vh;
+  background-color: var(--theme-color-bd_color);
+  font-family: var(--secondry-font);
+}
+.Fa {
+  width: 25%;
+}
+
+.Fa img {
+  width: 80px;
+  height: 80px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.desc {
+  width: 80%;
+  font-size: 1rem;
+  color: var(--theme-color-text_light);
+}
+
+/* start Trendy Clothing */
+
+.trendy-section {
+  color: var(--theme-color-bg_color);
+  padding: 7rem 0;
+  position: relative;
+  z-index: 800;
+}
+
+.trendy-text {
+  position: relative;
+  z-index: 2;
+  width: 70%;
+  margin-top: 100px;
+  font-family: var(--secondry-font);
+}
+
+.trendy-text .subtitle {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.trendy-text .main-title {
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  line-height: 4rem;
+  font-size: 4rem;
+}
+
+.trendy-btn {
+  font-weight: 400;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+}
+
+.wave-top {
+  position: absolute;
+  top: -1px;
+  left: 0;
+}
+.wave-bottom {
+  top:-2px;
+  position: relative;
+}

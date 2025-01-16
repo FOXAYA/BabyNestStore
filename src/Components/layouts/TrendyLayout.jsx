@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import AutumnCollection from "../Trendy/AutumnCollection";
-import TrendyClothing from "../Trendy/TrendyClothing";
-import Icon from '../Trendy/Icon'
+import Trendy from "../Trendy/Trendy";
 class TrendyLayout extends Component {
   render() {
     return (
       <>
         <AutumnCollection />
-        <TrendyClothing />
-       <Icon />
+        <Trendy />
+        
       </>
     );
   }

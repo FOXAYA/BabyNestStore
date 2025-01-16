@@ -9,19 +9,20 @@ class TrendyClothing extends Component {
   render() {
     return (
       <>
-      
-        <div className="trendy-section-wrapper">
+        <div className="trendy-section-wrapper mt-5">
           <div
-            className="trendy-section"
+            className="trendy-section wavy-background "
             style={{
               backgroundImage: `url(${trendyimg})`,
-              backgroundSize: "contain",
+              backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "90vh",
             }}
           >
-            <Container>
+            <WaveBottom className="wave-top" fill="#fff" />
+
+            <Container className="d-flex flex-column align-items-start justify-content-between">
               <div className="trendy-text">
                 <p className="subtitle">TRENDY CLOTHING</p>
                 <h1 className="main-title">
@@ -35,7 +36,6 @@ class TrendyClothing extends Component {
             </Container>
           </div>
         </div>
-        <WaveBottom duration={2} className="wave-bottom" />
       </>
     );
   }

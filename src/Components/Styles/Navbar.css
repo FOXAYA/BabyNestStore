@@ -54,6 +54,6 @@
     background-color: var(--theme-color-bg_color);
   }
   .sticky-top {
-    z-index: 1030;
+    z-index: 1000;
   }
   /***************** End navbar layout *******************/

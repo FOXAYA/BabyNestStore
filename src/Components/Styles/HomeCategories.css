@@ -1,20 +1,18 @@
-.category-card {
-  border: none !important;
-  background-color: blue;
+:root{
+  --theme-color-bg_color: #ffffff;
 
 }
-
+.category-card {
+  border: none !important;
+}
 .category-card .card-body {
-  position: absolute;
   top: 40%;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: self-start;
-  justify-content: center;
-  flex-direction: column;
-  opacity: 1;
+   opacity: 1;
   transition: opacity 0.3s ease;
   -webkit-transition: opacity 0.3s ease;
   -moz-transition: opacity 0.3s ease;
@@ -32,55 +30,18 @@
 .category-card .card-body .category-title {
   z-index: 4;
   font-size: 1.9rem;
-  color: #fff;
+  color: var(--theme-color-bg_color);
 }
 
 .category-card .card-body .shop-now-btn {
   display: none;
   margin-top: 70px;
-  color: #fff;
-    font-size: 1.5rem;
+  color: var(--theme-color-bg_color);
+  font-size: 1.5rem;
   font-weight: 300;
   z-index: 2;
 }
 
 .category-card:hover .card-body .shop-now-btn {
   display: inline-block;
-}
-
-/* Second Section */
-
-.h-c-sec-two .image {
-  width: 200px;
-  height: 200px;
-  border-radius: 8%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  -moz-transition: transform 0.3s ease;
-  -ms-transition: transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
-  -webkit-border-radius: 8%;
-  -moz-border-radius: 8%;
-  -ms-border-radius: 8%;
-  -o-border-radius: 8%;
-}
-
-.h-c-sec-two .alt {
-  color: var(--theme-color-extra_bg_color);
-  font-weight: 400;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-  -webkit-transition: color 0.3s ease;
-  -moz-transition: color 0.3s ease;
-  -ms-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
-}
-
-.h-c-sec-two .images:hover .alt {
-  color: var(--theme-color-text_hover);
-}
-
-.h-c-sec-two .images:hover {
-  transform: scale(1.1);
 }

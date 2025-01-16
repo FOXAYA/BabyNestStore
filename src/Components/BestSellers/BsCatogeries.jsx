@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/HomeCategories.css";
+import "../Styles/BestSeller.css";
 import sweet from "../assets/images/product-category5.jpg";
 import swim from "../assets/images/product-category6.jpg";
 import toys from "../assets/images/product-category7.jpg";
@@ -9,7 +9,7 @@ import dress from "../assets/images/product-category10.jpg";
 
 const BsCatogeries = () => {
   const images = [
-    { src: sweet , alt: "Sweatshirts" },
+    { src: sweet, alt: "Sweatshirts" },
     { src: swim, alt: "Swimsuits" },
     { src: toys, alt: "Toys" },
     { src: jackets, alt: "Jackets" },
@@ -18,7 +18,7 @@ const BsCatogeries = () => {
   ];
 
   return (
-    <div className="container d-flex gap-4 mt-5  h-c-sec-two">
+    <div className="container d-flex gap-4 bs-Catogeries py-4">
       {images.map((image, index) => (
         <div key={index} className="images text-center ">
           <img src={image.src} alt={image.alt} className="image" />

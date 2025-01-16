@@ -43,7 +43,7 @@ class CategoriesList extends Component {
                   alt={category.title}
                   className="category-image"
                 />
-                <Card.Body className="card-body">
+                <Card.Body className="card-body position-absolute justify-content-center flex-column ">
                   <Card.Title className="category-title position-absolute">
                     {category.title}
                   </Card.Title>

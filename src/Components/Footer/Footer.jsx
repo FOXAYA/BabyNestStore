@@ -4,6 +4,8 @@ import { FaTwitterSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaDribbble } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
+
+import { WaveTop } from "../animation/Wave";
 import footerlogo from "../assets/images/logo.png";
 import footerimg1 from "../assets/images/insta-image1.jpg";
 import footerimg2 from "../assets/images/insta-image2.jpg";
@@ -15,6 +17,8 @@ import { Container, Row, Col, Nav, Image } from "react-bootstrap";
 
 const Footer = () => {
   return (
+    <>
+    <WaveTop className = "wave-footer"fill={"#F8F4EB"}/>
     <footer>
       <Container>
         {/* Instagram Section */}
@@ -37,7 +41,7 @@ const Footer = () => {
         </Row>
 
         {/* Instagram Images Section */}
-        <Row className="justify-content-center g-5">
+        <Row className="justify-content-center g-5 ">
           {[
             footerimg1,
             footerimg2,
@@ -51,7 +55,7 @@ const Footer = () => {
               sm={4}
               md={2}
               key={index}
-              className="d-flex justify-content-center mb-3"
+              className="d-flex justify-content-center mb-3 imgs"
             >
               <Image
                 src={img}
@@ -136,6 +140,7 @@ const Footer = () => {
         </Container>
       </div>
     </footer>
+    </>
   );
 };
 

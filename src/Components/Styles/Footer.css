@@ -130,3 +130,22 @@ footer .footer-bottom span a {
   text-decoration: none;
   color: #132640;
 }
+.imgs {
+  border-radius: 8%;
+  position: relative;
+  z-index: 100;
+  -webkit-border-radius: 8%;
+  -moz-border-radius: 8%;
+  -ms-border-radius: 8%;
+  -o-border-radius: 8%;
+}
+.imgs:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.1);
+  filter: brightness(0.8);
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  -webkit-filter: brightness(0.8);
+}
