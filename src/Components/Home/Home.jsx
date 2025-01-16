@@ -47,14 +47,14 @@ class Home extends Component {
           <ButtonUi className="btn-one rounded-5 px-5 py-3 text-white fw-bolder" text ={"Shop Now"} />
         </div>
         <div className="icons-home-parent position-relative d-flex justify-content-around">
-          <IconOne className="home-icon-one" />
-          <IconTwo className="home-icon-two"  />
-          <IconThree  className="home-icon-three" />
-          <IconOne  className="home-icon-four" />
+          <IconOne className="home-icon1 position-absolute" />
+          <IconTwo className="home-icon2 position-absolute"  />
+          <IconThree  className="home-icon3 position-absolute" />
+          <IconOne  className="home-icon4 position-absolute" />
         </div>
         <div className="slider-image">
           <img src={image} alt={title} className="img-fluid" />
-          <IconNine className="home-icon-five" />
+          <IconNine className="home-icon5 position-absolute" />
         </div>
       </div>
     </Carousel.Item>

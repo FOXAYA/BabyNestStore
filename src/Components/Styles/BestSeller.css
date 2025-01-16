@@ -57,6 +57,7 @@ gries */
   max-width: 100%;
   height: 100vh;
   border-radius: 5%;
+  
 }
 .bs-card-container {
   max-width: 100%;
@@ -89,21 +90,21 @@ gries */
 .bs-icon-1 {
   width: 25px;
   height: 25px;
-  transform: translate(40px, -640px);
-  -webkit-transform: translate(40px, -640px);
-  -moz-transform: translate(40px, -640px);
-  -ms-transform: translate(40px, -640px);
-  -o-transform: translate(40px, -640px);
+  transform: translate(50px, -640px);
+  -webkit-transform: translate(50px, -640px);
+  -moz-transform: translate(50px, -640px);
+  -ms-transform: translate(50px, -640px);
+  -o-transform: translate(50px, -640px);
 }
 
 .bs-icon-2 {
-  width: 130px;
-  height: 130px;
-  transform: translate(300px, -650px);
-  -webkit-transform: translate(300px, -65 0px);
-  -moz-transform: translate(300px, -65 0px);
-  -ms-transform: translate(300px, -65 0px);
-  -o-transform: translate(300px, -65 0px);
+  width: 150px;
+  height: 145px;
+  transform: translate(300px, -700px);
+  -webkit-transform: translate(300px, -700px);
+  -moz-transform: translate(300px, -700px);
+  -ms-transform: translate(300px, -700px);
+  -o-transform: translate(300px, -700px);
 }
 
 .bs-icon-3 {
