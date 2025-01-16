@@ -1,25 +1,11 @@
 /******************** Start Home *************************/
-.slider-bg {
-  background-color: var(--theme-color-bd_color);
-}
-.slider-text {
-  width: 40%;
-}
-.slider-text h1 {
-  color: var(--theme-color-text_dark);
-  font-family: var(--primary-font);
-  font-size: 3.5rem;
-  font-weight: 700;
-}
-.slider-text h6 {
-  font-size: 1rem;
-  color: var(--theme-color-text_dark);
-  font-weight: 400;
-}
+
+/* .slider-img{
+
+width: 100%;} */
 .p_home {
   color: var(--theme-color-text);
 }
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: var(--theme-color-text_hover3);
@@ -141,7 +127,7 @@
 }
 .home-icon4 {
   left: 50px;
-  top:400px;
+  top: 400px;
 }
 .home-icon5 {
   left: 600px;
@@ -149,3 +135,71 @@
 }
 
 /***************** End Home *******************/
+
+.slider-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center; /* Centr-align text for smaller screens */
+}
+
+.slider-text {
+  flex: 1 1 100%; /* Take full width on smaller screens */
+  margin-bottom: 20px;
+  margin-left: 140px;
+  padding: 20px;
+}
+
+.slider-text h1 {
+  color: var(--theme-color-text_dark);
+  font-family: var(--primary-font);
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+.slider-text h6 {
+  font-size: 1rem;
+  color: var(--theme-color-text_dark);
+  font-weight: 400;
+}
+.slider-image {
+  flex: 1 1 100%; /* Take full width on smaller screens */
+  text-align: center;
+}
+
+.slider-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: Add rounded corners to the image */
+}
+@media (max-width: 768px) {
+  .slider-text h1,
+  .slider-text h6 {
+    padding: 0;
+    font-size: 1.5rem;
+  }
+  .slider-text {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 768px) {
+  .slider-content {
+    flex-wrap: nowrap;
+    text-align: left; /* Align text to the left for larger screens */
+  }
+
+  .slider-text {
+    flex: 1 1 50%;
+    padding-right: 20px;
+  }
+
+  .slider-image {
+    flex: 1 1 50%;
+    padding-left: 20px;
+  }
+}
+
+.slider-bg {
+  background-color: var(--theme-color-bd_color);
+}

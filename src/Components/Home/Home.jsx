@@ -5,12 +5,6 @@ import myimg2 from "../assets/images/home-2.png";
 import myimg3 from "../assets/images/home-3.png";
 import ButtonUi from "../ui/ButtonUi";
 import { WaveBottom, WaveTop } from "../animation/Wave";
-import {
-  IconOne,
-  IconTwo,
-  IconThree,
-    IconNine
-} from "../animation/IconsAnimated";
 import "../Styles/Home.css";
 
 const slides = [
@@ -39,22 +33,21 @@ const slides = [
 class Home extends Component {
   renderSlide = ({ title, subtitle, image, label }) => (
     <Carousel.Item>
-      <div className="d-flex align-items-center justify-content-center slider-content">
+      <div className="slider-content">
+        {/* Text Section */}
         <div className="slider-text">
           <h6>{label}</h6>
           <h1 className="h1_home">{title}</h1>
           <p className="lead fs-6 p_home">{subtitle}</p>
-          <ButtonUi className="btn-one rounded-5 px-5 py-3 text-white fw-bolder" text ={"Shop Now"} />
+          <ButtonUi
+            className="btn-one rounded-5 px-5 py-3 text-white fw-bolder"
+            text={"Shop Now"}
+          />
         </div>
-        <div className="icons-home-parent position-relative d-flex justify-content-around">
-          <IconOne className="home-icon1 position-absolute" />
-          <IconTwo className="home-icon2 position-absolute"  />
-          <IconThree  className="home-icon3 position-absolute" />
-          <IconOne  className="home-icon4 position-absolute" />
-        </div>
+
+        {/* Image Section */}
         <div className="slider-image">
-          <img src={image} alt={title} className="img-fluid" />
-          <IconNine className="home-icon5 position-absolute" />
+          <img src={image} alt={title} className="img-fluid slider-img" />
         </div>
       </div>
     </Carousel.Item>

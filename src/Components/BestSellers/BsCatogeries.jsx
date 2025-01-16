@@ -21,7 +21,7 @@ const BsCatogeries = () => {
 
   return (
     <Container className="py-4 bs-Catogeries">
-      <Row className="gy-4   ">
+      <Row className="g-4">
          {images.map((image, index) => (
           <Col
             key={index}

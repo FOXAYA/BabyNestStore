@@ -18,7 +18,7 @@ class TrendyClothing extends Component {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "90vh",
-            }}
+            }}  
           >
             <WaveBottom className="wave-top" fill="#fff" />
 
