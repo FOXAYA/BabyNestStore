@@ -13,7 +13,7 @@ const AnimatedNumber = ({ target }) => {
 
     useEffect(() => {
         let start = 0;
-        const duration = 2000;// مدة الحركة
+        const duration = 2000; // مدة الحركة
         const step = target / (duration / 16); // الخطوة بناءً على عدد الإطارات
         const interval = setInterval(() => {
         start += step;
