@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import "../Styles/BestSeller.css";
 import sweet from "../assets/images/product-category5.jpg";
 import swim from "../assets/images/product-category6.jpg";
@@ -18,14 +19,28 @@ const BsCatogeries = () => {
   ];
 
   return (
-    <div className="container d-flex gap-4 bs-Catogeries py-4">
-      {images.map((image, index) => (
-        <div key={index} className="images text-center ">
-          <img src={image.src} alt={image.alt} className="image" />
-          <p className="alt mt-2">{image.alt}</p>
-        </div>
-      ))}
-    </div>
+    <Container className="py-4">
+      <Row className="gy-4 bs-Catogeries">
+        {images.map((image, index) => (
+          <Col
+            key={index}
+            xs={6}
+            sm={4}
+            md={3}
+            lg={2}
+            className="text-center d-flex flex-column align-items-center images"
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="img-fluid rounded"
+            />
+            <p className="mt-2 alt">{image.alt}</p>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 };
+
 export default BsCatogeries;
