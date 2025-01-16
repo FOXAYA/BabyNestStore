@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import "../Styles/BestSeller.css";
 import sweet from "../assets/images/product-category5.jpg";
 import swim from "../assets/images/product-category6.jpg";
@@ -7,6 +6,8 @@ import toys from "../assets/images/product-category7.jpg";
 import jackets from "../assets/images/product-category8.jpg";
 import denim from "../assets/images/product-category9.jpg";
 import dress from "../assets/images/product-category10.jpg";
+import { Container, Row, Col } from "react-bootstrap";
+
 
 const BsCatogeries = () => {
   const images = [
@@ -19,9 +20,9 @@ const BsCatogeries = () => {
   ];
 
   return (
-    <Container className="py-4">
-      <Row className="gy-4 bs-Catogeries">
-        {images.map((image, index) => (
+    <Container className="py-4 bs-Catogeries">
+      <Row className="gy-4   ">
+         {images.map((image, index) => (
           <Col
             key={index}
             xs={6}
@@ -33,7 +34,7 @@ const BsCatogeries = () => {
             <img
               src={image.src}
               alt={image.alt}
-              className="img-fluid rounded images"
+              className="img-fluid rounded image"
             />
             <p className="mt-2 alt">{image.alt}</p>
           </Col>
@@ -44,3 +45,4 @@ const BsCatogeries = () => {
 };
 
 export default BsCatogeries;
+

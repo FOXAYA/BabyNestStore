@@ -2,8 +2,12 @@
 .bs-product-2 {
   background-color: var(--theme-color-bd_color);
 }
-/* Best Sellers Catogries */
-.bs-Catogeries .images {
+/* Best Sellers Cato
+gries */
+.bs-Catogeries .row:hover {
+  color: var(--theme-color-bd_color);
+}
+.bs-Catogeries .image {
   width: 190px;
   height: 190px;
   border-radius: 8%;
@@ -25,19 +29,21 @@
   -ms-transition: color 0.3s ease;
   -o-transition: color 0.3s ease;
 }
-
-.bs-Catogeries .images:hover .alt {
-  color: var(--theme-color-text_hover);
-}
-
-.bs-Catogeries .images:hover {
+.bs-Catogeries .image:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
-
+.bs-Catogeries .alt:hover {
+  color: var( --theme-color-text_hover);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
 .bs-card .image-container {
   background-color: var(--theme-color-bd_color) !important;
   border: none !important;
@@ -85,7 +91,7 @@
   -o-border-radius: 30px;
 }
 .all-icons {
-  position: sticky;
+  position: relative;
 }
 .bs-icon-1 {
   width: 25px;
