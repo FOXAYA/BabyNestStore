@@ -2,6 +2,7 @@ import React from "react";
 import ContactUs from "../contact/ContactUs";
 import { Container } from "react-bootstrap";
 import AboutHeader from "./AboutHeader";
+import Navbar from "../Navbar/Navbar"
 
 
 
@@ -9,6 +10,7 @@ import AboutHeader from "./AboutHeader";
 const AboutUs = () => {
     return (
         <>
+        <Navbar />
         <AboutHeader />
             <Container>
                 
