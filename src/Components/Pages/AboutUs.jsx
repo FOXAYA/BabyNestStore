@@ -29,6 +29,11 @@ const AboutUs = () => {
                     className="d-flex justify-content-center"
                     style={{ background: "#F8F4EC", borderRadius: "10px" }}
                     >
+                        <div>
+                            <h6>Toys and clothing</h6>
+                            <h4>Your children deserve the best</h4>
+                            
+                        </div>
                     </Col>
                 </Row>
             </Container>
