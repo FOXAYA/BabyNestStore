@@ -27,13 +27,13 @@ const BsCatogeries = () => {
             xs={6}
             sm={4}
             md={3}
-            lg={2}
-            className="text-center d-flex flex-column align-items-center images"
+            lg={6}
+            className="text-center d-flex flex-column align-items-center justify-content-center"
           >
             <img
               src={image.src}
               alt={image.alt}
-              className="img-fluid rounded"
+              className="img-fluid rounded images"
             />
             <p className="mt-2 alt">{image.alt}</p>
           </Col>
