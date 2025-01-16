@@ -1,9 +1,18 @@
 import React from "react";
-import ContactUs from "../contact/ContactUs";
+import Footer2 from "../Footer/Footer2";
 import { Container, Row, Col } from "react-bootstrap";
 import AboutHeader from "./AboutHeader";
 import Navbar from "../Navbar/Navbar"
 import img1 from "../assets/images/about-image1.jpg"
+import img2 from "../assets/images/blog2.jpg"
+
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
+//import Forms from "./Form"
+
+import Numbers from "./Number";
+
 
 
 
@@ -39,20 +48,42 @@ const AboutUs = () => {
                             <p>Sit voluptatem accusantium doloremque laudantium,
                             totam rem aperiam. Sed ut perspiciatis unde omnis iste.</p>
 
+                            <Numbers />
+
                         </div>
                     </Col>
                 </Row>
             </Container>
 
-            <div>
-                <img src={img1} className="d-block w-100" alt="..."/>
+            <div
+            style={{
+            backgroundImage: `url(${img2})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            }}
+            >
+                <div
+                style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.67)", // لون خلفية شبه شفاف
+                    borderRadius: "15px",
+                    padding: "30px",
+                    maxWidth: "600px",
+                    width: "50%",
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                    }}
+                >
+                    <h2 className="text-center mb-4" style={{ fontWeight: "bold" }}>
+                        Contact Us
+                    </h2>
+                    {/*<Forms />*/}
+                </div>
             </div>
-        
-        <ContactUs />
-        
-        
+        <Footer2 />
         </>
-
     );
 };
 
