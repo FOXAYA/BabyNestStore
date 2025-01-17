@@ -12,7 +12,7 @@ class Clients extends Component {
   render() {
     const images = [img1, img2, img3, img4, img5, img6];
     return (
-      <Container className="py-4">
+      <Container className="py-4 mt-4">
         <Row >
           {images.map((image, index) => (
             <Col key={index} xs={6} sm={6} md={3} lg={2}>
