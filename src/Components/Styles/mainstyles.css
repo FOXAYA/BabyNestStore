@@ -5,7 +5,7 @@
   --theme-color-bg_color: #ffffff;
   --theme-color-bd_color: #f8f4eb;
   --theme-color-text: rgb(100, 102, 114);
- --theme-color-text_light: #8e919d;
+  --theme-color-text_light: #8e919d;
   --theme-color-text_dark: #132640;
   --theme-color-extra_bg_color: #1f2834;
   --theme-color-text_link: #eea12c;
@@ -80,7 +80,6 @@ a {
   }
 }
 /* End responsive home */
-
 
 .slider {
   -webkit-appearance: none;

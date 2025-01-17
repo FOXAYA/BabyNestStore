@@ -1,9 +1,4 @@
-/* Best Sellers product */
-.bs-product-2 {
-  background-color: var(--theme-color-bd_color);
-}
-/* Best Sellers Cato
-gries */
+/* Best Sellers Catogries */
 .bs-Catogeries .row:hover {
   color: var(--theme-color-bd_color);
 }
@@ -50,44 +45,49 @@ gries */
 }
 /* Best Seller product */
 .bs-product {
-  height: 100vh;
+  height: auto; /* Allow dynamic height */
   padding: 0 !important;
 }
-.child-img {
-  max-width: 100%;
-  height: 100vh;
-  border-radius: 5%;
-  
-}
-.bs-card-container {
-  max-width: 100%;
-  border-radius: 5%;
-  max-height: 100vh;
+
+.bs-product-2 {
   background-color: var(--theme-color-bd_color);
 }
+
+.child-img {
+  width: 100%; /* Adapt to container */
+  height: 100%; /* Maintain aspect ratio */
+  border-radius: 5%;
+}
+
+.bs-card-container {
+  width: 100%; /* Flexibility for responsiveness */
+  border-radius: 5%;
+  max-height: 100%; /* Avoid fixed height for smaller screens */
+  background-color: var(--theme-color-bd_color);
+}
+
 .bs-product .row {
-  max-height: 100vh;
-  max-width: 100%;
+  width: 100%;
+  margin: 0; /* Remove excess margins */
 }
 
 .bs-card {
-  width: 70%;
-  height: auto;
-  margin: auto auto;
+  width: 100%; /* Full width for smaller screens */
+  max-width: 70%; /* Limit width on larger screens */
+  margin: auto;
   border: none !important;
   background-color: var(--theme-color-bd_color) !important;
 }
+
 .bs-card .card-body {
   background-color: var(--theme-color-bd_color);
 }
+
 .bs-card .product-image {
   border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
 }
-.bs-icon-1 {
+
+/* .bs-icon-1 {
   width: 25px;
   height: 25px;
   transform: translate(50px, -640px);
@@ -175,4 +175,4 @@ gries */
   -moz-transform: translate(590px, -650px);
   -ms-transform: translate(590px, -650px);
   -o-transform: translate(590px, -650px);
-}
+} */
