@@ -12,6 +12,7 @@ const AutumnCollection = () => {
         category="OuterWear"
         columns={4}
       />
+
       <div className="Shop_btn text-center">
         <ButtonUi
           className="rounded-5 px-5 py-3 text-white Shop_btn"
