@@ -7,6 +7,7 @@ import BestSellers from "./BestSellerLayout";
 import TrendyLayout from "./TrendyLayout";
 import BlogImage from "../Blog/BlogImage";
 import Footer from "../Footer/Footer";
+import AboutUs from "../Pages/AboutUs";
 
 class Layout extends Component {
   render() {
@@ -16,10 +17,12 @@ class Layout extends Component {
         <Home />
         <Clients />
         <HomeCatogories />
-                <BestSellers />
+        <BestSellers />
         <TrendyLayout/>
         <BlogImage />
         <Footer />
+
+        <AboutUs />
       </>
     );
   }

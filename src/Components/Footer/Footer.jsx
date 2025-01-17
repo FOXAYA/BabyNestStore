@@ -41,7 +41,7 @@ const Footer = () => {
         </Row>
 
         {/* Instagram Images Section */}
-        <Row className="justify-content-center g-5 ">
+        <Row className="justify-content-center g-4 ">
           {[
             footerimg1,
             footerimg2,

@@ -1,10 +1,13 @@
 import React from "react";
 import Footer2 from "../Footer/Footer2";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Carousel } from "react-bootstrap";
 import AboutHeader from "./AboutHeader";
 import Navbar from "../Navbar/Navbar"
 import img1 from "../assets/images/about-image1.jpg"
 import img2 from "../assets/images/blog2.jpg"
+import img3 from "../assets/images/cathy-image1.jpg"
+import img4 from "../assets/images/linda-image2.jpg"
+import img5 from "../assets/images/jennifer-image3.jpg"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -80,6 +83,63 @@ const AboutUs = () => {
                     <Forms />
                 </div>
             </div>
+
+
+
+               {/* إضافة الكارسول */}
+                <Container className="my-5">
+                
+                <Carousel>
+                    <Carousel.Item>
+                        <div className="text-center mb-5">
+                            <img
+                                className="rounded-circle"
+                                src={img3}
+                                alt="Client 1"
+                                style={{ width: "100px", height: "100px", objectFit: "cover", marginTop:" 60px" }}
+                            />
+                            <p className="mt-3">
+                                "Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia<br/> voluptas sit aspernatur
+                                aut odit aut fugit, sed. Beatae vitae dicta. Adipiscing<br/> elit, sed do eiusmod tempor incididunt."
+                            </p>
+                            <h3>Cathy Gordon</h3>
+                            <h6>Client</h6>
+                        </div>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <div className="text-center mb-5">
+                            <img
+                                className="rounded-circle"
+                                src={img4}
+                                alt="Client 2"
+                                style={{ width: "100px", height: "100px", objectFit: "cover", marginTop:" 60px" }}
+                            />
+                            <p className="mt-3">
+                                "Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia<br/> voluptas sit aspernatur
+                                aut odit aut fugit, sed. Beatae vitae dicta. Adipiscing<br/> elit, sed do eiusmod tempor incididunt."
+                            </p>
+                            <h3>Linda Moore</h3>
+                            <h6>Client</h6>
+                        </div>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <div className="text-center mb-5">
+                            <img
+                                className="rounded-circle"
+                                src={img5}
+                                alt="Client 3"
+                                style={{ width: "100px", height: "100px", objectFit: "cover", marginTop:" 60px" }}
+                            />
+                            <p className="mt-3">
+                                "Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia<br/> voluptas sit aspernatur
+                                aut odit aut fugit, sed. Beatae vitae dicta. Adipiscing<br/> elit, sed do eiusmod tempor incididunt."
+                            </p>
+                            <h3>Jennifer Lee</h3>
+                            <h6>Client</h6>
+                        </div>
+                    </Carousel.Item>
+                </Carousel>
+            </Container>
         <Footer2 />
         </>
     );
