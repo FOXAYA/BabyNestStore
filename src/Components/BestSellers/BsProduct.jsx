@@ -15,8 +15,8 @@ import "../Styles/BestSeller.css";
 const BsProduct = () => {
   return (
     <Container className="my-5 bs-product py-4">
-      <Row className="mt-6 row">
-        <Col md={6}>
+      <Row className="mt-6 row gy-4">
+        <Col xs={12} md={6}>
           <div
             className="child-img"
             style={{
@@ -28,7 +28,7 @@ const BsProduct = () => {
           ></div>
         </Col>
 
-        <Col md={6} className="bs-card-container">
+        <Col xs={12} md={6} className="bs-card-container">
           <ProductCard
             className="bs-card"
             products={Product}
