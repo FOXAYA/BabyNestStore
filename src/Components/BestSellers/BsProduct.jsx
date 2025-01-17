@@ -3,20 +3,20 @@ import img1 from "../../Components/assets/images/product-image12.png";
 import ProductCard from "../shop/ProductCard";
 import Product from "../shop/GaleryData";
 import "../Styles/BestSeller.css";
-import {
-  IconOne,
-  IconSeven,
-  IconThree,
-  IconSix,
-  IconTen,
-  IconNine,
-} from "../animation/IconsAnimated";
+// import {
+//   IconOne,
+//   IconSeven,
+//   IconThree,
+//   IconSix,
+//   IconTen,
+//   IconNine,
+// } from "../animation/IconsAnimated";
 
 const BsProduct = () => {
   return (
     <Container className="my-5 bs-product py-4">
-      <Row className="mt-6 row">
-        <Col md={6}>
+      <Row className="mt-6 row gy-4">
+        <Col xs={12} md={6}>
           <div
             className="child-img"
             style={{
@@ -28,7 +28,7 @@ const BsProduct = () => {
           ></div>
         </Col>
 
-        <Col md={6} className="bs-card-container">
+        <Col xs={12} md={6} className="bs-card-container">
           <ProductCard
             className="bs-card"
             products={Product}
@@ -36,7 +36,7 @@ const BsProduct = () => {
             productId={33}
             columns={1}
           />
-          <div>
+          {/* <div>
             <IconOne className="bs-icon-1 all-icons " />
             <IconTen className="bs-icon-2 all-icons" />
           </div>
@@ -52,7 +52,7 @@ const BsProduct = () => {
             <IconOne className="bs-icon-7 all-icons" />
             <IconSix className="bs-icon-8 all-icons" />
             <IconOne className="bs-icon-9 all-icons" />
-          </div>
+          </div> */}
         </Col>
       </Row>
     </Container>

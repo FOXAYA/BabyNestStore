@@ -6,6 +6,8 @@ import toys from "../assets/images/product-category7.jpg";
 import jackets from "../assets/images/product-category8.jpg";
 import denim from "../assets/images/product-category9.jpg";
 import dress from "../assets/images/product-category10.jpg";
+import { Container, Row, Col } from "react-bootstrap";
+
 
 const BsCatogeries = () => {
   const images = [
@@ -18,14 +20,29 @@ const BsCatogeries = () => {
   ];
 
   return (
-    <div className="container d-flex gap-4 bs-Catogeries py-4">
-      {images.map((image, index) => (
-        <div key={index} className="images text-center ">
-          <img src={image.src} alt={image.alt} className="image" />
-          <p className="alt mt-2">{image.alt}</p>
-        </div>
-      ))}
-    </div>
+    <Container className="py-4 bs-Catogeries">
+      <Row className="g-4">
+         {images.map((image, index) => (
+          <Col
+            key={index}
+            xs={6}
+            sm={4}
+            md={3}
+            lg={2}
+            className="text-center d-flex flex-column align-items-center justify-content-center"
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="img-fluid rounded image"
+            />
+            <p className="mt-2 alt">{image.alt}</p>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 };
+
 export default BsCatogeries;
+

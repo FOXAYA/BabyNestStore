@@ -18,11 +18,11 @@ class TrendyClothing extends Component {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "90vh",
-            }}
+            }}  
           >
             <WaveBottom className="wave-top" fill="#fff" />
 
-            <Container className="d-flex flex-column align-items-start justify-content-between">
+            <Container fluid className="d-flex flex-column align-items-start justify-content-between">
               <div className="trendy-text">
                 <p className="subtitle">TRENDY CLOTHING</p>
                 <h1 className="main-title">
