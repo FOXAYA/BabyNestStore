@@ -1,21 +1,15 @@
 import React from "react";
-import Footer2 from "../Footer/Footer2";
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 import AboutHeader from "./AboutHeader";
 import Navbar from "../Navbar/Navbar"
+import Numbers from "./Number";
+import Forms from "./Forms"
+import Footer2 from "../Footer/Footer2";
 import img1 from "../assets/images/about-image1.jpg"
 import img2 from "../assets/images/blog2.jpg"
 import img3 from "../assets/images/cathy-image1.jpg"
 import img4 from "../assets/images/linda-image2.jpg"
 import img5 from "../assets/images/jennifer-image3.jpg"
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import Forms from "./Forms"
-import Numbers from "./Number";
-
-
-
 
 
 const AboutUs = () => {
@@ -24,7 +18,7 @@ const AboutUs = () => {
         <Navbar />
         <AboutHeader />
             <Container className="my-5">
-                <Row className="mt-6">
+                <Row className="mt-5">
                     <Col md={6} className="d-flex justify-content-center">
                     <img
                         src={img1}
@@ -50,45 +44,42 @@ const AboutUs = () => {
                             totam rem aperiam. Sed ut perspiciatis unde omnis iste.</p>
 
                             <Numbers />
-
                         </div>
                     </Col>
                 </Row>
             </Container>
 
             <div
+            className="d-flex align-items-center justify-content-center"
             style={{
-            backgroundImage: `url(${img2})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            minHeight: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+                backgroundImage: `url(${img2})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                minHeight: "100vh",
             }}
             >
                 <div
-                style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.67)", // لون خلفية شبه شفاف
+                    className="container p-4"
+                    style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.37)",
                     borderRadius: "15px",
-                    padding: "30px",
-                    maxWidth: "600px",
-                    width: "50%",
                     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+
                     }}
                 >
-                    <h2 className="text-center mb-4" style={{ fontWeight: "bold" }}>
-                        Contact Us
-                    </h2>
-                    <Forms />
+                    <div className="row justify-content-center">
+                        <div className="col-12 col-md-8 col-lg-6">
+                            <h2 className="text-center mb-4" style={{ fontWeight: "bold" }}>
+                            Contact Us
+                            </h2>
+                            <Forms />
+                        </div>
+                    </div>
                 </div>
             </div>
 
-
-
-               {/* إضافة الكارسول */}
-                <Container className="my-5">
-                
+           {/* add carousel */}
+            <Container className="my-5">
                 <Carousel>
                     <Carousel.Item>
                         <div className="text-center mb-5">
