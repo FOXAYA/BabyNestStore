@@ -1,6 +1,6 @@
 import React from "react";
 import { Offcanvas } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom"; 
 import { FaTwitterSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaDribbble } from "react-icons/fa";
@@ -14,7 +14,7 @@ const Sidebar = ({ show, handleClose }) => {
     <Offcanvas show={show} onHide={handleClose} placement="end">
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>
-          <Link to="/"> {/* Wrap logo in Link component */}
+          <Link to="/"> 
             <img src={footerlogo} alt="Logo" width={60} className="m-3" fluid />
           </Link>
         </Offcanvas.Title>
