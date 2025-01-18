@@ -203,3 +203,27 @@ width: 100%;} */
 .slider-bg {
   background-color: var(--theme-color-bd_color);
 }
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.animation-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* Ensure it's behind the content */
+  pointer-events: none; /* Prevent interaction with the animation */
+}
+
+.custom-carousel {
+  position: relative;
+  z-index: 2; /* Place the carousel content above the animation */
+}
+
+
+
+

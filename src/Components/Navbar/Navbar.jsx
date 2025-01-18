@@ -12,8 +12,10 @@ import Sidebar from "../SideBar/SideBar";
 import SearchBar from "../SearchBar/SearchBar";
 import { useBasket } from "../shop/BasketContext";
 import "../Styles/Navbar.css";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 const NavbarLayout = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
   const [show, setShow] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
   const target = useRef(null);
@@ -49,6 +51,9 @@ const NavbarLayout = () => {
     }
   };
 
+  const handleMouseEnter = () => setShowDropdown(true);
+  const handleMouseLeave = () => setShowDropdown(false);
+
   return (
     <Navbar expand="lg" className="bgground p-3 sticky-top">
       <Container>
@@ -61,6 +66,23 @@ const NavbarLayout = () => {
             <Nav.Link href="/" className="custom-link position-relative text-dark ">
               Home
             </Nav.Link>
+            <NavDropdown
+              title="Pages"
+              id="basic-nav-dropdown"
+              className="link-underline-custom position-relative text-dark"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              show={showDropdown}
+            >
+              <NavDropdown.Item as={Link} to="/aboutus">
+                About Us
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Our Services
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Our Team</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.4">Pricing</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link href="#" className="link-underline-custom position-relative text-dark">
               Pages
             </Nav.Link>

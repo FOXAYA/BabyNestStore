@@ -6,6 +6,7 @@ import myimg3 from "../assets/images/home-3.png";
 import ButtonUi from "../ui/ButtonUi";
 import { WaveBottom, WaveTop } from "../animation/Wave";
 import "../Styles/Home.css";
+import RandomIcons from "../animation/IconsIcos";
 
 const slides = [
   {
@@ -55,13 +56,20 @@ class Home extends Component {
 
   render() {
     return (
-      <>
+      <div className="home-container">
+        {/* Background Animation */}
+        <div className="animation-background">
+          {/* Only render group "one" */}
+          <RandomIcons group="one" />
+        </div>
+
+        {/* Carousel Content */}
         <WaveTop />
         <Carousel className="custom-carousel slider-bg">
           {slides.map(this.renderSlide)}
         </Carousel>
         <WaveBottom />
-      </>
+      </div>
     );
   }
 }
