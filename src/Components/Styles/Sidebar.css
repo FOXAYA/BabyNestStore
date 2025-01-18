@@ -1,0 +1,68 @@
+/* Updated CSS to remove circles around social media icons */
+
+.social-icons {
+  display: flex;
+  justify-content: center; 
+  gap: 4px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li {
+  display: inline-flex;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #c4c0c0;
+  border-radius: 50%;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 18px;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, color 0.3s ease;
+  -ms-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.social-link:hover {
+  color: #fff;
+}
+
+.social-link.facebook:hover {
+  background-color: #3b5998;
+}
+
+.social-link.twitter:hover {
+  background-color: #1da1f2;
+}
+
+.social-link.basketball:hover {
+  background-color: #f48c06;
+}
+
+.social-link.instagram:hover {
+  background-color: #e4405f;
+}
+
+.social-flex {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  font-weight: bolder;
+}
+
+
+.social-link span {
+  font-weight: bold;
+}

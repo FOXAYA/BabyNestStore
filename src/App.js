@@ -23,8 +23,7 @@ class App extends Component {
             <Route path="/blog/:id" element={<BabyShop />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/aboutus" element={<AboutUS/>} />
-            <Route path="/shop" element={<Shop />} />
-
+            <Route path="/shop/*" element={<Shop />} />
           </Routes>
         </Router>
       </BasketProvider>
