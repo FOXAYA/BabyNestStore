@@ -4,46 +4,53 @@ import CategoryFilter from "./CategryFilter";
 import SizeFilter from "./SizeFilter";
 import ColorFilter from "./ColorFilter";
 import BrandFilter from "./BrandFilter";
-import PriceFilter from "./PriceFilter";
+
+
 
 const GalleryItems = ({ categories, sizes, colors, brands, filters, onFilterChange }) => {
   return (
     <div className="container my-4 p-3">
-      {/* Filter by Category */}
-      <CategoryFilter
-        categories={categories}
-        selectedCategory={filters.category}
-        onSelectCategory={(category) => onFilterChange("category", category)}
-      />
+      <div className="row">
+        {/* Filter by Category */}
+        <div className="col-12 mb-3">
+          <CategoryFilter
+            categories={categories}
+            selectedCategory={filters.category}
+            onSelectCategory={(category) => onFilterChange("category", category)}
+          />
+        </div>
 
-      {/* Filter by Size */}
-      <SizeFilter
-        sizes={sizes}
-        selectedSize={filters.size}
-        onSelectSize={(size) => onFilterChange("size", size)}
-      />
+        {/* Filter by Size */}
+        <div className="col-12 mb-3">
+          <SizeFilter
+            sizes={sizes}
+            selectedSize={filters.size}
+            onSelectSize={(size) => onFilterChange("size", size)}
+          />
+        </div>
 
-      {/* Filter by Color */}
-      <ColorFilter
-        colors={colors}
-        selectedColor={filters.color}
-        onSelectColor={(color) => onFilterChange("color", color)}
-      />
+        {/* Filter by Color */}
+        <div className="col-12 mb-3">
+          <ColorFilter
+            colors={colors}
+            selectedColor={filters.color}
+            onSelectColor={(color) => onFilterChange("color", color)}
+          />
+        </div>
 
-      {/* Filter by Brand */}
-      <BrandFilter
-        brands={brands}
-        selectedBrand={filters.brand}
-        onSelectBrand={(brand) => onFilterChange("brand", brand)}
-      />
+        {/* Filter by Brand */}
+        <div className="col-12 mb-3">
+          <BrandFilter
+            brands={brands}
+            selectedBrand={filters.brand}
+            onSelectBrand={(brand) => onFilterChange("brand", brand)}
+          />
+        </div>
 
-      {/* Filter by Price */}
-      <PriceFilter
-        priceRange={filters.price}
-        onRangeChange={(priceRange) => onFilterChange("price", priceRange)}
-      />
+            </div>
     </div>
   );
 };
+
 
 export default GalleryItems;

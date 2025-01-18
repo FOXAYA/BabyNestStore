@@ -11,7 +11,7 @@ const ColorFilter = ({ colors, onSelectColor }) => {
   };
 
   if (!colors || !Array.isArray(colors)) {
-    return <p>No colors available</p>; // رسالة خطأ أو محتوى افتراضي
+    return <p>No colors available</p>; 
   }
 
   return (
@@ -51,4 +51,3 @@ const ColorFilter = ({ colors, onSelectColor }) => {
 };
 
 export default ColorFilter;
-

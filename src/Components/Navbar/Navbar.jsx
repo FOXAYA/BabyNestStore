@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -8,17 +8,46 @@ import { CiSearch } from "react-icons/ci";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
 import { SlBag } from "react-icons/sl";
 import ShoppingCard from "../shop/ShopingCard";
+import Sidebar from "../SideBar/SideBar";
+import SearchBar from "../SearchBar/SearchBar";
 import { useBasket } from "../shop/BasketContext";
 import "../Styles/Navbar.css";
 
 const NavbarLayout = () => {
   const [show, setShow] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
   const target = useRef(null);
-  const handleToggle = () => setShow(!show);
-  const handleClose = () => setShow(false);
-  const { cartItems } = useBasket();
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  const handleToggle = () => setShow(!show);
+  const handleClose = () => {
+    setShow(false);
+    setShowSidebar(false);
+  };
+  const handleToggleSidebar = () => setShowSidebar(!showSidebar);
+  const { cartItems } = useBasket();
   const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const [showSearch, setShowSearch] = useState(false);
+
+  const handleBlogClick = () => {
+    if (location.pathname === "/") {
+     
+      const blogSection = document.getElementById("blog");
+      if (blogSection) {
+        blogSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // استحدمنا السكرول هنا عشان لما نضغط عالبلوج واحنا في صفجة تانية يروح عالرئيسة وينزل للبلوج 
+      navigate("/");
+      setTimeout(() => {
+        const blogSection = document.getElementById("blog");
+        if (blogSection) {
+          blogSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500); 
+    }
+  };
 
   return (
     <Navbar expand="lg" className="bgground p-3 sticky-top">
@@ -29,60 +58,40 @@ const NavbarLayout = () => {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="m-auto my-2 my-lg-0 nav_bar " navbarScroll>
-            <Nav.Link
-              href="#"
-              className="custom-link  position-relative text-dark "
-            >
+            <Nav.Link href="/" className="custom-link position-relative text-dark ">
               Home
             </Nav.Link>
-            <Nav.Link
-              href="#"
-              className="link-underline-custom position-relative text-dark"
-            >
+            <Nav.Link href="#" className="link-underline-custom position-relative text-dark">
               Pages
             </Nav.Link>
+            {/* تعديل رابط Blog */}
             <Nav.Link
-              href="#blog"
               className="link-underline-custom position-relative text-dark"
+              onClick={handleBlogClick}
             >
               Blog
             </Nav.Link>
-            <Nav.Link
-              href="/shop"
-              className="link-underline-custom position-relative text-dark"
-            >
+            <Nav.Link href="/shop" className="link-underline-custom position-relative text-dark">
               Shop
             </Nav.Link>
-            <Nav.Link
-              href="/contact"
-              className="link-underline-custom  position-relative text-dark"
-            >
+            <Nav.Link href="/contact" className="link-underline-custom position-relative text-dark">
               Contact us
             </Nav.Link>
           </Nav>
           <div className="d-flex align-items-center justify-content-center gap-4 icon-nav">
-            <i
-              className="bi bi-bag position-relative"
-              onClick={handleToggle}
-              ref={target}
-            >
+            <i className="bi bi-bag position-relative" onClick={handleToggle} ref={target}>
               <SlBag className="fs-4 bag-icon" />
-              <span className="badge text-dark position-relative">
-                {itemCount}
-              </span>{" "}
+              <span className="badge text-dark position-relative">{itemCount}</span>{" "}
             </i>
-            <ShoppingCard
-              show={show}
-              target={target}
-              handleClose={handleClose}
-            />
-
-            <i className="bi bi-search fs-3 ms-3">
-              <CiSearch />{" "}
+            <ShoppingCard show={show} target={target} handleClose={handleClose} />
+            <i className="bi bi-search fs-3 ms-3" onClick={() => setShowSearch(!showSearch)}>
+              <CiSearch />
             </i>
-            <i className="bi bi-grid fs-3">
+            {showSearch && <SearchBar />}
+            <i className="bi bi-grid fs-3" onClick={handleToggleSidebar}>
               <HiOutlineSquares2X2 />
             </i>
+            {showSidebar && <Sidebar show={showSidebar} handleClose={handleClose} />}
           </div>
         </Navbar.Collapse>
       </Container>
