@@ -3,6 +3,7 @@ import img1 from "../../Components/assets/images/product-image12.png";
 import ProductCard from "../shop/ProductCard";
 import Product from "../shop/GaleryData";
 import "../Styles/BestSeller.css";
+import RandomIcons from "../animation/IconsAnimated";
 
 const BsProduct = () => {
   return (
@@ -17,21 +18,25 @@ const BsProduct = () => {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
-              minHeight: "300px", 
-
+              minHeight: "300px",
+              position: "relative", // Ensure this is the reference for absolute positioning of icons
             }}
           ></div>
         </Col>
 
-        {/* Card Section */}
         <Col xs={12} md={6} className="bs-card-container">
+          <div className="icons-container">
+            <RandomIcons group="two" />
+          </div>
           <ProductCard
             className="bs-card"
             products={Product}
             category="Boy"
             productId={33}
             columns={1}
-          />
+          >
+          </ProductCard>
+          {}
         </Col>
       </Row>
     </Container>

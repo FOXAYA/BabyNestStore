@@ -13,6 +13,7 @@ const ProductCard = ({
   productId = null,
   columns = 4,
   className = "",
+  children, 
 }) => {
   const [selectedColors, setSelectedColors] = useState({});
 
@@ -112,6 +113,8 @@ const ProductCard = ({
                       ></button>
                     ))}
                   </div>
+                    {/* محتوى مخصص يمرر عبر children */}
+                    {children && <div className="custom-content">{children}</div>}
                 </Card.Body>
               </Card>
             </Col>

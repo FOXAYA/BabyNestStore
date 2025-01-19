@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import mylogo from "../assets/images/logo.png";
+import mylogo from "../assets/images/logo.jpeg";
 import { CiSearch } from "react-icons/ci";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
 import { SlBag } from "react-icons/sl";
@@ -83,10 +83,7 @@ const NavbarLayout = () => {
               <NavDropdown.Item href="#action/3.3">Our Team</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.4">Pricing</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" className="link-underline-custom position-relative text-dark">
-              Pages
-            </Nav.Link>
-            {/* تعديل رابط Blog */}
+           
             <Nav.Link
               className="link-underline-custom position-relative text-dark"
               onClick={handleBlogClick}
