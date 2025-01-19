@@ -10,9 +10,8 @@ import icon10 from "../assets/images/icon-10.svg";
 import icon11 from "../assets/images/icon-5.svg";
 import icon12 from "../assets/images/icon-8.svg";
 import icon13 from "../assets/images/icon-4.svg";
-
-
 import "../Styles/Animation.css";
+
 
 const groups = {
   one: {

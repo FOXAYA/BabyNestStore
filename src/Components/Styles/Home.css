@@ -115,13 +115,6 @@
   height: 70px;
 }
 
-/* positions: [
-  { top: "10%", left: "40%" },
-  { top: "30%", left: "50%" },
-  { top: "50%", left: "50%" },
-  { top: "70%", left: "90%" },
-  { top: "70%", left: "40%" },
-], */
 /******************** Media Queries ************************/
 
 @media (max-width: 575.98px) {
@@ -129,16 +122,12 @@
   .carousel-control-next-icon {
     top: 45%;
   }
-  .animation-background .icons-container > :nth-child(4) {
-    top: 5%;
-    left: 2%;
-  }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
-    top: 48%;
+    top: 40%;
   }
 }
 
@@ -156,6 +145,28 @@
   }
   .slider-text {
     margin-left: 0;
+  }
+  .animation-background .icons-container > img:nth-child(1) {
+    top: 10% !important;
+    left: 10% !important;
+  }
+  .animation-background .icons-container > img:nth-child(2) {
+    top: 27% !important;
+    left: 40% !important;
+  }
+  .animation-background .icons-container > img:nth-child(3) {
+    top: 10% !important;
+    left: 80% !important;
+    width: 40px;
+    height: 40px;
+  }
+  .animation-background .icons-container > img:nth-child(4) {
+    top: 75% !important;
+    left: 90% !important;
+  }
+  .animation-background .icons-container > img:nth-child(5) {
+    top: 70% !important;
+    left: 5% !important;
   }
 }
 
