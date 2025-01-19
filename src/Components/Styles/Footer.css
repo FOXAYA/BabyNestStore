@@ -1,9 +1,10 @@
 footer {
-    width: 100%;
-    max-width: 100%;
-    padding-top: 155px;
-    background-color: #F8F4EB;
-    text-align: center;
+  width: 100%;
+  max-width: 100%;
+  padding-top: 155px;
+  background-color: #f8f4eb;
+  position: relative;
+  text-align: center;
 }
 
 .instagram a {
@@ -114,4 +115,32 @@ footer .footer-bottom span a {
   -ms-transition: transform 0.3s ease;
   -o-transition: transform 0.3s ease;
   -webkit-filter: brightness(0.8);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }
+/* animation */
+.footer-icons .icons-container > img:nth-child(3) {
+  width: 70px;
+  height: 70px;
+}
+
+.footer-icons .icons-container > img:nth-child(3) ,
+.footer-icons .icons-container > img:nth-child(5) {
+  animation: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+}
+
+.footer-icons .icons-container {
+@media (max-width: 768px) {
+  .icon {
+    width: clamp(20px, 8vw, 60px);
+  }
+}}
+
+
