@@ -117,3 +117,10 @@
   width: 160px;
   height: 160px;
 }
+
+@media (max-width: 576px) {
+  .bs-card-container .icons-container > img {
+    width: 40px;
+    height: 40px;
+  }
+}

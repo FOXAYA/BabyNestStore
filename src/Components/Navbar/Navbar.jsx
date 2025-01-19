@@ -40,7 +40,6 @@ const NavbarLayout = () => {
         blogSection.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // استحدمنا السكرول هنا عشان لما نضغط عالبلوج واحنا في صفجة تانية يروح عالرئيسة وينزل للبلوج 
       navigate("/");
       setTimeout(() => {
         const blogSection = document.getElementById("blog");
