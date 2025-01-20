@@ -124,60 +124,10 @@ footer .footer-bottom span a {
 .footer-icons .icons-container > img:nth-child(5) {
   animation: none !important;
   transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  -webkit-animation: none !important;
 }
 
-@media (max-width: 768px) {
-  .footer-icons .icons-container img:nth-child(1) {
-    width: 40px;
-    top: 15% !important;
-    left: 10% !important;
-  }
-
-  .footer-icons .icons-container img:nth-child(2),
-  .footer-icons .icons-container img:nth-child(5),
-  .footer-icons .icons-container img:nth-child(6) {
-    left: 0;
-    width: 20px;
-    top: 0;
-  }
-
-  .footer-icons .icons-container img:nth-child(3) {
-    width: 30px;
-    height: 30px;
-  }
-
-  .footer-icons .icons-container img:nth-child(4) {
-    top: 15% !important;
-    left: 80% !important;
-    width: 40px;
-  }
-
-  .footer-icons .icons-container img:nth-child(7) {
-    width: 90px;
-    height: 70px;
-    left: 70% !important;
-  }
-
-  .footer-icons .icons-container img:nth-child(8) {
-    left: 10% !important;
-    top: 77% !important;
-  }
-}
-@media (min-width: 768px) and (max-width: 1120px) {
-  .footer-icons .icons-container img:nth-child(7) {
-    width: 90px;
-    height: 70px;
-    left: 70% !important;
-  }
-
-  .footer-icons .icons-container img:nth-child(8) {
-    left: 10% !important;
-    top: 77% !important;
-  }
-  .footer-icons .icons-container img:nth-child(4) {
-    top: 20% !important;
-    left: 80% !important;
-    }
-
-
-}
