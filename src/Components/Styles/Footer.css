@@ -1,9 +1,9 @@
 footer {
-    width: 100%;
-    max-width: 100%;
-    padding-top: 155px;
-    background-color: #F8F4EB;
-    text-align: center;
+  width: 100%;
+  padding-top: 155px;
+  background-color: #f8f4eb;
+  position: relative;
+  text-align: center;
 }
 
 .instagram a {
@@ -12,14 +12,17 @@ footer {
   line-height: 20px;
 }
 
-.insta-icon {
+.insta-icon,
+.insta-text {
   color: #202020;
-  font-size: 24px; /*Adjust icon size */
+}
+
+.insta-icon {
+  font-size: 24px;
 }
 
 .insta-text {
   text-decoration: none;
-  color: #202020;
   font-size: 17px;
 }
 
@@ -32,7 +35,6 @@ footer {
 }
 
 /* Social Icons Styles */
-
 .social-icons li {
   display: inline-flex;
 }
@@ -47,8 +49,8 @@ footer {
   border-radius: 50%;
   color: #000;
   text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-transition: background-color 0.3s ease, color 0.3s ease;
   -moz-transition: background-color 0.3s ease, color 0.3s ease;
   -ms-transition: background-color 0.3s ease, color 0.3s ease;
@@ -66,15 +68,12 @@ footer {
 .social-link.facebook:hover {
   background-color: #3b5998;
 }
-
 .social-link.twitter:hover {
   background-color: #1da1f2;
 }
-
 .social-link.basketball:hover {
   background-color: #f48c06;
 }
-
 .social-link.instagram:hover {
   background-color: #e4405f;
 }
@@ -82,7 +81,7 @@ footer {
 footer .footer-bottom {
   text-align: center;
   margin-top: 25px;
-  padding: 15px 0px;
+  padding: 15px 0;
   border-top: 1px solid #c9c0c0;
 }
 
@@ -96,22 +95,89 @@ footer .footer-bottom span a {
   text-decoration: none;
   color: #132640;
 }
+
 .imgs {
   border-radius: 8%;
   position: relative;
   z-index: 100;
-  -webkit-border-radius: 8%;
-  -moz-border-radius: 8%;
-  -ms-border-radius: 8%;
-  -o-border-radius: 8%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  -webkit-transition: transform 0.3s ease, filter 0.3s ease;
+  -moz-transition: transform 0.3s ease, filter 0.3s ease;
+  -ms-transition: transform 0.3s ease, filter 0.3s ease;
+  -o-transition: transform 0.3s ease, filter 0.3s ease;
+
 }
+
 .imgs:hover {
-  transition: transform 0.3s ease;
   transform: scale(1.1);
   filter: brightness(0.8);
-  -webkit-transition: transform 0.3s ease;
-  -moz-transition: transform 0.3s ease;
-  -ms-transition: transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
   -webkit-filter: brightness(0.8);
+
+}
+
+/* Animation */
+.footer-icons .icons-container > img:nth-child(3) {
+  width: 70px;
+  height: 70px;
+}
+.footer-icons .icons-container > img:nth-child(3),
+.footer-icons .icons-container > img:nth-child(5) {
+  animation: none !important;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  .footer-icons .icons-container img:nth-child(1) {
+    width: 40px;
+    top: 15% !important;
+    left: 10% !important;
+  }
+
+  .footer-icons .icons-container img:nth-child(2),
+  .footer-icons .icons-container img:nth-child(5),
+  .footer-icons .icons-container img:nth-child(6) {
+    left: 0;
+    width: 20px;
+    top: 0;
+  }
+
+  .footer-icons .icons-container img:nth-child(3) {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer-icons .icons-container img:nth-child(4) {
+    top: 15% !important;
+    left: 80% !important;
+    width: 40px;
+  }
+
+  .footer-icons .icons-container img:nth-child(7) {
+    width: 90px;
+    height: 70px;
+    left: 70% !important;
+  }
+
+  .footer-icons .icons-container img:nth-child(8) {
+    left: 10% !important;
+    top: 77% !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1120px) {
+  .footer-icons .icons-container img:nth-child(7) {
+    width: 90px;
+    height: 70px;
+    left: 70% !important;
+  }
+
+  .footer-icons .icons-container img:nth-child(8) {
+    left: 10% !important;
+    top: 77% !important;
+  }
+  .footer-icons .icons-container img:nth-child(4) {
+    top: 20% !important;
+    left: 80% !important;
+    }
+
+
 }

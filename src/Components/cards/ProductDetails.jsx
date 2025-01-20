@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { SlBasketLoaded } from "react-icons/sl";
-
 import { Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Product from "../shop/GaleryData";
@@ -21,6 +20,7 @@ const ProductDetailPage = () => {
   const [selectedSize, setSelectedSize] = useState(null);
   const { addToBasket } = useBasket();
 
+  // Load product based on the URL parameter
   useEffect(() => {
     const foundProduct = Product.find((p) => p.id === parseInt(id));
     setProduct(foundProduct);
@@ -35,7 +35,7 @@ const ProductDetailPage = () => {
     }
   }, [id]);
 
-  if (!product) return <p>Loading...</p>;
+  if (!product) return <p>Loading...</p>; // Display loading state until product is fetched
 
   const handleIncrease = () => setQuantity(quantity + 1);
   const handleDecrease = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
@@ -44,12 +44,10 @@ const ProductDetailPage = () => {
   };
 
   // ProductButton Component
-  function ProductButton({ product }) {
-    if (!product.sale) {
-      return null;
-    }
+  const ProductButton = ({ product }) => {
+    if (!product.sale) return null; // Show sale button only if the product is on sale
     return <ButtonUi text={product.sale} className={"btn-1"} />;
-  }
+  };
 
   return (
     <div className="body">
@@ -76,7 +74,7 @@ const ProductDetailPage = () => {
                 <h2>{product.name}</h2>
                 <h5>{product.brand}</h5>
               </div>
-              <div className="d-flex second-details ">
+              <div className="d-flex second-details">
                 <h4>
                   $ {product.price.toFixed(2)} - ${" "}
                   {(product.price + 10).toFixed(2)}
@@ -90,7 +88,7 @@ const ProductDetailPage = () => {
               </div>
 
               {/* Color Selection */}
-              <div className="d-flex colors  ">
+              <div className="d-flex colors">
                 <p className="me-4">Color</p>
                 {product.colors?.map((color, index) => (
                   <button
@@ -122,8 +120,7 @@ const ProductDetailPage = () => {
 
               {/* Quantity Selector */}
               <div className="d-flex align-items-center gap-2 mt-6">
-                <div className="quantity-wrap d-flex  justify-content-around align-items-center">
-
+                <div className="quantity-wrap d-flex justify-content-around align-items-center">
                   <button
                     className="quantity-btn decrement"
                     onClick={handleDecrease}
@@ -132,7 +129,6 @@ const ProductDetailPage = () => {
                     <IoIosArrowDown className="fs-3" />
                   </button>
                   <span className="quantity-display">{quantity}</span>
-
                   <button
                     className="quantity-btn increment"
                     onClick={handleIncrease}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "../Styles/BlogImage.module.css";
-
 import blog1 from "../assets/images/blog1.jpg";
 import blog2 from "../assets/images/blog2.jpg";
 import blog3 from "../assets/images/blog3.jpg";
@@ -10,6 +9,7 @@ import blog5 from "../assets/images/blog5.jpg";
 
 export default function BlogImage() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  
   const BlogImages = [
     {
       id: 1,
@@ -59,23 +59,28 @@ export default function BlogImage() {
   ];
 
   useEffect(() => {
+    // Set up an interval to cycle through images every 5 seconds
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % BlogImages.length);
     }, 5000);
+
+    // Cleanup interval on component unmount
     return () => clearInterval(interval);
   }, [BlogImages.length]);
 
   const getDisplayImages = () => {
     const totalImages = BlogImages.length;
-    const isSmallScreen = window.innerWidth <= 767;
+    const isSmallScreen = window.innerWidth <= 767; // Check if the screen is small
 
     if (isSmallScreen) {
+      // Show two images on small screens
       return [
         BlogImages[currentIndex % totalImages],
         BlogImages[(currentIndex + 1) % totalImages],
-      ]; // ع في الشاشات الصغيرة
+      ];
     }
 
+    // Show four images on larger screens
     const indices = [];
     for (let i = 0; i < 4; i++) {
       indices.push((currentIndex + i) % totalImages);
@@ -90,35 +95,33 @@ export default function BlogImage() {
         <h4>Trending now</h4>
         <h1>More news in our blog</h1>
       </div>
+      
       <div className={styles.blogContainer}>
-        {getDisplayImages().map((blogImage, index) => (
-          <div key={index} className={styles.blogItem}>
+        {getDisplayImages().map((blogImage) => (
+          <div key={blogImage.id} className={styles.blogItem}>
             <Link
               to={`/blog/${blogImage.id}`}
-              state={{ blogImage }} // تمرير بيانات المدونة كخصائص
+              state={{ blogImage }} // Passing blog data to the linked route
               className={styles.imageContainer}
             >
               <img src={blogImage.image} alt={blogImage.title} />
 
               <div className={styles.contentArea}>
                 <h3>{blogImage.title}</h3>
-                <p>
-                  {blogImage.date} | {blogImage.comments}
-                </p>
+                <p>{blogImage.date} | {blogImage.comments}</p>
                 <p>{blogImage.category}</p>
               </div>
             </Link>
           </div>
         ))}
       </div>
+
       <div className={styles.dotsContainer}>
         {BlogImages.map((_, index) => (
           <span
             key={index}
-            className={`${styles.dot} ${
-              index === currentIndex ? styles.active : ""
-            }`}
-            onClick={() => setCurrentIndex(index)}
+            className={`${styles.dot} ${index === currentIndex ? styles.active : ""}`}
+            onClick={() => setCurrentIndex(index)} // Change index when dot is clicked
           ></span>
         ))}
       </div>

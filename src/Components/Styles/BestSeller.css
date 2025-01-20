@@ -64,6 +64,7 @@
   border-radius: 5%;
   max-height: 100%; /* Avoid fixed height for smaller screens */
   background-color: var(--theme-color-bd_color);
+  position: relative; /* Ensure the container is positioned correctly */
 }
 
 .bs-product .row {
@@ -77,6 +78,7 @@
   margin: auto;
   border: none !important;
   background-color: var(--theme-color-bd_color) !important;
+  position: relative;
 }
 
 .bs-card .card-body {
@@ -86,8 +88,7 @@
 .bs-card .product-image {
   border-radius: 30px;
 }
-
-/* .bs-icon-1 {
+.bs-icon-1 {
   width: 25px;
   height: 25px;
   transform: translate(50px, -640px);
@@ -107,14 +108,14 @@
   -o-transform: translate(300px, -700px);
 }
 
-.bs-icon-3 {
-  width: 170px;
-  height: 170px;
-  transform: translate(10px, -640px);
-  -webkit-transform: translate(10px, -640px);
-  -moz-transform: translate(10px, -640px);
-  -ms-transform: translate(10px, -640px);
-  -o-transform: translate(10px, -640px);
+.child-img {
+  position: relative;
+  min-height: 300px;
+}
+
+.bs-card {
+  position: relative;
+  z-index: 1;
 }
 
 .bs-icon-4 {
@@ -175,4 +176,4 @@
   -moz-transform: translate(590px, -650px);
   -ms-transform: translate(590px, -650px);
   -o-transform: translate(590px, -650px);
-} */
+}

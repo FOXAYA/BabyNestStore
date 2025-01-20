@@ -1,7 +1,8 @@
 import ProductCard from "../shop/ProductCard";
 import Product from "../shop/GaleryData";
 
-const BsCards= () => {
+// Component for rendering a ProductCard with "Best Sellers" details
+const BsCards = () => {
   return (
     <ProductCard
       title="Our Favs"

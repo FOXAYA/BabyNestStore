@@ -15,7 +15,7 @@ const SizeFilter = ({ sizes = [], selectedSize, onSelectSize }) => {
             <button
               className={`btn btn-light text-start p-2 ${selectedSize === size ? 'btn-primary' : ''}`}
               style={{
-                borderRadius: 5, // Add border radius for rounded corners
+                borderRadius: 5, 
               }}
               onClick={() => onSelectSize(size)}
             >
