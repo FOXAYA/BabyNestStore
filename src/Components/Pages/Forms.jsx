@@ -60,141 +60,155 @@ const Forms = () => {
     };
 
     return (
-<div>
-         {/* العمود الأيمن */}
-         <div style={{ flex: "1", paddingLeft: "20px", padding: "30px", borderRadius: "8px" }}>
-         <form onSubmit={handleSubmit}>
-             <div style={{ display: "flex", gap: "20px", marginBottom: "20px" }}>
-                 <input
-                     type="text"
-                     name="name"
-                     value={formData.name}
-                     onChange={handleInputChange}
-                     placeholder="Name"
-                     style={{
-                         flex: "1",
-                         padding: "15px",
-                         border: "1px solid #ccc",
-                         borderRadius: "4px",
-                         fontSize: "16px",
-                     }}
-                 />
-                 {errors.name && <div style={{ color: "red", fontSize: "12px" }}>{errors.name}</div>}
-                 <input
-                     type="email"
-                     name="email"
-                     value={formData.email}
-                     onChange={handleInputChange}
-                     placeholder="Email Address"
-                     style={{
-                         flex: "1",
-                         padding: "15px",
-                         border: "1px solid #ccc",
-                         borderRadius: "4px",
-                         fontSize: "16px",
-                     }}
-                 />
-                 {errors.email && <div style={{ color: "red", fontSize: "12px" }}>{errors.email}</div>}
-             </div>
-             <div style={{ display: "flex", gap: "20px", marginBottom: "20px" }}>
-                 <input
-                     type="text"
-                     name="phone"
-                     value={formData.phone}
-                     onChange={handleInputChange}
-                     placeholder="Phone"
-                     style={{
-                         flex: "1",
-                         padding: "15px",
-                         border: "1px solid #ccc",
-                         borderRadius: "4px",
-                         fontSize: "16px",
-                     }}
-                 />
-                 {errors.phone && <div style={{ color: "red", fontSize: "12px" }}>{errors.phone}</div>}
-                 <input
-                     type="text"
-                     name="subject"
-                     value={formData.subject}
-                     onChange={handleInputChange}
-                     placeholder="Subject"
-                     style={{
-                         flex: "1",
-                         padding: "15px",
-                         border: "1px solid #ccc",
-                         borderRadius: "4px",
-                         fontSize: "16px",
-                     }}
-                 />
-                 {errors.subject && <div style={{ color: "red", fontSize: "12px" }}>{errors.subject}</div>}
-             </div>
-             <textarea
-                 name="message"
-                 value={formData.message}
-                 onChange={handleInputChange}
-                 placeholder="How can we help you? Feel free to get in touch!"
-                 rows="5"
-                 style={{
-                     width: "100%",
-                     padding: "15px",
-                     border: "1px solid #ccc",
-                     borderRadius: "4px",
-                     fontSize: "16px",
-                     marginBottom: "20px",
-                 }}
-             />
-             {errors.message && <div style={{ color: "red", fontSize: "12px" }}>{errors.message}</div>}
-             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                 <button
-                     type="submit"
-                     style={{
-                         backgroundColor: "#ffb400",
-                         color: "#fff",
-                         border: "none",
-                         padding: "12px 25px",
-                         borderRadius: "4px",
-                         cursor: "pointer",
-                         fontSize: "16px",
-                     }}
-                 >
-                     Get In Touch
-                 </button>
-                 <div>
-                     <input
-                         type="checkbox"
-                         id="privacy"
-                         name="agree"
-                         checked={formData.agree}
-                         onChange={handleInputChange}
-                     />
-                     <label
-                         htmlFor="privacy"
-                         style={{
-                             marginLeft: "5px",
-                             fontSize: "14px",
-                             color: "#2c2c54",
-                         }}
-                     >
-                         I agree to the Privacy Policy
-                     </label>
-                     {errors.agree && <div style={{ color: "red", fontSize: "12px" }}>{errors.agree}</div>}
-                 </div>
-             </div>
-             {success && (
-                 <div
-                     style={{
-                         color: "green",
-                         fontSize: "14px",
-                         marginTop: "20px",
-                     }}
-                 >
-                     Thank you for filling out the application!
-                 </div>
-             )}
-         </form>
-     </div>
- </div>
-);
+        <div
+            style={{
+                padding: "30px",
+                borderRadius: "8px",
+                maxWidth: "90%",
+                margin: "auto",
+                boxSizing: "border-box",
+            }}
+        >
+            <form onSubmit={handleSubmit}>
+                <div
+                    style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: "20px",
+                        marginBottom: "20px",
+                    }}
+                >
+                    <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "200px" }}>
+                        <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            placeholder="Name"
+                            style={{
+                                width: "100%",
+                                padding: "10px",
+                                border: "1px solid #ccc",
+                                borderRadius: "4px",
+                                fontSize: "16px",
+                            }}
+                        />
+                        {errors.name && <div style={{ color: "red", fontSize: "12px" }}>{errors.name}</div>}
+                    </div>
+                    <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "200px" }}>
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            placeholder="Email Address"
+                            style={{
+                                width: "100%",
+                                padding: "10px",
+                                border: "1px solid #ccc",
+                                borderRadius: "4px",
+                                fontSize: "16px",
+                            }}
+                        />
+                        {errors.email && <div style={{ color: "red", fontSize: "12px" }}>{errors.email}</div>}
+                    </div>
+                </div>
+                <div
+                    style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: "20px",
+                        marginBottom: "20px",
+                    }}
+                >
+                    <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "200px" }}>
+                        <input
+                            type="text"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            placeholder="Phone"
+                            style={{
+                                width: "100%",
+                                padding: "10px",
+                                border: "1px solid #ccc",
+                                borderRadius: "4px",
+                                fontSize: "16px",
+                            }}
+                        />
+                        {errors.phone && <div style={{ color: "red", fontSize: "12px" }}>{errors.phone}</div>}
+                    </div>
+                    <div style={{ flex: "1 1 calc(50% - 10px)", minWidth: "200px" }}>
+                        <input
+                            type="text"
+                            name="subject"
+                            value={formData.subject}
+                            onChange={handleInputChange}
+                            placeholder="Subject"
+                            style={{
+                                width: "100%",
+                                padding: "10px",
+                                border: "1px solid #ccc",
+                                borderRadius: "4px",
+                                fontSize: "16px",
+                            }}
+                        />
+                        {errors.subject && <div style={{ color: "red", fontSize: "12px" }}>{errors.subject}</div>}
+                    </div>
+                </div>
+                <div style={{ marginBottom: "20px" }}>
+                    <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        placeholder="How can we help you? Feel free to get in touch!"
+                        rows="5"
+                        style={{
+                            width: "100%",
+                            padding: "10px",
+                            border: "1px solid #ccc",
+                            borderRadius: "4px",
+                            fontSize: "16px",
+                        }}
+                    />
+                    {errors.message && <div style={{ color: "red", fontSize: "12px" }}>{errors.message}</div>}
+                </div>
+                <div style={{ marginBottom: "20px" }}>
+                    <label style={{ fontSize: "14px", color: "#2c2c54" }}>
+                        <input
+                            type="checkbox"
+                            name="agree"
+                            checked={formData.agree}
+                            onChange={handleInputChange}
+                            style={{ marginRight: "10px" }}
+                        />
+                        I agree to the Privacy Policy
+                    </label>
+                    {errors.agree && <div style={{ color: "red", fontSize: "12px" }}>{errors.agree}</div>}
+                </div>
+                <button
+                    type="submit"
+                    style={{
+                        backgroundColor: "#ffb400",
+                        color: "#fff",
+                        border: "none",
+                        padding: "10px 20px",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                        fontSize: "16px",
+                        width: "100%",
+                    }}
+                >
+                    Get In Touch
+                </button>
+                {success && (
+                    <div style={{ color: "green", fontSize: "14px", marginTop: "20px" }}>
+                        Thank you for filling out the application!
+                    </div>
+                )}
+            </form>
+        </div>
+    );
 };
 
 export default Forms;

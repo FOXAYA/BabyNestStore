@@ -114,16 +114,3 @@
   width: 70%;
   background-color: var(--theme-color-extra_bg_color);
 }
-@media (min-width: 768px) {
-  .navbar .dropdown-menu {
-    position: absolute;
-  z-index: 1000;
-    border: none;
-    background-color: var(--theme-color-extra_bg_color) !important;
-  }
-
-  .navbar .dropdown-item {
-    font-size: 1rem;
-    padding: 12px;
-  }
-}

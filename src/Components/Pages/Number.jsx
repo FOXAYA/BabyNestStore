@@ -14,7 +14,7 @@ const AnimatedNumber = ({ target }) => {
     useEffect(() => {
         let start = 0;
         const duration = 2000; // مدة الحركة
-        const step = target / (duration / 16); // الخطوة بناءً على عدد الإطارات
+        const step = target / (duration / 14);
         const interval = setInterval(() => {
         start += step;
         if (start >= target) {
@@ -23,13 +23,13 @@ const AnimatedNumber = ({ target }) => {
         } else {
            setCurrent(Math.ceil(start)); // القيمة الحالية
         }
-      }, 16); // تحديث كل 16 ثانية
+        }, 14);
 
-      return () => clearInterval(interval);
+        return () => clearInterval(interval);
     }, [target]);
 
     return (
-      <h1
+        <h1
         style={{
         fontSize: "3rem", // حجم الخط
         fontWeight: "bold",
@@ -78,8 +78,8 @@ return (
             <AnimatedNumber target={stat.value} />
             <p
                 style={{
-                fontSize: "1.2rem", // حجم النص أسفل الرقم
-                color: "#232a47", // لون النص
+                fontSize: "1.2rem",
+                color: "#232a47",
                 margin: "0",
                 }}
                 >

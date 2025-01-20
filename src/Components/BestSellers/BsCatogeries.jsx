@@ -8,7 +8,7 @@ import denim from "../assets/images/product-category9.jpg";
 import dress from "../assets/images/product-category10.jpg";
 import { Container, Row, Col } from "react-bootstrap";
 
-
+// Component to display a list of category images with titles
 const BsCatogeries = () => {
   const images = [
     { src: sweet, alt: "Sweatshirts" },
@@ -22,7 +22,7 @@ const BsCatogeries = () => {
   return (
     <Container className="py-4 bs-Catogeries">
       <Row className="g-4">
-         {images.map((image, index) => (
+        {images.map((image, index) => (
           <Col
             key={index}
             xs={6}
@@ -45,4 +45,3 @@ const BsCatogeries = () => {
 };
 
 export default BsCatogeries;
-

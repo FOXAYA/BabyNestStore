@@ -87,13 +87,3 @@
   background-color: #717171;
 }
 
-@media (max-width: 600px) {
-  .blogContainer {
-    flex-direction: column;
-  }
-
-  .blogItem {
-    flex: 1 1 100%;
-    margin-bottom: 20px;
-  }
-}
