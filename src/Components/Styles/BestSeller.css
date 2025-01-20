@@ -87,25 +87,20 @@
 
 .bs-card .product-image {
   border-radius: 30px;
-}
-.bs-icon-1 {
-  width: 25px;
-  height: 25px;
-  transform: translate(50px, -640px);
-  -webkit-transform: translate(50px, -640px);
-  -moz-transform: translate(50px, -640px);
-  -ms-transform: translate(50px, -640px);
-  -o-transform: translate(50px, -640px);
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
 
-.bs-icon-2 {
-  width: 150px;
-  height: 145px;
-  transform: translate(300px, -700px);
-  -webkit-transform: translate(300px, -700px);
-  -moz-transform: translate(300px, -700px);
-  -ms-transform: translate(300px, -700px);
-  -o-transform: translate(300px, -700px);
+.bs-icon-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
 }
 
 .child-img {
@@ -118,62 +113,14 @@
   z-index: 1;
 }
 
-.bs-icon-4 {
-  bottom: 700px;
-  left: 380px;
-  transform: translate(560px, -760px);
-  -webkit-transform: translate(560px, -760px);
-  -moz-transform: translate(560px, -760px);
-  -ms-transform: translate(560px, -760px);
-  -o-transform: translate(560px, -760px);
+.bs-card-container .icons-container > img:nth-child(3) {
+  width: 160px;
+  height: 160px;
 }
 
-.bs-icon-5 {
-  width: 70px;
-  height: 65px;
-  transform: translate(560px, -650px);
-  -webkit-transform: translate(560px, -650px);
-  -moz-transform: translate(560px, -650px);
-  -ms-transform: translate(560px, -650px);
-  -o-transform: translate(560px, -650px);
-}
-
-.bs-icon-6 {
-  width: 40px;
-  height: 40px;
-  transform: translate(10px, -650px);
-  -webkit-transform: translate(10px, -650px);
-  -moz-transform: translate(10px, -650px);
-  -ms-transform: translate(10px, -650px);
-  -o-transform: translate(10px, -650px);
-}
-
-.bs-icon-7 {
-  width: 25px;
-  height: 25px;
-  transform: translate(70px, -530px);
-  -webkit-transform: translate(70px, -530px);
-  -moz-transform: translate(70px, -530px);
-  -ms-transform: translate(70px, -530px);
-  -o-transform: translate(70px, -530px);
-}
-
-.bs-icon-8 {
-  width: 90px;
-  height: 90px;
-  transform: translate(300px, -630px);
-  -webkit-transform: translate(300px, -630px);
-  -moz-transform: translate(300px, -630px);
-  -ms-transform: translate(300px, -630px);
-  -o-transform: translate(300px, -630px);
-}
-
-.bs-icon-9 {
-  width: 20px;
-  height: 20px;
-  transform: translate(590px, -650px);
-  -webkit-transform: translate(590px, -650px);
-  -moz-transform: translate(590px, -650px);
-  -ms-transform: translate(590px, -650px);
-  -o-transform: translate(590px, -650px);
+@media (max-width: 576px) {
+  .bs-card-container .icons-container > img {
+    width: 40px;
+    height: 40px;
+  }
 }
