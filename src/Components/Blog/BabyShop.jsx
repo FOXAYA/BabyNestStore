@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import styles from "../Styles/BabyShop.module.css";     
 import Navbar from '../Navbar/Navbar'
 import { WaveTop } from "../animation/Wave";
-
+import Footer2 from "../Footer/Footer2";
 export default function BabyShop() {
   const location = useLocation();
   const { blogImage } = location.state || {};     
@@ -29,8 +29,9 @@ export default function BabyShop() {
                           <img src={blogImage.image} alt={blogImage.title} className={styles.image} />
                     </div>
                       
-                      
-                     </div>
+          <Footer2 />            
+          </div>
+          
                   </>
     
             ) : (
