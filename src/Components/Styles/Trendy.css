@@ -90,37 +90,4 @@
   position: relative;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .trendy-section-wrapper {
-    margin: 0;
 
-    .subtitle {
-      font-size: 0.9rem; /* Smaller font for subtitles */
-    }
-    .main-title {
-      font-size: 3rem; /* Adjust main title size */
-    }
-    .trendy-text {
-      margin: 0;
-      max-width: 100%;
-    }
-  }
-  .icon-container {
-    height: auto;
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-  }
-  .Fa {
-    justify-content: center;
-    align-items: center;
-    margin-left: 50px;
-    text-align: center;
-    padding: 3px;
-  }
-  .Fa .desc {
-    width: 100%;
-  }
-}
