@@ -1,0 +1,189 @@
+/******************** Media Queries ************************/
+
+/* Small devices (max-width: 575.98px) */
+@media (max-width: 575.98px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    top: 45%;
+  }
+  .clients-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .client-img {
+    width: 70px;
+    height: 70px;
+    margin: 6px;
+  }
+  .bs-card-container .icons-container > img {
+    width: 40px;
+    height: 40px;
+  }
+  .slider-text h1,
+  .slider-text h6 {
+    font-size: 1.5rem;
+  }
+  .slider-text {
+    margin-left: 0;
+  }
+  .animation-background .icons-container > img:nth-child(1) {
+    top: 10% !important;
+    left: 10% !important;
+  }
+  .animation-background .icons-container > img:nth-child(2) {
+    top: 27% !important;
+    left: 40% !important;
+  }
+  .animation-background .icons-container > img:nth-child(3) {
+    top: 10% !important;
+    left: 80% !important;
+    width: 40px;
+    height: 40px;
+  }
+  .animation-background .icons-container > img:nth-child(4),
+  .animation-background .icons-container > img:nth-child(5) {
+    top: 65% !important;
+    left: 90% !important;
+  }
+  .animation-background .icons-container > img:nth-child(5) {
+    left: 10% !important;
+    top: 60% !important;
+  }
+  .blogContainer {
+    flex-direction: column;
+  }
+  .blogItem {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+  .trendy-section-wrapper {
+    margin: 0;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  .main-title {
+    font-size: 3rem; /* Adjust main title size */
+  }
+  .trendy-text {
+    margin: 0;
+    max-width: 100%;
+  }
+  .icon-container,
+  .Fa {
+    height: auto;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .Fa .desc {
+    width: 100%;
+  }
+  .footer-icons .icons-container img {
+    width: auto;
+  }
+  .footer-icons .icons-container img:nth-child(1) {
+    width: 40px;
+    top: 15% !important;
+    left: 10% !important;
+  }
+  .footer-icons .icons-container img:nth-child(2),
+  .footer-icons .icons-container img:nth-child(5),
+  .footer-icons .icons-container img:nth-child(6) {
+    left: 0;
+    top: 0;
+    width: 20px;
+  }
+  .footer-icons .icons-container img:nth-child(3) {
+    width: 30px;
+    height: 30px;
+  }
+  .footer-icons .icons-container img:nth-child(4) {
+    top: 15% !important;
+    left: 80% !important;
+    width: 40px;
+  }
+  .footer-icons .icons-container img:nth-child(7) {
+    width: 90px;
+    height: 70px;
+    left: 70% !important;
+  }
+  .footer-icons .icons-container img:nth-child(8) {
+    left: 10% !important;
+    top: 77% !important;
+  }
+}
+
+/* Medium devices (min-width: 576px and max-width: 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    top: 40%;
+  }
+  .clients-container {
+    justify-content: space-around;
+    padding: 1rem;
+    height: 60vh;
+  }
+  .client-img {
+    width: 80px;
+    height: 80px;
+    margin-top: 100px;
+  }
+}
+
+/* Larger tablets (min-width: 768px and max-width: 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    top: 50%;
+  }
+  .client-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* General styles for tablets and up (min-width: 768px) */
+@media (min-width: 768px) {
+  .slider-content {
+    flex-wrap: nowrap;
+    text-align: left;
+  }
+  .slider-text {
+    flex: 1 1 50%;
+    padding-right: 20px;
+  }
+  .slider-image {
+    flex: 1 1 50%;
+    padding-left: 20px;
+  }
+  .navbar .dropdown-menu {
+    position: absolute;
+    z-index: 1000;
+    border: none;
+    background-color: var(--theme-color-extra_bg_color) !important;
+  }
+  .navbar .dropdown-item {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Specific range (min-width: 768px and max-width: 1120px) */
+@media (min-width: 768px) and (max-width: 1120px) {
+  .footer-icons .icons-container img:nth-child(7) {
+    width: 90px;
+    height: 70px;
+    left: 70% !important;
+  }
+  .footer-icons .icons-container img:nth-child(8) {
+    left: 10% !important;
+    top: 77% !important;
+  }
+  .footer-icons .icons-container img:nth-child(4) {
+    top: 20% !important;
+    left: 80% !important;
+  }
+}
