@@ -4,14 +4,14 @@ const ColorFilter = ({ colors, onSelectColor }) => {
   const [state, setState] = useState({ isColorOpen: false });
 
   const toggleColorSection = () => {
-    setState(prevState => ({
+    setState((prevState) => ({
       ...prevState,
       isColorOpen: !prevState.isColorOpen
     }));
   };
 
   if (!colors || !Array.isArray(colors)) {
-    return <p>No colors available</p>; 
+    return <p>No colors available</p>;
   }
 
   return (

@@ -5,11 +5,11 @@ import ShopHeader from "./ShopHeader";
 import Footer2 from "../Footer/Footer2";
 import GalleryItems from "./GalleryItems";
 import Gallery from "./Gallery";
-import Product from "./GaleryData";
+import Product from "./GaleryData"; 
 
 const Shop = () => {
   const { category, size, color, brand } = useParams();
-  const location = useLocation(); 
+  const location = useLocation();
   const navigate = useNavigate();
 
   const [filters, setFilters] = useState({
@@ -17,10 +17,18 @@ const Shop = () => {
     size: size || null,
     color: color || null,
     brand: brand || null,
-    search: null, 
+    search: null,
   });
 
-  const searchParams = new URLSearchParams(location.search); 
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 767);
+
+  useEffect(() => {
+    const handleResize = () => setIsSmallScreen(window.innerWidth <= 767);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get("search");
 
   const categories = [
@@ -53,7 +61,6 @@ const Shop = () => {
   const colors = ["Black", "Brown", "Blue", "Green", "Grey"];
   const brands = ["Boden", "Burberry", "Rejina Pyo", "Tinycottons"];
 
-  
   const filteredImages = useMemo(() => {
     return Product.filter((image) => {
       const inCategory =
@@ -61,17 +68,18 @@ const Shop = () => {
         (Array.isArray(image.category)
           ? image.category.includes(filters.category)
           : image.category === filters.category);
-      const inSize =
-        !filters.size ||
-        (image.sizes && image.sizes.length > 0 && image.sizes.includes(filters.size));
+      const inSize = !filters.size || (image.sizes && image.sizes.includes(filters.size));
       const inColor =
         !filters.color ||
-        (image.colors && image.colors.length > 0 && image.colors.includes(filters.color));
+        (image.colors &&
+          image.colors.length > 0 &&
+          image.colors.some((imgColor) =>
+            imgColor.toLowerCase().trim() === filters.color.toLowerCase().trim()
+          ));
       const inBrand = !filters.brand || image.brand === filters.brand;
       const inSearch =
-         !filters.search ||
-       (filters.search && image.name.toLowerCase().includes(filters.search.toLowerCase()));
-
+        !filters.search ||
+        (filters.search && image.name.toLowerCase().includes(filters.search.toLowerCase()));
 
       return inCategory && inSize && inColor && inBrand && inSearch;
     });
@@ -83,7 +91,7 @@ const Shop = () => {
       size: size || null,
       color: color || null,
       brand: brand || null,
-      search: searchQuery || null, 
+      search: searchQuery || null,
     });
   }, [category, size, color, brand, searchQuery]);
 
@@ -96,10 +104,10 @@ const Shop = () => {
         url += `/category/${newFilters.category}`;
       }
       if (newFilters.size) {
-        url += `/size/${newFilters.size}`;
+        url += `/size/${value}`; 
       }
       if (newFilters.color) {
-        url += `/color/${newFilters.color}`;
+        url += `/color/${value}`; 
       }
       if (newFilters.brand) {
         url += `/brand/${newFilters.brand}`;
@@ -124,25 +132,27 @@ const Shop = () => {
       <Navbar />
       <ShopHeader title={headerTitle} />
       <div style={{ backgroundColor: "#F8F4EB" }}>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-3">
-            <GalleryItems
-              categories={categories}
-              sizes={sizes}
-              colors={colors}
-              brands={brands}
-              filters={filters}
-              onFilterChange={handleFilterChange}
-            />
-          </div>
-          <div className="col-md-9">
-            <Gallery images={filteredImages} />
+        <div className="container-fluid">
+          <div className="row">
+            {!isSmallScreen && (
+              <div className="col-md-3">
+                <GalleryItems
+                  categories={categories}
+                  sizes={sizes}
+                  colors={colors}
+                  brands={brands}
+                  filters={filters}
+                  onFilterChange={handleFilterChange}
+                />
+              </div>
+            )}
+            <div className="col-md-9">
+              <Gallery images={filteredImages} />
+            </div>
           </div>
         </div>
-      </div>
         <Footer2 />
-        </div>
+      </div>
     </>
   );
 };
