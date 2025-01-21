@@ -5,7 +5,6 @@ import AboutHeader from "./AboutHeader";
 import Navbar from "../Navbar/Navbar";
 import img1 from "../assets/images/about-image1.jpg";
 import img2 from "../assets/images/blog2.jpg";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/aboutUs.css";
 import Forms from "./Forms";
