@@ -1,9 +1,9 @@
-import React, { useReducer, useEffect, useState } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import React, { useReducer, useState } from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import "../Styles/Gallery.css";
-
+import ButtonUi from "../ui/ButtonUi";
 const initialState = {
   visibleImages: 12,
   sortedImages: [],
@@ -38,7 +38,7 @@ const Gallery = ({ images }) => {
     state;
   const [selectedColor, setSelectedColor] = useState(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const filteredImages = images.filter((image) => {
       const inCategory =
         category === "all" ||
@@ -88,16 +88,25 @@ const Gallery = ({ images }) => {
   };
 
   return (
-    <Container className="mt-4 mb-4">
+    <Container fluid className="mt-4 mb-4">
       <Row className="g-4 mb-4">
-        <Col xs={12} className="d-flex justify-content-between align-items-center">
-          <span style={{ color: "rgba(0, 0, 0, 0.6)" }}>
-            Showing 1–{Math.min(visibleImages, sortedImages.length)} of {sortedImages.length} results
+        <Col
+          xs={12}
+          className="d-flex justify-content-between align-items-center flex-wrap"
+        >
+          <span className="above-catogary">
+            Showing 1–{Math.min(visibleImages, sortedImages.length)} of{" "}
+            {sortedImages.length} results
           </span>
           <select
             id="sort-select"
             onChange={handleSort}
-            style={{ border: "none", outline: "none", backgroundColor: "transparent" }}
+            className="form-select w-auto"
+            style={{
+              border: "none",
+              outline: "none",
+              backgroundColor: "transparent",
+            }}
           >
             <option value="latest">Sort by latest</option>
             <option value="popularity">Sort by popularity</option>
@@ -111,8 +120,8 @@ const Gallery = ({ images }) => {
       {sortedImages.length > 0 ? (
         <Row className="g-4">
           {sortedImages.slice(0, visibleImages).map((product) => (
-            <Col key={product.id} xs={12} sm={6} md={3} className="mb-3">
-              <Card className="product-card">
+            <Col key={product.id} xs={12} sm={6} md={4} lg={3} className="mb-3">
+              <Card className="product-card2 h-100">
                 <div className="image-container">
                   <Card.Img
                     variant="top"
@@ -129,7 +138,7 @@ const Gallery = ({ images }) => {
                     </Link>
                   </div>
                 </div>
-                <Card.Body>
+                <Card.Body className="d-flex flex-column">
                   <Card.Title>
                     <Link to={`/product/${product.id}`} className="title-link">
                       {product.name}
@@ -137,10 +146,11 @@ const Gallery = ({ images }) => {
                   </Card.Title>
                   <Card.Text className="price-container d-flex justify-content-between">
                     <span className="price">
-                      $ {product.price.toFixed(2)} - ${(product.price + 10).toFixed(2)}
+                      $ {product.price.toFixed(2)} - $
+                      {(product.price + 10).toFixed(2)}
                     </span>
                   </Card.Text>
-                  <div className="d-flex mb-4">
+                  <div className="d-flex">
                     {product.colors?.map((color, index) => (
                       <button
                         key={index}
@@ -149,7 +159,10 @@ const Gallery = ({ images }) => {
                           width: "20px",
                           height: "20px",
                           backgroundColor: color,
-                          border: selectedColor === color ? "2px solid black" : "1px solid #ddd",
+                          border:
+                            selectedColor === color
+                              ? "2px solid black"
+                              : "1px solid #ddd",
                           borderRadius: "50%",
                           cursor: "pointer",
                           marginRight: "8px",
@@ -164,18 +177,22 @@ const Gallery = ({ images }) => {
           ))}
         </Row>
       ) : (
-        <Row className="no-results-row">
+        <Row>
           <Col xs={12}>
-            <p className="no-results-text">No products were found matching your selection.</p>
+            <p className="no-results-text text-center">
+              No products were found matching your selection.
+            </p>
           </Col>
         </Row>
       )}
       {visibleImages < sortedImages.length && (
-        <Row className="g-4 mt-4 mb-4">
+        <Row className="mt-4 mb-4 ">
           <Col xs={12} className="d-flex justify-content-center">
-            <Button variant="warning" onClick={handleShowMore} style={{ marginBottom: "20px" }}>
-              Load More
-            </Button>
+            <ButtonUi
+              className="btn-one rounded-5 px-5 py-3 text-white "
+              text={"Load More"}
+              onClick={handleShowMore}
+            />
           </Col>
         </Row>
       )}
