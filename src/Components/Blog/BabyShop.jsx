@@ -1,40 +1,130 @@
-import React from "react";
-import ash from "../assets/images/ash.png";
-import { useLocation } from "react-router-dom";
-import styles from "../Styles/BabyShop.module.css";     
-import Navbar from '../Navbar/Navbar';
-import { WaveTop } from "../animation/Wave";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import styles from "../Styles/BlogImage.module.css";
+import blog1 from "../assets/images/blog1.jpg";
+import blog2 from "../assets/images/blog2.jpg";
+import blog3 from "../assets/images/blog3.jpg";
+import blog4 from "../assets/images/blog4.jpg";
+import blog5 from "../assets/images/blog5.jpg";
 
-export default function BabyShop() {
-  const location = useLocation();
-  const { blogImage } = location.state || {};  // Retrieve blog image data from location state
+export default function BlogImage() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const BlogImages = [
+    {
+      id: 1,
+      title: "What do you need to buy for your baby’s first wardrobe?",
+      date: "Apr 21, 2020",
+      comments: "0 Comments",
+      category: "PLAY & GROW",
+      image: blog1,
+      link: "/blog/1",
+    },
+    {
+      id: 2,
+      title: "Eco-friendly spring essentials for babies",
+      date: "Apr 21, 2020",
+      comments: "0 Comments",
+      category: "PLAY & GROW",
+      image: blog2,
+      link: "/blog/2",
+    },
+    {
+      id: 3,
+      title: "The ultimate guide to buying baby boy jackets",
+      date: "Apr 21, 2020",
+      comments: "0 Comments",
+      category: "PLAY & GROW",
+      image: blog3,
+      link: "/blog/3",
+    },
+    {
+      id: 4,
+      title: "What you should know about buying sleepsuits",
+      date: "Apr 21, 2020",
+      comments: "0 Comments",
+      category: "PLAY & GROW",
+      image: blog4,
+      link: "/blog/4",
+    },
+    {
+      id: 5,
+      title: "What you should know about buying sleepsuits",
+      date: "Apr 21, 2020",
+      comments: "0 Comments",
+      category: "PLAY & GROW",
+      image: blog5,
+      link: "/blog/5",
+    },
+  ];
+
+  useEffect(() => {
+    // Set up an interval to cycle through images every 5 seconds
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % BlogImages.length);
+    }, 5000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, [BlogImages.length]);
+
+  const getDisplayImages = () => {
+    const totalImages = BlogImages.length;
+    const isSmallScreen = window.innerWidth <= 767; // Check if the screen is small
+
+    if (isSmallScreen) {
+      // Show two images on small screens
+      return [
+        BlogImages[currentIndex % totalImages],
+        BlogImages[(currentIndex + 1) % totalImages],
+      ];
+    }
+
+    // Show four images on larger screens
+    const indices = [];
+    for (let i = 0; i < 4; i++) {
+      indices.push((currentIndex + i) % totalImages);
+    }
+
+    return indices.map((index) => BlogImages[index]);
+  };
 
   return (
-    <div>
-      {blogImage ? (
-        <>
-          <Navbar />
-          <WaveTop /> {/* Wave animation */}
-          
-          <div className={styles.container}>
-            <span className={styles.span}>{blogImage.category}</span>
-            <h1 className={styles.title}>{blogImage.title}</h1>
-            
-            <div className={styles.authorInfo}>
-              <img src={ash} alt="ash" className={styles.ash} />
-              <p className={styles.author}>by Ashton Porter</p>
-              <p className={styles.date}>{blogImage.date}</p>
-              <p className={styles.comments}>{blogImage.comments}</p>
-            </div>
-            
-            <div className={styles.imageContainer}>
-              <img src={blogImage.image} alt={blogImage.title} className={styles.image} />
-            </div>
+    <div id="blog" className={styles.slideContainer}>
+      <div className={styles.headerSection}>
+        <h4>Trending now</h4>
+        <h1>More news in our blog</h1>
+      </div>
+      
+      <div className={styles.blogContainer}>
+        {getDisplayImages().map((blogImage) => (
+          <div key={blogImage.id} className={styles.blogItem}>
+            <Link
+              to={`/blog/${blogImage.id}`}
+              state={{ blogImage }} // Passing blog data to the linked route
+              className={styles.imageContainer}
+            >
+              <img src={blogImage.image} alt={blogImage.title} />
+
+              <div className={styles.contentArea}>
+                <h3>{blogImage.title}</h3>
+                <p>{blogImage.date} | {blogImage.comments}</p>
+                <p>{blogImage.category}</p>
+              </div>
+            </Link>
           </div>
-        </>
-      ) : (
-        <p>No blog post data found.</p>
-      )}
+        ))}
+      </div>
+
+      <div className={styles.dotsContainer}>
+        {BlogImages.map((_, index) => (
+          <span
+            key={index}
+            className={`${styles.dot} ${index === currentIndex ? styles.active : ""}`}
+            onClick={() => setCurrentIndex(index)} // Change index when dot is clicked
+          ></span>
+        ))}
+      </div>
     </div>
   );
 }
