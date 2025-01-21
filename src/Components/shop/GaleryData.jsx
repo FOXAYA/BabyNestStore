@@ -156,6 +156,7 @@ const Product = [
     image: img10,
     name: "Yellow raincoat",
     price: 105,
+    colors: ["#FFD700"],
     rating: 3,
     sizes: ["2-4 year", "5-8 year"],
     date: "2025-01-01",
