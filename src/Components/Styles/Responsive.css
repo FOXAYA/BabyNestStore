@@ -63,7 +63,7 @@
     font-size: 0.9rem;
   }
   .main-title {
-    font-size: 3rem; /* Adjust main title size */
+    font-size: 3rem;
   }
   .trendy-text {
     margin: 0;
@@ -79,6 +79,13 @@
   }
   .Fa .desc {
     width: 100%;
+  }
+  .heading-bold {
+    font-size: 1.5rem;
+  }
+
+  .contact-container {
+    padding: 15px;
   }
   .footer-icons .icons-container img {
     width: auto;
@@ -130,6 +137,22 @@
     width: 80px;
     height: 80px;
     margin-top: 100px;
+  }
+  .img-fluid-rounded {
+    max-width: 100%;
+  }
+
+  .heading-bold {
+    font-size: 1.8rem;
+  }
+
+  .text-bold,
+  .text-muted {
+    font-size: 1rem;
+  }
+
+  .contact-container {
+    width: 95%;
   }
 }
 

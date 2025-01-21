@@ -8,7 +8,6 @@ import BabyShop from "./Components/Blog/BabyShop";
 import Contact from "./Components/contact/Contact";
 import AboutUS from './Components/Pages/AboutUs'
 import { BasketProvider } from "./Components/shop/BasketContext";
-
 import Shop from "./Components/shop/Shop";
 class App extends Component {
   render() {

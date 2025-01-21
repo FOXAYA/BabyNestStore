@@ -1,9 +1,10 @@
 footer {
   width: 100%;
   padding-top: 155px;
-  background-color: #f8f4eb;
+  background-color: var(--theme-color-bd_color);
   position: relative;
   text-align: center;
+  font-family: var(--secondry-fon);
 }
 
 .instagram a {
@@ -130,4 +131,3 @@ footer .footer-bottom span a {
   -o-transform: none !important;
   -webkit-animation: none !important;
 }
-

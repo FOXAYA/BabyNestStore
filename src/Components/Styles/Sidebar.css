@@ -1,12 +1,30 @@
-/* Updated CSS to remove circles around social media icons */
+:root {
+  --primary-font: "Permanent Marker", serif;
+  --secondry-font: "Roboto", serif;
+  --accent-font: "Hind Madurai", serif;
+}
+
+.offcanvas {
+  z-index: 1000;
+  position: relative;
+  width: 30% !important;
+  font-family: var(--secondry-font);
+  color: #1f2834;
+  font-size: 1.3rem;
+}
+
+.offcanvas-header .btn-close {
+  background-color: #f48c06;
+  color: #1f2834 !important;
+}
+
+.side-logo {
+  width: 100px;
+}
 
 .social-icons {
-  display: flex;
-  justify-content: center; 
-  gap: 4px;
   list-style-type: none;
   padding: 0;
-  margin: 0;
 }
 
 .social-icons li {
@@ -25,14 +43,6 @@
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 18px;
-  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-  -moz-transition: background-color 0.3s ease, color 0.3s ease;
-  -ms-transition: background-color 0.3s ease, color 0.3s ease;
-  -o-transition: background-color 0.3s ease, color 0.3s ease;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
 }
 
 .social-link:hover {
@@ -61,7 +71,6 @@
   gap: 20px;
   font-weight: bolder;
 }
-
 
 .social-link span {
   font-weight: bold;

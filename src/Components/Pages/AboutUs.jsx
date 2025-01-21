@@ -7,7 +7,7 @@ import img1 from "../assets/images/about-image1.jpg";
 import img2 from "../assets/images/blog2.jpg";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import "../Styles/aboutUs.css";
 import Forms from "./Forms";
 import Numbers from "./Number";
 
@@ -17,86 +17,33 @@ const AboutUs = () => {
       <Navbar />
       <AboutHeader />
       <Container className="my-5">
-        <Row className="mt-6">
-          <Col md={6} className="d-flex justify-content-center">
-            <img
-              src={img1}
-              alt="Child"
-              className="img-fluid rounded"
-              style={{
-                width: "100%",
-                maxWidth: "600px",
-                height: "600px",
-                borderRadius: "10px",
-              }}
-            />
+        <Row className="mt-6 align-items-center">
+          <Col xs={12} md={6} className="d-flex justify-content-center">
+            <img src={img1} alt="Child" className="img-fluid-rounded" />
           </Col>
-
-          <Col
-            md={6}
-            className="d-flex justify-content-center"
-            style={{ borderRadius: "10px" }}
-          >
-            <div>
-              <h5
-                style={{
-                  color: "#2c2c55",
-                  fontWeight: "bold",
-                  marginBottom: "15px",
-                }}
-              >
-                Toys and clothing
-              </h5>
-              <h1
-                style={{
-                  color: "#2c2c54",
-                  fontWeight: "bold",
-                  marginBottom: "20px",
-                  lineHeight: "1.4",
-                }}
-              >
-                Your children deserve the best
-              </h1>
-              <p style={{ color: "#767575" }}>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam. Sed ut
-                perspiciatis unde omnis.
-              </p>
-              <p style={{ color: "#767575" }}>
-                Sit voluptatem accusantium doloremque laudantium, totam rem
-                aperiam. Sed ut perspiciatis unde omnis iste.
-              </p>
-
-              <Numbers />
-            </div>
+          <Col xs={12} md={6} className="d-flex flex-column">
+            <h5 className="text-bold">Toys and clothing</h5>
+            <h1 className="heading-bold">Your children deserve the best</h1>
+            <p className="text-muted">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam. Sed ut
+              perspiciatis unde omnis.
+            </p>
+            <p className="text-muted">
+              Sit voluptatem accusantium doloremque laudantium, totam rem
+              aperiam. Sed ut perspiciatis unde omnis iste.
+            </p>
+            <Numbers />
           </Col>
         </Row>
       </Container>
 
       <div
-        style={{
-          backgroundImage: `url(${img2})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+        className="background-cover"
+        style={{ backgroundImage: `url(${img2})` }}
       >
-        <div
-          style={{
-            backgroundColor: "rgba(255, 255, 255, 0.67)", // لون خلفية شبه شفاف
-            borderRadius: "15px",
-            padding: "30px",
-            maxWidth: "600px",
-            width: "50%",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <h2 className="text-center mb-4" style={{ fontWeight: "bold" }}>
-            Contact Us
-          </h2>
+        <div className="contact-container">
+          <h2 className="text-center mb-4 contact-header">Contact Us</h2>
           <Forms />
         </div>
       </div>

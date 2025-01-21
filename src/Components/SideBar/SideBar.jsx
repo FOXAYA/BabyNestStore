@@ -15,16 +15,16 @@ const Sidebar = ({ show, handleClose }) => {
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>
           <Link to="/">
-            <img src={footerlogo} alt="Logo" width={60} className="m-3" fluid />
+            <img src={footerlogo} alt="Logo" width={60} className="m-3 side-logo" fluid />
           </Link>
         </Offcanvas.Title>
       </Offcanvas.Header>
 
       <Offcanvas.Body>
         <Row className="justify-content-center my-4">
-          <ul className="d-flex list-unstyled social-icons flex-column">
+          <ul className="d-flex list-unstyled social-icons flex-column d-flex justify-content-center gap-4">
             <li className="m-2">
-              <div className="social-flex">
+              <div className="social-flex ">
                 <a href="i" className="social-link facebook">
                   <FaFacebookSquare />
                 </a>
