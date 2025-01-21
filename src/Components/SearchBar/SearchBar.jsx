@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Navbar.css";
-import img1 from "../assets/images/logo.png";
+import img1 from "../assets/images/logo.jpeg";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
