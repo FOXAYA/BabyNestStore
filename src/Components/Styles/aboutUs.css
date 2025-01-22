@@ -1,0 +1,117 @@
+.img-fluid-rounded {
+    width: 100%;
+    max-width: 600px;
+    height: auto; /* Adjust height to maintain aspect ratio */
+    border-radius: 10px;
+  }
+  
+  .text-bold {
+    color: #2c2c55;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .heading-bold {
+    color: #2c2c54;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  
+  .text-muted {
+    color: #767575;
+  }
+  
+  .contact-container {
+    background-color: rgba(255, 255, 255, 0.67);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%; /* Adjust to fit smaller screens */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Background Styles */
+  .background-cover {
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  /* General Input Styles */
+.form-input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .form-textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .form-checkbox {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #2c2c54;
+  }
+  
+  .form-button {
+    background-color: #ffb400;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .form-button:hover {
+    background-color: #e0a300;
+  }
+  
+  /* Error Messages */
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  
+  /* Success Message */
+  .success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  
+  /* Layout Styles */
+  .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .form-wrapper {
+    flex: 1;
+    padding-left: 20px;
+    padding: 30px;
+    border-radius: 8px;
+  }
+  
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  

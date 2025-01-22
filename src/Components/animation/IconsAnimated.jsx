@@ -12,7 +12,6 @@ import icon12 from "../assets/images/icon-8.svg";
 import icon13 from "../assets/images/icon-4.svg";
 import "../Styles/Animation.css";
 
-
 const groups = {
   one: {
     icons: [icon1, icon3, icon2, icon9, icon1],
@@ -44,7 +43,7 @@ const groups = {
       { top: "23%", left: "90%" },
       { top: "50%", left: "49%" },
       { top: "7%", left: "30%" },
-      { top: "75%", left: "85%" },
+      { top: "75%", left: "80%" },
       { top: "70%", left: "7%" },
     ],
   },

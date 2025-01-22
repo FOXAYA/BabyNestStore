@@ -1,10 +1,12 @@
 import React from "react";
 import { Popover, Overlay, Stack, Button, Image } from "react-bootstrap";
 import { useBasket } from "./BasketContext";
+import { useNavigate } from "react-router-dom";
 import "../Styles/ShopingCard.css";
 import ButtonUi from "../ui/ButtonUi";
 
 const ShoppingCard = ({ show, target, handleClose }) => {
+  const navigate = useNavigate();
   const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } =
     useBasket();
 
@@ -13,6 +15,10 @@ const ShoppingCard = ({ show, target, handleClose }) => {
       typeof item.price === "number" ? item.price : parseFloat(item.price) || 0;
     return acc + price * item.quantity;
   }, 0);
+
+  const handleCheckout = () => {
+    navigate("/checkout");
+  };
 
   return (
     <Overlay
@@ -27,7 +33,7 @@ const ShoppingCard = ({ show, target, handleClose }) => {
             {cartItems.map((item) => (
               <div
                 key={item.id}
-                className="cart-item d-flex  align-items-center"
+                className="cart-item d-flex align-items-center"
               >
                 <Image
                   src={item.image}
@@ -74,7 +80,7 @@ const ShoppingCard = ({ show, target, handleClose }) => {
               </div>
             ))}
 
-            <div className="subtotal  d-flex justify-content-around align-items-center">
+            <div className="subtotal d-flex justify-content-around align-items-center">
               <div className="subtotal-label">Subtotal:</div>
               <div className="subtotal-amount blod">
                 ${cartTotalAmount.toFixed(2)}
@@ -83,19 +89,20 @@ const ShoppingCard = ({ show, target, handleClose }) => {
           </Stack>
 
           <div className="cart-actions d-flex justify-content-between align-items-center">
-          <ButtonUi
-  size="sm"
-  variant="light"
-  className="view-cart-button"
-  onClick={handleClose}
-  text="View Cart"
-/>
-<ButtonUi
-  variant="light"
-  size="sm"
-  className="checkout-button"
-  text="Checkout"
-/>
+            <ButtonUi
+              size="sm"
+              variant="light"
+              className="view-cart-button"
+              onClick={handleClose}
+              text="View Cart"
+            />
+            <ButtonUi
+              variant="light"
+              size="sm"
+              className="checkout-button"
+              text="Checkout"
+              onClick={handleCheckout}
+            />
           </div>
         </Popover.Body>
       </Popover>

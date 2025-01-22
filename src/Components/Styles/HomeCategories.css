@@ -1,6 +1,5 @@
-:root{
+y:root {
   --theme-color-bg_color: #ffffff;
-
 }
 .category-card {
   border: none !important;
@@ -12,14 +11,13 @@
   height: 100%;
   display: flex;
   align-items: self-start;
-   opacity: 1;
+  opacity: 1;
   transition: opacity 0.3s ease;
   -webkit-transition: opacity 0.3s ease;
   -moz-transition: opacity 0.3s ease;
   -ms-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   background: linear-gradient(to bottom, #ffffff00, #3632324f);
-
 }
 
 .category-card:hover .card-body {

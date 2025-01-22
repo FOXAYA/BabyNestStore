@@ -8,8 +8,9 @@ import BabyShop from "./Components/Blog/BabyShop";
 import Contact from "./Components/contact/Contact";
 import AboutUS from './Components/Pages/AboutUs'
 import { BasketProvider } from "./Components/shop/BasketContext";
-
 import Shop from "./Components/shop/Shop";
+import Payment from './Components/shop/Payment'; 
+import CheckoutForm from "./Components/shop/CheckOut";
 class App extends Component {
   render() {
     return (
@@ -24,6 +25,9 @@ class App extends Component {
             <Route path="/contact" element={<Contact />} />
             <Route path="/aboutus" element={<AboutUS/>} />
             <Route path="/shop/*" element={<Shop />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/checkout" element={<CheckoutForm />} />
+
           </Routes>
         </Router>
       </BasketProvider>

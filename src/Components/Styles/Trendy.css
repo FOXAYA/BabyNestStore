@@ -8,6 +8,7 @@
 }
 .Icons {
   margin-bottom: 200px;
+  background-color: var(--theme-color-bd_color);
 }
 .icon-container {
   height: 70vh;
