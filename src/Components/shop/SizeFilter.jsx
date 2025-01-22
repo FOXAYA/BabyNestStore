@@ -29,9 +29,9 @@ const SizeFilter = ({ sizes = [], selectedSize, onSelectSize }) => {
         }`}
       >
         {sizes.map((size) => (
-          <li key={size} className="me-2 mb-2">
+          <li key={size} className="me-2 mb-2 size-li">
             <button
-              className={`btn btn-light text-start p-2 ${
+              className={`btn btn-light size-btn text-start p-2 ${
                 selectedSize === size ? "btn-primary" : ""
               }`}
               style={{ borderRadius: 5 }}

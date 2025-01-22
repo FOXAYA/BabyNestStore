@@ -13,6 +13,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useBasket } from "../shop/BasketContext";
 import "../Styles/Navbar.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { motion } from "framer-motion";
 
 const NavbarLayout = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -21,6 +22,7 @@ const NavbarLayout = () => {
   const target = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const [showSearch, setShowSearch] = useState(false);
 
   const handleToggle = () => setShow(!show);
   const handleClose = () => {
@@ -30,11 +32,9 @@ const NavbarLayout = () => {
   const handleToggleSidebar = () => setShowSidebar(!showSidebar);
   const { cartItems } = useBasket();
   const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-  const [showSearch, setShowSearch] = useState(false);
 
   const handleBlogClick = () => {
     if (location.pathname === "/") {
-     
       const blogSection = document.getElementById("blog");
       if (blogSection) {
         blogSection.scrollIntoView({ behavior: "smooth" });
@@ -46,7 +46,7 @@ const NavbarLayout = () => {
         if (blogSection) {
           blogSection.scrollIntoView({ behavior: "smooth" });
         }
-      }, 500); 
+      }, 500);
     }
   };
 
@@ -62,7 +62,10 @@ const NavbarLayout = () => {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="m-auto my-2 my-lg-0 nav_bar " navbarScroll>
-            <Nav.Link href="/" className="custom-link position-relative text-dark ">
+            <Nav.Link
+              href="/"
+              className="custom-link position-relative text-dark "
+            >
               Home
             </Nav.Link>
             <NavDropdown
@@ -82,34 +85,74 @@ const NavbarLayout = () => {
               <NavDropdown.Item href="#action/3.3">Our Team</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.4">Pricing</NavDropdown.Item>
             </NavDropdown>
-           
+
             <Nav.Link
               className="link-underline-custom position-relative text-dark"
               onClick={handleBlogClick}
             >
               Blog
             </Nav.Link>
-            <Nav.Link href="/shop" className="link-underline-custom position-relative text-dark">
+            <Nav.Link
+              href="/shop"
+              className="link-underline-custom position-relative text-dark"
+            >
               Shop
             </Nav.Link>
-            <Nav.Link href="/contact" className="link-underline-custom position-relative text-dark">
+            <Nav.Link
+              href="/contact"
+              className="link-underline-custom position-relative text-dark"
+            >
               Contact us
             </Nav.Link>
           </Nav>
+
           <div className="d-flex align-items-center justify-content-center gap-4 icon-nav">
-            <i className="bi bi-bag position-relative" onClick={handleToggle} ref={target}>
+            <i
+              className="bi bi-bag position-relative"
+              onClick={handleToggle}
+              ref={target}
+              aria-label="Shopping Cart"
+            >
               <SlBag className="fs-4 bag-icon" />
-              <span className="badge text-dark position-relative">{itemCount}</span>{" "}
+              <span className="badge text-dark position-relative">
+                {itemCount}
+              </span>{" "}
             </i>
-            <ShoppingCard show={show} target={target} handleClose={handleClose} />
-            <i className="bi bi-search fs-3 ms-3" onClick={() => setShowSearch(!showSearch)}>
+            <ShoppingCard
+              show={show}
+              target={target}
+              handleClose={handleClose}
+            />
+
+            <i
+              className="bi bi-search fs-3 ms-3"
+              onClick={() => setShowSearch(!showSearch)}
+              aria-label="Search"
+            >
               <CiSearch />
             </i>
-            {showSearch && <SearchBar />}
-            <i className="bi bi-grid fs-3" onClick={handleToggleSidebar}>
+
+            {showSearch && (
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: 0.3 }}
+              >
+                <SearchBar />
+              </motion.div>
+            )}
+
+            <i
+              className="bi bi-grid fs-3"
+              onClick={handleToggleSidebar}
+              aria-label="Sidebar Menu"
+            >
               <HiOutlineSquares2X2 />
             </i>
-            {showSidebar && <Sidebar show={showSidebar} handleClose={handleClose} />}
+            {showSidebar && (
+              <Sidebar show={showSidebar} handleClose={handleClose} />
+            )}
           </div>
         </Navbar.Collapse>
       </Container>
