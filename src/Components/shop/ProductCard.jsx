@@ -94,7 +94,7 @@ const ProductCard = ({
                   </Card.Text>
                   <div className="d-flex mb-4">
                     {product.colors?.map((color, index) => (
-                      <button
+                      <button className="color-button"
                         key={index}
                         onClick={() => handleColorSelect(product.id, color)}
                         style={{
@@ -113,7 +113,6 @@ const ProductCard = ({
                       ></button>
                     ))}
                   </div>
-                    {/* محتوى مخصص يمرر عبر children */}
                     {children && <div className="custom-content">{children}</div>}
                 </Card.Body>
               </Card>
