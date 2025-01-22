@@ -1,7 +1,7 @@
 import React from "react";
 import { WaveTop, WaveBottom } from "../animation/Wave";
 
-const ContactHeader = () => {
+const HeaderSection = ({ title, subtitle }) => {
     return (
         <>
             <WaveTop />
@@ -17,14 +17,14 @@ const ContactHeader = () => {
                     )`,
                     textAlign: "center",
                     padding: "50px 0",
-                    marginBottom: "0", 
+                    marginBottom: "0",
                 }}
             >
                 <h1 style={{ fontWeight: "bold", color: "#2c2c54", margin: "0" }}>
-                    Contact Us
+                    {title}
                 </h1>
                 <p style={{ color: "#2c2c54", fontSize: "14px", margin: "5px 0" }}>
-                    HOME - CONTACT US
+                    {subtitle}
                 </p>
             </div>
             <WaveBottom />
@@ -32,4 +32,4 @@ const ContactHeader = () => {
     );
 };
 
-export default ContactHeader;
+export default HeaderSection;

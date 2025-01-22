@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { SlBasketLoaded } from "react-icons/sl";
+
 import { Container, Row, Col } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Product from "../shop/GaleryData";
 import Navbar from "../Navbar/Navbar";
 import { useBasket } from "./BasketContext";
-import StarRating from "../cards/StarRating";
+import StarRating from "./StarRating";
 import ButtonUi from "../ui/ButtonUi";
 import { WaveTop } from "../animation/Wave";
 import Footer2 from "../Footer/Footer2";
 import "../Styles/Card.css";
 
 const ProductDetailPage = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState(null);
-  const [quantity, setQuantity] = useState(1);
-  const [selectedColor, setSelectedColor] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null);
-  const { addToBasket } = useBasket();
+  const { id } = useParams(); // Get the product ID from the URL
+  const [product, setProduct] = useState(null); // State to store the product details
+  const [quantity, setQuantity] = useState(1); // State for quantity selection
+  const [selectedColor, setSelectedColor] = useState(null); // State for color selection
+  const [selectedSize, setSelectedSize] = useState(null); // State for size selection
+  const { addToBasket } = useBasket(); // Context function to add items to the basket
+  const navigate = useNavigate(); // Hook to handle navigation
 
-  // Load product based on the URL parameter
+  // Fetch the product details based on the ID
   useEffect(() => {
     const foundProduct = Product.find((p) => p.id === parseInt(id));
     setProduct(foundProduct);
@@ -35,17 +37,24 @@ const ProductDetailPage = () => {
     }
   }, [id]);
 
-  if (!product) return <p>Loading...</p>; // Display loading state until product is fetched
+  if (!product) return <p>Loading...</p>;
 
   const handleIncrease = () => setQuantity(quantity + 1);
   const handleDecrease = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
+
   const handleBuyNow = () => {
     addToBasket({ ...product, selectedColor, selectedSize }, quantity);
   };
 
-  // ProductButton Component
+  const handlePayment = () => {
+    navigate("/payment"); // Navigate to the payment page
+  };
+
+  // Helper component for product-specific buttons
   const ProductButton = ({ product }) => {
-    if (!product.sale) return null; // Show sale button only if the product is on sale
+    if (!product.sale) {
+      return null;
+    }
     return <ButtonUi text={product.sale} className={"btn-1"} />;
   };
 
@@ -53,7 +62,7 @@ const ProductDetailPage = () => {
     <div className="body">
       <Navbar />
       <WaveTop className="wave" />
-      <div className="main-detials">
+      <div className="main-details">
         <Container className="mt-5">
           <Row>
             <Col md={6}>
@@ -67,8 +76,8 @@ const ProductDetailPage = () => {
               <div className="product-details d-flex gap-4 flex-column">
                 <div className="links d-flex gap-4">
                   <span>Home - </span>
-                  <span> Baby Boy - </span>
-                  <span> {product.name}</span>
+                  <span>Baby Boy - </span>
+                  <span>{product.name}</span>
                 </div>
                 <ProductButton product={product} />
                 <h2>{product.name}</h2>
@@ -76,7 +85,7 @@ const ProductDetailPage = () => {
               </div>
               <div className="d-flex second-details">
                 <h4>
-                  $ {product.price.toFixed(2)} - ${" "}
+                  ${product.price.toFixed(2)} - $
                   {(product.price + 10).toFixed(2)}
                 </h4>
                 <StarRating
@@ -110,7 +119,7 @@ const ProductDetailPage = () => {
                   <ButtonUi
                     key={index}
                     className={`me-2 ${
-                      selectedSize === size ? "unselected" : "selected-size"
+                      selectedSize === size ? "selected-size" : "unselected"
                     }`}
                     onClick={() => setSelectedSize(size)}
                     text={size}
@@ -119,7 +128,7 @@ const ProductDetailPage = () => {
               </div>
 
               {/* Quantity Selector */}
-              <div className="d-flex align-items-center gap-2 mt-6">
+              <div className="d-flex align-items-center gap-2 mt-4">
                 <div className="quantity-wrap d-flex justify-content-around align-items-center">
                   <button
                     className="quantity-btn decrement"
@@ -147,10 +156,14 @@ const ProductDetailPage = () => {
                   &#9825;
                 </button>
               </div>
+              <button className="payment-btn btn-1" onClick={handlePayment}>
+                Continue to Payment
+              </button>
             </Col>
           </Row>
         </Container>
       </div>
+
       <Footer2 />
     </div>
   );

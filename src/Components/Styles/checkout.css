@@ -1,0 +1,17 @@
+.check {
+  font-family: var(--secondry-font);
+}
+.check form label {
+  color: var(--theme-color-extra_bg_color);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.check form input {
+  color: var(--theme-color-extra_bg_color);
+}
+.pypal-btn {
+  background-color: var(--theme-color-extra_bg_color) !important;
+  border: none !important;
+  font-family: var(--secondry-font);
+  text-transform: capitalize;
+}

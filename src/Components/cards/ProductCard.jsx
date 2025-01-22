@@ -70,6 +70,7 @@ const ProductCard = () => {
                   <div className="d-flex mb-4">
                     {product.colors?.map((color, index) => (
                       <button
+                        className="color-button"
                         key={index}
                         onClick={() => setSelectedColor(color)}
                         style={{
