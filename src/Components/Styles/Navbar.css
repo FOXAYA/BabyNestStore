@@ -128,6 +128,10 @@
   background-color: #1f2834 !important;
   transition: all 0.3s ease-in-out;
   position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 .search-bar-input::placeholder {
@@ -149,6 +153,14 @@
   transform: translateY(-50%);
   outline: none;
   transition: color 0.3s;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
 }
 
 .search-bar-close-btn:hover {

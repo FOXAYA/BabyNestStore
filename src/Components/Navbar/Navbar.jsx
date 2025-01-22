@@ -13,7 +13,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useBasket } from "../shop/BasketContext";
 import "../Styles/Navbar.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { motion } from "framer-motion"; // Import motion for animation
+import { motion } from "framer-motion";
 
 const NavbarLayout = () => {
   const [showDropdown, setShowDropdown] = useState(false);
