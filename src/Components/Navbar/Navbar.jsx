@@ -167,10 +167,10 @@ const NavbarLayout = () => {
               <Sidebar show={showSidebar} handleClose={handleClose} />
             )}
 
-            {/* إضافة زر تسجيل الدخول */}
+            
             <span
               onClick={handleAuthModalOpen}
-              className="custom-link position-relative text-dark"
+              className=" position-relative text-dark"
               style={{ cursor: 'pointer' }}
             >
               Sign In
