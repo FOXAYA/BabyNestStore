@@ -166,3 +166,9 @@
 .search-bar-close-btn:hover {
   color: #c96f10;
 }
+
+.nav_bar .nav-link.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px; 
+  text-underline-offset: 4px; 
+}

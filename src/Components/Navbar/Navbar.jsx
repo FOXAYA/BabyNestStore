@@ -14,11 +14,13 @@ import { useBasket } from "../shop/BasketContext";
 import "../Styles/Navbar.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { motion } from "framer-motion";
+import AuthModal from "../Sign/AuthModal";
 
 const NavbarLayout = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [show, setShow] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false); // حالة عرض نافذة التوثيق
   const target = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,6 +30,7 @@ const NavbarLayout = () => {
   const handleClose = () => {
     setShow(false);
     setShowSidebar(false);
+    setShowAuthModal(false); // إغلاق نافذة التوثيق عند الإغلاق
   };
   const handleToggleSidebar = () => setShowSidebar(!showSidebar);
   const { cartItems } = useBasket();
@@ -53,6 +56,9 @@ const NavbarLayout = () => {
   const handleMouseEnter = () => setShowDropdown(true);
   const handleMouseLeave = () => setShowDropdown(false);
 
+  // إضافة وظيفة لفتح نافذة التوثيق
+  const handleAuthModalOpen = () => setShowAuthModal(true);
+
   return (
     <Navbar expand="lg" className="bgground p-3 sticky-top">
       <Container>
@@ -61,10 +67,11 @@ const NavbarLayout = () => {
         </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="m-auto my-2 my-lg-0 nav_bar " navbarScroll>
+          <Nav className="m-auto my-2 my-lg-0 nav_bar" navbarScroll>
             <Nav.Link
-              href="/"
-              className="custom-link position-relative text-dark "
+              as={Link}
+              to="/"
+              className={`position-relative text-dark ${location.pathname === '/' ? 'active' : ''}`}
             >
               Home
             </Nav.Link>
@@ -76,31 +83,37 @@ const NavbarLayout = () => {
               onMouseLeave={handleMouseLeave}
               show={showDropdown}
             >
-              <NavDropdown.Item as={Link} to="/aboutus">
+              <NavDropdown.Item as={Link} to="/aboutus" className={location.pathname === '/aboutus' ? 'active' : ''}>
                 About Us
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item as={Link} to="/our-services" className={location.pathname === '/our-services' ? 'active' : ''}>
                 Our Services
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Our Team</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">Pricing</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/our-team" className={location.pathname === '/our-team' ? 'active' : ''}>
+                Our Team
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''}>
+                Pricing
+              </NavDropdown.Item>
             </NavDropdown>
 
             <Nav.Link
-              className="link-underline-custom position-relative text-dark"
+              className={`link-underline-custom position-relative text-dark ${location.pathname === '/blog' ? 'active' : ''}`}
               onClick={handleBlogClick}
             >
               Blog
             </Nav.Link>
             <Nav.Link
-              href="/shop"
-              className="link-underline-custom position-relative text-dark"
+              as={Link}
+              to="/shop"
+              className={`link-underline-custom position-relative text-dark ${location.pathname === '/shop' ? 'active' : ''}`}
             >
               Shop
             </Nav.Link>
             <Nav.Link
-              href="/contact"
-              className="link-underline-custom position-relative text-dark"
+              as={Link}
+              to="/contact"
+              className={`link-underline-custom position-relative text-dark ${location.pathname === '/contact' ? 'active' : ''}`}
             >
               Contact us
             </Nav.Link>
@@ -153,11 +166,22 @@ const NavbarLayout = () => {
             {showSidebar && (
               <Sidebar show={showSidebar} handleClose={handleClose} />
             )}
+
+            
+            <span
+              onClick={handleAuthModalOpen}
+              className=" position-relative text-dark"
+              style={{ cursor: 'pointer' }}
+            >
+              Sign In
+            </span>
           </div>
         </Navbar.Collapse>
       </Container>
+      <AuthModal show={showAuthModal} handleClose={handleClose} />
     </Navbar>
   );
 };
 
 export default NavbarLayout;
+

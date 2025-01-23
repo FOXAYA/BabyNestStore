@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { SlBasketLoaded } from "react-icons/sl";
-
 import { Container, Row, Col } from "react-bootstrap";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import Product from "../shop/GaleryData";
 import Navbar from "../Navbar/Navbar";
 import { useBasket } from "./BasketContext";
@@ -75,8 +74,8 @@ const ProductDetailPage = () => {
             <Col md={6}>
               <div className="product-details d-flex gap-4 flex-column">
                 <div className="links d-flex gap-4">
-                  <span>Home - </span>
-                  <span>Baby Boy - </span>
+                  <Link to="/">Home</Link> - 
+                  <Link to="/shop">Baby Boy - </Link>
                   <span>{product.name}</span>
                 </div>
                 <button className="payment-btn" onClick={handlePayment}>
