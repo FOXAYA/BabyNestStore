@@ -6,13 +6,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../src/Components/Styles/Responsive.css";
 
 import { BasketProvider } from "./Components/shop/BasketContext";
+import { AuthProvider } from "../src/Components/Sign/AuthContext.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <BasketProvider>
-      <App />
-    </BasketProvider>
+          <BasketProvider>
+    <AuthProvider>
+        <App />
+        </AuthProvider>
+
+      </BasketProvider>
   </React.StrictMode>
 );

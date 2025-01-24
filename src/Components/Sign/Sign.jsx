@@ -1,37 +1,22 @@
-import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
-import { useAuth } from './AuthContext';
-import { supabase } from './supabaseClient';
+import React, { useState } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
+import { useAuth } from "./AuthContext";
+
 
 const SignIn = ({ handleClose, switchToSignUp, switchToForgotPassword }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { signIn } = useAuth();
-  const [error, setError] = useState('');
-  const [resentEmail, setResentEmail] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    console.log('SignIn button clicked');  // للتحقق من استدعاء الدالة
-    try {
-      await signIn(email, password);
-      handleClose();
-    } catch (error) {
-      if (error.message === 'Email not confirmed') {
-        setError('Email not confirmed. Please check your email to confirm your account.');
-      } else {
-        setError('Error logging in: ' + error.message);
-      }
-      console.error('Error logging in:', error.message);
-    }
-  };
 
-  const handleResendConfirmation = async () => {
     try {
-      await supabase.auth.api.resendConfirmationEmail(email);
-      setResentEmail(true);
-    } catch (error) {
-      console.error('Error resending confirmation email:', error.message);
+      await signIn(email, password); // Call signIn function from context
+      handleClose(); // Close modal on success
+    } catch (err) {
+      setError(`SignIn failed: ${err.message}`); // Display error message
     }
   };
 
@@ -42,8 +27,9 @@ const SignIn = ({ handleClose, switchToSignUp, switchToForgotPassword }) => {
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSignIn}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Username or email address *</Form.Label>
+          {/* Email field */}
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email Address *</Form.Label>
             <Form.Control
               type="email"
               placeholder="Enter email"
@@ -52,7 +38,9 @@ const SignIn = ({ handleClose, switchToSignUp, switchToForgotPassword }) => {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+
+          {/* Password field */}
+          <Form.Group controlId="formBasicPassword" className="mt-3">
             <Form.Label>Password *</Form.Label>
             <Form.Control
               type="password"
@@ -62,26 +50,38 @@ const SignIn = ({ handleClose, switchToSignUp, switchToForgotPassword }) => {
               required
             />
           </Form.Group>
-          {error && <p style={{ color: 'red' }}>{error}</p>}
-          <Button variant="dark" type="submit" className="w-100">
+
+          {/* Error message */}
+          {error && <p style={{ color: "red" }}>{error}</p>}
+
+          {/* Sign In button */}
+          
+          <Button variant="dark" type="submit" className="w-100 mt-3">
             Sign In
           </Button>
-          {error === 'Email not confirmed. Please check your email to confirm your account.' && (
-            <Button variant="outline-dark" className="w-100 mt-2" onClick={handleResendConfirmation}>
-              Resend Confirmation Email
-            </Button>
-          )}
-          {resentEmail && <p style={{ color: 'green' }}>Confirmation email resent. Please check your inbox.</p>}
         </Form>
+
+        {/* Forgot password link */}
         <div className="text-center mt-3">
-          <small>
-            <span className="text-muted" onClick={switchToForgotPassword} style={{ cursor: 'pointer' }}>
-              Lost your password?
-            </span>
-          </small>
+          <span
+            className="text-muted"
+            role="button"
+            tabIndex={0}
+            onClick={switchToForgotPassword}
+            style={{ cursor: "pointer" }}
+          >
+            Lost your password?
+          </span>
         </div>
+
         <hr />
-        <Button variant="outline-dark" className="w-100" onClick={switchToSignUp}>
+
+        {/* Sign Up button */}
+        <Button
+          variant="outline-dark"
+          className="w-100"
+          onClick={switchToSignUp}
+        >
           Create an account
         </Button>
       </Modal.Body>

@@ -113,3 +113,10 @@ a {
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
+.welcome {
+  color: var(--theme-color-text_hover);
+  font-size: large;
+  position: absolute;
+  bottom: -5px;
+  right: 70px;
+}
