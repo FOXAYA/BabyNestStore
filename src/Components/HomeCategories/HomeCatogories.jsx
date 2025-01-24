@@ -5,29 +5,31 @@ import img2 from "../assets/images/product-category2.jpg";
 import img3 from "../assets/images/product-category3.jpg";
 import img4 from "../assets/images/product-category4.jpg";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import "../Styles/HomeCategories.css";
+
 class CategoriesList extends Component {
   render() {
     const categories = [
       {
         title: "Baby girl",
         image: img1,
-        link: "",
+        link: "/shop",
       },
       {
         title: "Baby boy",
         image: img2,
-        link: "",
+        link: "/shop", // Add a link to avoid empty links
       },
       {
         title: "Girl",
         image: img3,
-        link: "",
+        link: "/shop", // Add a link to avoid empty links
       },
       {
         title: "Boy",
         image: img4,
-        link: "",
+        link: "/shop", // Add a link to avoid empty links
       },
     ];
 
@@ -43,16 +45,16 @@ class CategoriesList extends Component {
                   alt={category.title}
                   className="category-image"
                 />
-                <Card.Body className="card-body position-absolute justify-content-center flex-column ">
+                <Card.Body className="card-body d-flex flex-column justify-content-center position-absolute w-100 h-100">
                   <Card.Title className="category-title position-absolute">
                     {category.title}
                   </Card.Title>
-                  <a
-                    href={category.link}
-                    className=" shop-now-btn position-absolute"
+                  <Link
+                    to={category.link}
+                    className="shop-now-btn position-absolute"
                   >
                     Shop Now <FaArrowRight />
-                  </a>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>

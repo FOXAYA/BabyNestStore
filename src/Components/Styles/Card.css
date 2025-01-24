@@ -217,7 +217,7 @@
   border-radius: 50%;
   cursor: pointer;
   margin-left: 8px;
-  padding: 15px;
+  padding: 20px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -309,7 +309,7 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   position: absolute;
-  top: 110%;
+  top: 120%;
 }
 
 .payment-btn:hover {

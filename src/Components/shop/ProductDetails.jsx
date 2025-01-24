@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { SlBasketLoaded } from "react-icons/sl";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import { Container, Row, Col } from "react-bootstrap";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Product from "../shop/GaleryData";
 import Navbar from "../Navbar/Navbar";
 import { useBasket } from "./BasketContext";
@@ -74,13 +75,15 @@ const ProductDetailPage = () => {
             <Col md={6}>
               <div className="product-details d-flex gap-4 flex-column">
                 <div className="links d-flex gap-4">
-                  <Link to="/">Home</Link> - 
-                  <Link to="/shop">Baby Boy - </Link>
-                  <span>{product.name}</span>
+                  {/* Wrap Home and Product Name with Link for navigation */}
+                  <Link to="/" className="text-decoration-none">
+                    <span className="text-dark">Home - </span>
+                  </Link>
+                  <Link to="/baby-boy" className="text-decoration-none">
+                    <span className="text-dark">Baby Boy - </span>
+                  </Link>
+                  <span className="text-dark">{product.name}</span> {/* This can remain plain text */}
                 </div>
-                <button className="payment-btn" onClick={handlePayment}>
-                  Continue to Payment
-                </button>
                 <ProductButton product={product} />
                 <h2>{product.name}</h2>
                 <h5>{product.brand}</h5>
@@ -158,10 +161,14 @@ const ProductDetailPage = () => {
                   &#9825;
                 </button>
               </div>
+              <button className="payment-btn " onClick={handlePayment}>
+                Continue to Payment
+              </button>
             </Col>
           </Row>
         </Container>
       </div>
+
       <Footer2 />
     </div>
   );

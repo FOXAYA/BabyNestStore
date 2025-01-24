@@ -156,8 +156,8 @@ const Gallery = ({ images }) => {
                         key={index}
                         onClick={() => setSelectedColor(color)}
                         style={{
-                          width: "20px",
-                          height: "20px",
+                          width: "15px",
+                          height: "15px",
                           backgroundColor: color,
                           border:
                             selectedColor === color
@@ -166,6 +166,7 @@ const Gallery = ({ images }) => {
                           borderRadius: "50%",
                           cursor: "pointer",
                           marginRight: "8px",
+                          padding:"10px"
                         }}
                         aria-label={`Select color ${color}`}
                       ></button>

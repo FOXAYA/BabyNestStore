@@ -6,6 +6,7 @@ import toys from "../assets/images/product-category7.jpg";
 import jackets from "../assets/images/product-category8.jpg";
 import denim from "../assets/images/product-category9.jpg";
 import dress from "../assets/images/product-category10.jpg";
+import { Link } from "react-router-dom"; 
 import { Container, Row, Col } from "react-bootstrap";
 
 // Component to display a list of category images with titles
@@ -31,12 +32,14 @@ const BsCatogeries = () => {
             lg={2}
             className="text-center d-flex flex-column align-items-center justify-content-center"
           >
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="img-fluid rounded image"
-            />
-            <p className="mt-2 alt">{image.alt}</p>
+            <Link to="/shop" className="text-decoration-none">
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="img-fluid rounded image"
+              />
+              <p className="mt-2 alt">{image.alt}</p>
+            </Link>
           </Col>
         ))}
       </Row>
