@@ -1,86 +1,41 @@
-// // AuthContext.js
-// import React, { createContext, useContext, useState } from 'react';
-// import { supabase } from './supabaseClient';
+import React, { createContext, useContext, useState } from "react";
 
-// const AuthContext = createContext();
-
-// export const AuthProvider = ({ children }) => {
-//   const [user, setUser] = useState(null);
-
-//   const signIn = async (email, password) => {
-//     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-//     if (error) throw error;
-//     setUser(data.user);
-//   };
-
-//   const signOut = async () => {
-//     const { error } = await supabase.auth.signOut();
-//     if (error) throw error;
-//     setUser(null);
-//   };
-
-//   const signUp = async (email, password) => {
-//     const { data, error } = await supabase.auth.signUp({ email, password });
-//     if (error) throw error;
-//     setUser(data.user);
-//   };
-
-//   const resetPassword = async (email) => {
-//     const { error } = await supabase.auth.api.resetPasswordForEmail(email);
-//     if (error) throw error;
-//   };
-
-//   return (
-//     <AuthContext.Provider value={{ user, signIn, signOut, signUp, resetPassword }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// };
-
-// export const useAuth = () => useContext(AuthContext);
-
-// AuthContext.js
-import React, { createContext, useContext, useState } from 'react';
-import { supabase } from './supabaseClient';
-
+// Create a Context for authentication
 const AuthContext = createContext();
 
+// Provider component that will wrap your app and provide auth state
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); // Store user info here
 
+  // Simulate sign-in logic
   const signIn = async (email, password) => {
-    console.log('SignIn function called');  // للتحقق من استدعاء الدالة
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) throw error;
-    setUser(data.user);
+    // Simulate successful sign-in (replace with real authentication logic)
+    setUser({ email, name: user.username });
   };
 
-  const signOut = async () => {
-    console.log('SignOut function called');  // للتحقق من استدعاء الدالة
-    const { error } = await supabase.auth.signOut();
-    if (error) throw error;
+  // Simulate sign-up logic
+  const signUp = async (email, password, userInfo) => {
+    // Store the username along with other user details
+    setUser({
+      email,
+      name: `${userInfo.firstName} ${userInfo.lastName}`,
+      username: userInfo.username,
+    });
+  };
+
+  // Function to sign out
+  const signOut = () => {
     setUser(null);
   };
 
-  const signUp = async (email, password) => {
-    console.log('SignUp function called');  // للتحقق من استدعاء الدالة
-    const { data, error } = await supabase.auth.signUp({ email, password });
-    if (error) throw error;
-    setUser(data.user);
-  };
-
-  const resetPassword = async (email) => {
-    console.log('ResetPassword function called');  // للتحقق من استدعاء الدالة
-    const { error } = await supabase.auth.api.resetPasswordForEmail(email);
-    if (error) throw error;
-  };
-
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut, signUp, resetPassword }}>
+    <AuthContext.Provider value={{ user, signIn, signUp, signOut }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
-
+// Custom hook to access the AuthContext
+export const useAuth = () => {
+  return useContext(AuthContext);
+};

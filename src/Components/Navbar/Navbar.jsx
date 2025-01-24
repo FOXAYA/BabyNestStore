@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { motion } from "framer-motion";
 import mylogo from "../assets/images/logo.jpeg";
 import { CiSearch } from "react-icons/ci";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
@@ -11,30 +13,32 @@ import ShoppingCard from "../shop/ShopingCard";
 import Sidebar from "../SideBar/SideBar";
 import SearchBar from "../SearchBar/SearchBar";
 import { useBasket } from "../shop/BasketContext";
-import "../Styles/Navbar.css";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { motion } from "framer-motion";
 import AuthModal from "../Sign/AuthModal";
+import { useAuth } from "../Sign/AuthContext";
+import "../Styles/Navbar.css";
 
 const NavbarLayout = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [show, setShow] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
-  const [showAuthModal, setShowAuthModal] = useState(false); // حالة عرض نافذة التوثيق
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const target = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
-  const [showSearch, setShowSearch] = useState(false);
+
+  const { cartItems } = useBasket();
+  const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const { user, signOut } = useAuth();
 
   const handleToggle = () => setShow(!show);
   const handleClose = () => {
     setShow(false);
     setShowSidebar(false);
-    setShowAuthModal(false); // إغلاق نافذة التوثيق عند الإغلاق
+    setShowAuthModal(false);
   };
   const handleToggleSidebar = () => setShowSidebar(!showSidebar);
-  const { cartItems } = useBasket();
-  const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const handleAuthModalOpen = () => setShowAuthModal(true);
 
   const handleBlogClick = () => {
     if (location.pathname === "/") {
@@ -56,9 +60,6 @@ const NavbarLayout = () => {
   const handleMouseEnter = () => setShowDropdown(true);
   const handleMouseLeave = () => setShowDropdown(false);
 
-  // إضافة وظيفة لفتح نافذة التوثيق
-  const handleAuthModalOpen = () => setShowAuthModal(true);
-
   return (
     <Navbar expand="lg" className="bgground p-3 sticky-top">
       <Container>
@@ -71,7 +72,9 @@ const NavbarLayout = () => {
             <Nav.Link
               as={Link}
               to="/"
-              className={`position-relative text-dark ${location.pathname === '/' ? 'active' : ''}`}
+              className={`position-relative text-dark ${
+                location.pathname === "/" ? "active" : ""
+              }`}
             >
               Home
             </Nav.Link>
@@ -83,22 +86,42 @@ const NavbarLayout = () => {
               onMouseLeave={handleMouseLeave}
               show={showDropdown}
             >
-              <NavDropdown.Item as={Link} to="/aboutus" className={location.pathname === '/aboutus' ? 'active' : ''}>
+              <NavDropdown.Item
+                as={Link}
+                to="/aboutus"
+                className={location.pathname === "/aboutus" ? "active" : ""}
+              >
                 About Us
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/our-services" className={location.pathname === '/our-services' ? 'active' : ''}>
+              <NavDropdown.Item
+                as={Link}
+                to="/our-services"
+                className={
+                  location.pathname === "/our-services" ? "active" : ""
+                }
+              >
                 Our Services
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/our-team" className={location.pathname === '/our-team' ? 'active' : ''}>
+              <NavDropdown.Item
+                as={Link}
+                to="/our-team"
+                className={location.pathname === "/our-team" ? "active" : ""}
+              >
                 Our Team
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/pricing" className={location.pathname === '/pricing' ? 'active' : ''}>
+              <NavDropdown.Item
+                as={Link}
+                to="/pricing"
+                className={location.pathname === "/pricing" ? "active" : ""}
+              >
                 Pricing
               </NavDropdown.Item>
             </NavDropdown>
 
             <Nav.Link
-              className={`link-underline-custom position-relative text-dark ${location.pathname === '/blog' ? 'active' : ''}`}
+              className={`link-underline-custom position-relative text-dark ${
+                location.pathname === "/blog" ? "active" : ""
+              }`}
               onClick={handleBlogClick}
             >
               Blog
@@ -106,14 +129,18 @@ const NavbarLayout = () => {
             <Nav.Link
               as={Link}
               to="/shop"
-              className={`link-underline-custom position-relative text-dark ${location.pathname === '/shop' ? 'active' : ''}`}
+              className={`link-underline-custom position-relative text-dark ${
+                location.pathname === "/shop" ? "active" : ""
+              }`}
             >
               Shop
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/contact"
-              className={`link-underline-custom position-relative text-dark ${location.pathname === '/contact' ? 'active' : ''}`}
+              className={`link-underline-custom position-relative text-dark ${
+                location.pathname === "/contact" ? "active" : ""
+              }`}
             >
               Contact us
             </Nav.Link>
@@ -129,7 +156,7 @@ const NavbarLayout = () => {
               <SlBag className="fs-4 bag-icon" />
               <span className="badge text-dark position-relative">
                 {itemCount}
-              </span>{" "}
+              </span>
             </i>
             <ShoppingCard
               show={show}
@@ -167,14 +194,20 @@ const NavbarLayout = () => {
               <Sidebar show={showSidebar} handleClose={handleClose} />
             )}
 
-            
-            <span
-              onClick={handleAuthModalOpen}
-              className=" position-relative text-dark"
-              style={{ cursor: 'pointer' }}
-            >
-              Sign In
-            </span>
+            {user ? (
+              <>
+                <span className="welcome">
+                  Welcome, {user.username || user.name}
+                </span>
+                <button onClick={signOut} className="btn btn-outline-dark ms-2">
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <span onClick={handleAuthModalOpen} className="sign-in-button">
+                Sign In
+              </span>
+            )}
           </div>
         </Navbar.Collapse>
       </Container>
@@ -184,4 +217,3 @@ const NavbarLayout = () => {
 };
 
 export default NavbarLayout;
-
